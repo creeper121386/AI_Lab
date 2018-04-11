@@ -3,7 +3,7 @@ import matplotlib as plt
 import csv
 
 N = 350
-k = 10
+k = 20
 
 
 def classify(train_data, train_label, test_data):
@@ -29,10 +29,42 @@ def classify(train_data, train_label, test_data):
     return result
 
 
+def fill(data, length):
+    # 处理缺失值：
+    for j in range(8):
+        tmp = num = 0
+        for i in range(length):
+            if data[i][j]:
+                tmp += data[i][j]
+                num += 1
+        ave = tmp/num
+        for i in range(length):
+            if not data[i][j]:
+                data[i][j] = tmp/ave
+        return data
+
+
+def normalize(data, length):
+    # 数据归一化处理：
+    Max = np.max(data, axis=0)
+    Min = np.min(data, axis=0)
+    for j in range(8):
+        for i in range(length):
+            data[i][j] = (data[i][j]-Min[j])/(Max[j]-Min[j])
+    return data
+
+
 with open("pima-indians-diabetes.data.csv", "r") as f:
     reader = csv.reader(f)
+    print()
     data = [x for x in reader]
 data = np.array(data, dtype="float64")
+length = len(data)
+
+data = fill(data, length)
+data = normalize(data, length)
+
+# 划分测试集和训练集:
 train_data = data[:N, :]
 test_data = data[N:, :]
 train_label = train_data[:, -1:]
