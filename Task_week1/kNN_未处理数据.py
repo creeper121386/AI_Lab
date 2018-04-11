@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib as plt
 import csv
 
 N = 350

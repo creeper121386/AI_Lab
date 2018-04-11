@@ -1,9 +1,8 @@
 import numpy as np
-import matplotlib as plt
 import csv
 
 N = 350
-k = 20
+k = 10
 
 
 def classify(train_data, train_label, test_data):
