@@ -24,7 +24,7 @@ def load():
         for j in ls:
             if os.path.isfile(os.path.join(path[i], j)):
                 num += 1
-        num = 50        # <-这里最后记得改!
+        # num = 500        # <-这里最后记得改!
         f_num.append(num)
         for k in range(num):
             with open(path[i]+'%d.txt' % k) as f:
