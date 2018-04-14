@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import math
 N = 350
 
 
@@ -13,7 +14,7 @@ def cal_ent(data, label):
             label_num[1] += 1
     p0 = label_num[0]/num
     p1 = label_num[0]/num
-    ent = -p0-p1
+    ent =-p0*math.log(2,p0)-p1*math.log(2,p1)
     return ent
 
 
