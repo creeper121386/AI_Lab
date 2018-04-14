@@ -3,7 +3,6 @@ import csv
 import math
 N = 350
 
-
 def cal_ent(data, label):
     num = len(data)
     label_num = [0, 0]  # 分别表示类别为0和1的概率
@@ -25,8 +24,7 @@ data = np.array(data, dtype="float64")
 label = data[:, -1:]
 data = data[:, 0:-1]
 ent = cal_ent(data, label)
-print(ent)
-
+print('\n',ent)
 
 train_data = data[:N, :]
 test_data = data[N:, :]
