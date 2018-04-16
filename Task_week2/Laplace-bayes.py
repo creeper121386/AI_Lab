@@ -6,6 +6,18 @@ def load():
     with open("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/melon.csv", "r") as f:
         reader = csv.reader(f)
         data = [x[1:] for x in reader]
+
+
+
+
+    for i in range(len(data[0])):
+        for j in range(len(data)):
+            
+
+
+
+
+
     data = np.array(data[1:])
     label = [(1 if x == '是' else 0) for x in data[:, -1:]]
     tmp = np.array(data[:, -3:-1], 'float32')
