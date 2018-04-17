@@ -207,9 +207,13 @@ def person(name, age, *, city='Beijing', job)
 调用生成器的方法：
 * 使用next(生成器名)函数。
 * 使用for x in 生成器名循环语句（生成器是可迭代对象）。
-###模块
+### 模块
 导入：`import 模块名`，单独导入部分模块：`from 模块名 import 名称`
-###高阶函数
+#### **常用模块**
+#### math库
+* `math.sqrt(x)`求x的平方根
+* `math.exp(x)`返回e的x次方
+### 高阶函数
 函数本身可以赋值给变量（类似指向函数的指针），函数名也是变量。函数也可以接受另一个函数名作为参数。函数名的数据类型实际上是<font color= 'red'>function类</font>。
 
 python的骚操作：
