@@ -32,4 +32,10 @@ categories: python
     * 对a的每一行求最值：使用`np.max(a,axis=1)`和`np.min(a,axis=1)`函数
     * 返回值是一个1* n的array
     * 返回列表a中出现的所有不同元素:`np.unique(a,return_index=Falise,return_counts=False)`.当`return_index`为`true`时,同时返回每个unique元素出现的第一个index;`return_counts`为`true`时,同时返回每个unique元素出现的次数.
-    
+    * 从数组a中随机抽取元素(被抽样的数组必须一维的):使用`np.random.choice()`,例如`np.random.choice(a,size=(2,3),replace=True)`,size表述要抽取的元素的大小,replace为true表示允许重复抽取.
+
+## 计算
+### 范数计算
+* 计算向量x和y的L2范数(欧式距离):`np.linalg.norm(x - y)`
+### 统计学与概率论
+* 对矩阵a进行均值计算:`np.mean(a,axis=0)`,axis=0时表示对列求均值,axis=1时表示对行求均值.
