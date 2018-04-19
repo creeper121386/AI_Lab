@@ -39,3 +39,5 @@ categories: python
 * 计算向量x和y的L2范数(欧式距离):`np.linalg.norm(x - y)`
 ### 统计学与概率论
 * 对矩阵a进行均值计算:`np.mean(a,axis=0)`,axis=0时表示对列求均值,axis=1时表示对行求均值.
+## 文件I/O
+* `np.loadtxt('文件名',dtype='',delimiter='分割符')`,从指定的文本文件中读取数据,返回值是array类型.可以指定分隔符读取,也可以读取csv文件.
