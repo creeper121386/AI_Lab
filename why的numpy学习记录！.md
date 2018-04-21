@@ -31,8 +31,24 @@ categories: python
     * 对a的每一列求最值：使用`np.max(a,axis=0)`和`np.min(a,axis=0)`函数
     * 对a的每一行求最值：使用`np.max(a,axis=1)`和`np.min(a,axis=1)`函数
     * 返回值是一个1* n的array
-    * 返回列表a中出现的所有不同元素:`np.unique(a,return_index=Falise,return_counts=False)`.当`return_index`为`true`时,同时返回每个unique元素出现的第一个index;`return_counts`为`true`时,同时返回每个unique元素出现的次数.
-    * 从数组a中随机抽取元素(被抽样的数组必须一维的):使用`np.random.choice()`,例如`np.random.choice(a,size=(2,3),replace=True)`,size表述要抽取的元素的大小,replace为true表示允许重复抽取.
+* 返回列表a中出现的所有不同元素:`np.unique(a,return_index=Falise,return_counts=False)`.当`return_index`为`true`时,同时返回每个unique元素出现的第一个index;`return_counts`为`true`时,同时返回每个unique元素出现的次数.
+
+* 从数组a中随机抽取元素(被抽样的数组必须一维的):使用`np.random.choice()`,例如`np.random.choice(a,size=(2,3),replace=True)`,size表述要抽取的元素的大小,replace为true表示允许重复抽取.
+
+* 删除矩阵a的特定行行/列:
+    * 删除行: 　`np.delete(a,index,axis=0)`
+    * 删除列:　`np.delete(a,index,axis=１)`
+    * index表示要删除的行/列的索引,可以为数字(删除一行/列),也可以为list(删除多个指定行/列)
+
+* 获取矩阵a的行列数:`np.shape(a)`,返回值是一个tuple.
+* 获取数组a中沿着轴x方向,最大值/最小值的索引:
+
+    |     |沿行方向最值         |沿列方向最值         |
+    |-----|:-----------------:|:-----------------:|
+    |最大值|np.argmax(a,axis=1)|np.argmax(a,axis=0)|
+    |最小值|np.argmin(a,axis=1)|np.argmin(a,axis=0)|
+
+    如果是一位数组,则不必考虑方向问题.
 
 ## 计算
 ### 范数计算

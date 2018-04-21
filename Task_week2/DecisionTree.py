@@ -20,41 +20,61 @@ def cal_ent(label):
 
 def divide(data, label, uqFeat):
     new_data = []
+    new_label = []
     slice = data[:, uqFeat:uqFeat+1]
+    data=np.delete(data,uqFeat,axis=1)
     values = np.unique(slice)
     for x in values:
+        tmp_data = []
+        tmp_label = []
         index = (np.where(slice == x))[0]
         for y in index:
-            new_data.append(data[y])
-    return new_data
+            tmp_data.append(data[y])
+            tmp_label.append(label[y])
+
+        new_data.append(np.array(tmp_data))
+        new_label.append(np.array(tmp_label))
+
+    return new_data, new_label, values
 
 
+# 寻找划分一个数据集的最佳方式(传入参数是一个训练集和其对应的标签)
 def optimize(data, label):
-    length = len(data)
-    feature_num = len(data[0])
+    num = len(label)
+    length = len(data[0])
     originEnt = cal_ent(label)
-    feature = 0
     maxGain = 0.0
-    special_value = 0
-    for i in range(feature_num):
-        value = [x[i] for x in data]
-        value = set(value)  # 一开始没想到用set...妙哇...
-        for mid_value in value:
-            new_data = divide(data, label, i)
-            len1 = len(label1)
-            len2 = len(label2)
-            if len1*len2 != 0:
-                ent1 = cal_ent(label1)
-                ent2 = cal_ent(label2)
-                gain = originEnt-(ent1*len1+ent2*len2)/length
-            else:
-                continue
-            #print('%d %f %f %f'%(i, mid_value,ent1,ent2))
-            if gain > maxGain:
-                maxGain = gain
-                feature = i
-                special_value = mid_value
-    return feature, special_value
+    uqFeat = 0  # <-作为最佳划分依据的特征
+    for i in range(length):
+        slice = data[:, i:i+1]
+        values = np.unique(slice)
+        new_data, new_label = divide(data, label, i)
+        sigma = 0
+        for x in new_label:
+            sigma += (cal_ent(x))*len(x)/num
+        gain = originEnt-sigma
+        if gain > maxGain:
+            maxGain = gain
+            uqFeat = i
+    return uqFeat
+
+
+def plant(data, label):
+    values, counts = np.unique(label, return_counts=True)
+    if counts == 1:
+        return label[0]
+    if np.shape(data[0])[0]==1:
+        return values[np.argmax(counts)]
+    tmp_data=data
+    tmp_label=label
+    uqFeat=optimize(tmp_data,tmp_label)
+    tree={uqFeat:{}}
+    new_data,new_label,featValue=divide(tmp_data,tmp_label,uqFeat)
+    for i in np.shape(featValue):
+        tree[uqFeat][featValue[i]]=plant(
+            new_data[i],new_label[i])
+    return tree
+
 
 train_data, train_label = load('traindata.txt')
-
+uqFeat = optimize(train_data, train_label)
