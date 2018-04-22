@@ -1,28 +1,33 @@
 import numpy as np
+import matplotlib.pyplot as plt
+#import draw_Tree as draw
+feat_label = [0, 1, 2, 3, 4, 5]
 
-
-def load(f_name):
+def load(f_name, divide):
     data = np.loadtxt("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
                       f_name, dtype=np.str, delimiter=' ')
     data = data[1:, :]
-    label = data[:, -1:]
-    data = data[:, :-1]
-    return data, label
+    if divide:
+        label = data[:, -1:]
+        data = data[:, :-1]
+        return data, label
+    else:
+        return data
 
 
 def cal_ent(label):
     num = len(label)
     _, counts = np.unique(label, return_counts=True)
     prob = counts/num
-    ent = -(np.sum(prob*np.log2(prob)))
-    return ent
+    ent = (np.sum(prob*np.log2(prob)))
+    return -ent
 
 
 def divide(data, label, uqFeat):
     new_data = []
     new_label = []
     slice = data[:, uqFeat:uqFeat+1]
-    data=np.delete(data,uqFeat,axis=1)
+    data = np.delete(data, uqFeat, axis=1)
     values = np.unique(slice)
     for x in values:
         tmp_data = []
@@ -46,9 +51,7 @@ def optimize(data, label):
     maxGain = 0.0
     uqFeat = 0  # <-作为最佳划分依据的特征
     for i in range(length):
-        slice = data[:, i:i+1]
-        values = np.unique(slice)
-        new_data, new_label = divide(data, label, i)
+        _, new_label, _ = divide(data, label, i)
         sigma = 0
         for x in new_label:
             sigma += (cal_ent(x))*len(x)/num
@@ -59,22 +62,55 @@ def optimize(data, label):
     return uqFeat
 
 
-def plant(data, label):
+def plant(data, label,feat_label):
     values, counts = np.unique(label, return_counts=True)
-    if counts == 1:
-        return label[0]
-    if np.shape(data[0])[0]==1:
+    if np.shape(values)[0] == 1:
+        return label[0][0]
+    if np.shape(data[0])[0] == 1:
         return values[np.argmax(counts)]
-    tmp_data=data
-    tmp_label=label
-    uqFeat=optimize(tmp_data,tmp_label)
-    tree={uqFeat:{}}
-    new_data,new_label,featValue=divide(tmp_data,tmp_label,uqFeat)
-    for i in np.shape(featValue):
-        tree[uqFeat][featValue[i]]=plant(
-            new_data[i],new_label[i])
+    uqFeat = optimize(data, label)
+    uqFeatLabel=feat_label[uqFeat]
+    tree = {uqFeatLabel: {}}
+    del(feat_label[uqFeat])
+    new_data, new_label, featValue = divide(data, label, uqFeat)
+    for i in range(np.shape(featValue)[0]):
+        subLabel=feat_label[:]
+        tree[uqFeatLabel][featValue[i]] = plant(
+            new_data[i], new_label[i], subLabel)
     return tree
 
 
-train_data, train_label = load('traindata.txt')
+def classify(data,tree):
+    '''for ix in tree.keys():
+        if type(tree[ix]).__name__ == 'dict':
+            if type(ix).__name__=='str':
+                if ix == data[featNo]:
+                    label=classify(data,tree[ix],featNo)
+            else:
+                label=classify(data,tree[ix],ix)
+        else:
+            label = classify(data, tree[ix], ix)'''
+    for x in tree.keys():
+        ix=x
+    dict=tree[ix]
+    for key in dict.keys():
+        if data[ix]==key:
+            if type(dict[key]).__name__ == 'dict':
+                label=classify(data,dict[key])
+            else:
+                label=dict[key]
+            return label
+    
+def pred(data, tree):
+    pred_label = []
+    for x in data:
+        label = classify(x,tree)
+        pred_label.append(label)
+    return pred_label
+
+
+train_data, train_label = load('traindata.txt', divide=True)
 uqFeat = optimize(train_data, train_label)
+tree = plant(train_data, train_label,feat_label)
+test_data = load('testdata.txt', divide=False)
+pred_label=pred(test_data,tree)

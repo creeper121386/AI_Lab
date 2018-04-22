@@ -10,7 +10,7 @@ categories: python
 # why的nmupy学习记录！
 
 #### 导入：`import np as np`
-##　数据类型
+## 数据类型
 **数组（array）：** 建立数组：np.array(列表)，将列表变成array。
 
 ***
@@ -44,7 +44,7 @@ categories: python
 * 获取数组a中沿着轴x方向,最大值/最小值的索引:
 
     |     |沿行方向最值         |沿列方向最值         |
-    |-----|:-----------------:|:-----------------:|
+    |:---:|:-----------------:|:-----------------:|
     |最大值|np.argmax(a,axis=1)|np.argmax(a,axis=0)|
     |最小值|np.argmin(a,axis=1)|np.argmin(a,axis=0)|
 
