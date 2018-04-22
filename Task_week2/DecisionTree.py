@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 #import draw_Tree as draw
-feat_label = [0, 1, 2, 3, 4, 5]
+k=10
 
 def load(f_name, divide):
     data = np.loadtxt("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
@@ -43,8 +43,8 @@ def divide(data, label, uqFeat):
     return new_data, new_label, values
 
 
-# 寻找划分一个数据集的最佳方式(传入参数是一个训练集和其对应的标签)
-def optimize(data, label):
+# 寻找划分一个数据集的最佳方式(传入参数是一个数据集和其对应的标签)
+def optimize(data, label, valiData, valiLabel):
     num = len(label)
     length = len(data[0])
     originEnt = cal_ent(label)
@@ -59,16 +59,39 @@ def optimize(data, label):
         if gain > maxGain:
             maxGain = gain
             uqFeat = i
-    return uqFeat
+    # 若不对结点进行划分,该节点对应的叶节点为:
+    values, counts = np.unique(label, return_counts=True)
+    value=values[np.argmax(counts)]
+    values, counts = np.unique(valiLabel, return_counts=True)
+    acc1=counts[np.where(values==value)[0]]/len(valiLabel)
+
+    _,new_label,featValue=divide(data,label,uqFeat)
+    n=len(featValue)
+    tmpLabel=[]
+    for i in range(n):
+        values, counts = np.unique(new_label[i], return_counts=True)
+        value = values[np.argmax(counts)]
+        tmpLabel.append(value)
+
+    count=0
+    for i in range(len(valiLabel)):
+        for j in range(n):
+            if featValue[j] == valiData[i][uqFeat] and tmpLabel[j] == valiLabel[i]:
+               count+=1
+    acc2=count/len(valiLabel)
+    if acc1<acc2:
+        return uqFeat
+    else:
+        return -1
 
 
-def plant(data, label,feat_label):
+def plant(data, label,feat_label,valiData,valiLabel):
     values, counts = np.unique(label, return_counts=True)
     if np.shape(values)[0] == 1:
         return label[0][0]
     if np.shape(data[0])[0] == 1:
         return values[np.argmax(counts)]
-    uqFeat = optimize(data, label)
+    uqFeat = optimize(data, label,valiData,valiLabel)
     uqFeatLabel=feat_label[uqFeat]
     tree = {uqFeatLabel: {}}
     del(feat_label[uqFeat])
@@ -76,20 +99,11 @@ def plant(data, label,feat_label):
     for i in range(np.shape(featValue)[0]):
         subLabel=feat_label[:]
         tree[uqFeatLabel][featValue[i]] = plant(
-            new_data[i], new_label[i], subLabel)
+            new_data[i], new_label[i], subLabel,valiData,valiLabel)
     return tree
 
 
 def classify(data,tree):
-    '''for ix in tree.keys():
-        if type(tree[ix]).__name__ == 'dict':
-            if type(ix).__name__=='str':
-                if ix == data[featNo]:
-                    label=classify(data,tree[ix],featNo)
-            else:
-                label=classify(data,tree[ix],ix)
-        else:
-            label = classify(data, tree[ix], ix)'''
     for x in tree.keys():
         ix=x
     dict=tree[ix]
@@ -108,9 +122,34 @@ def pred(data, tree):
         pred_label.append(label)
     return pred_label
 
+def test(data,tree,label):
+    pred_label=pred(data,tree)
+    num = len(label)
+    count=0
+    for i in range(num):
+        if label[i]==pred_label[i]:
+            count+=1
+    acc=count/num
+    return acc
 
-train_data, train_label = load('traindata.txt', divide=True)
-uqFeat = optimize(train_data, train_label)
-tree = plant(train_data, train_label,feat_label)
+
+data, label = load('traindata.txt', divide=True)
+num=len(label)
+trees=[]
+accs=[]
+for i in range(k):
+    ix=int(i+num/k)
+    valiData=data[i:ix,:]
+    valiLabel=label[i:ix,:]
+    train_data=np.vstack((data[:i,:],data[ix:,:]))
+    train_label = np.vstack((label[:i, :],label[ix:,:]))
+
+    feat_label = [0, 1, 2, 3, 4, 5]
+    tree = plant(train_data, train_label,feat_label,valiData,valiLabel)
+    acc=test(valiData,tree,valiLabel)
+    accs.append(acc)
+    trees.append(tree)
+
+tree=trees[accs.index(max(accs))]
 test_data = load('testdata.txt', divide=False)
 pred_label=pred(test_data,tree)
