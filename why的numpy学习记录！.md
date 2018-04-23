@@ -9,7 +9,10 @@ categories: python
 
 # why的nmupy学习记录！
 
-#### 导入：`import np as np`
+#### 导入：
+```python
+import np as np
+```
 ## 数据类型
 **数组（array）：** 建立数组：np.array(列表)，将列表变成array。
 
@@ -41,14 +44,13 @@ categories: python
     * index表示要删除的行/列的索引,可以为数字(删除一行/列),也可以为list(删除多个指定行/列)
 
 * 获取矩阵a的行列数:`np.shape(a)`,返回值是一个tuple.
-* 获取数组a中沿着轴x方向,最大值/最小值的索引:
+* 获取数组a中沿着轴x方向,最大值/最小值的索引（如果是一维数组,则不必考虑方向问题）：
 
-    |     |沿行方向最值         |沿列方向最值         |
-    |:---:|:-----------------:|:-----------------:|
-    |最大值|np.argmax(a,axis=1)|np.argmax(a,axis=0)|
-    |最小值|np.argmin(a,axis=1)|np.argmin(a,axis=0)|
+|     |沿行方向最值         |沿列方向最值 |
+|:---:|:-----------------:|:-----------------:|
+|最大值|np.argmax(a,axis=1)|np.argmax(a,axis=0)|
+|最小值|np.argmin(a,axis=1)|np.argmin(a,axis=0)|
 
-    如果是一位数组,则不必考虑方向问题.
 
 ## 计算
 ### 范数计算
