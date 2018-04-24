@@ -138,18 +138,6 @@ def test(data, tree, label):
     return acc
 
 
-def draw_ROC(pred_label, label):
-    if len(pred_label) != len(label):
-        print("[Error] length mismatch.")
-        return -1
-    values = np.unique(label)
-    for x in values:
-
-        for i in range(len(label)):
-            if label[i] == pred_label[i] == x:
-                pass
-
-
 data, label = load('traindata.txt', divide=True)
 num = len(label)
 trees = []
@@ -171,5 +159,6 @@ for i in range(k):
 
 
 tree = trees[accs.index(max(accs))]
+print(tree)
 test_data = load('testdata.txt', divide=False)
 pred_label = pred(test_data, tree)

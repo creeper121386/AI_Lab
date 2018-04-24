@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 #import draw_Tree as draw
 k = 10
+leafNo = -1
 
 
 def load(f_name, divide):
@@ -16,7 +17,7 @@ def load(f_name, divide):
         return data
 
 
-def cal_gini(label):
+def cal_ent(label):
     num = len(label)
     _, counts = np.unique(label, return_counts=True)
     prob = counts/num
@@ -49,7 +50,7 @@ def optimize(data, label, valiData, valiLabel):
     num = len(label)
     length = len(data[0])
     originEnt = cal_ent(label)
-    minGini = 0.0
+    maxGain = 0.0
     uqFeat = 0  # <-作为最佳划分依据的特征
     for i in range(length):
         _, new_label, _ = divide(data, label, i)
@@ -60,15 +61,43 @@ def optimize(data, label, valiData, valiLabel):
         if gain > maxGain:
             maxGain = gain
             uqFeat = i
+    '''
+    #调试中发现,如果进行预剪枝,将会导致决策树层数很浅,严重导致欠拟合,因此舍弃预剪枝步骤,以下代码仅作记录:
+    # 开始预剪枝:若不对结点进行划分,该节点对应的叶节点为:
+    values, counts = np.unique(label, return_counts=True)
+    value=values[np.argmax(counts)]
+    values, counts = np.unique(valiLabel, return_counts=True)
+    acc1=counts[np.where(values==value)[0]]/len(valiLabel)
+
+    _,new_label,featValue=divide(data,label,uqFeat)
+    n=len(featValue)
+    tmpLabel=[]
+    for i in range(n):
+        values, counts = np.unique(new_label[i], return_counts=True)
+        value = values[np.argmax(counts)]
+        tmpLabel.append(value)
+    count=0
+    for i in range(len(valiLabel)):
+        for j in range(n):
+            if featValue[j] == valiData[i][uqFeat] and tmpLabel[j] == valiLabel[i]:
+               count+=1
+    acc2=count/len(valiLabel)
+    if acc1<acc2:
+        return uqFeat
+    else:
+        return -1'''
     return uqFeat
 
 
 def plant(data, label, feat_label, valiData, valiLabel):
     values, counts = np.unique(label, return_counts=True)
     if np.shape(values)[0] == 1:
-        return label[0][0]
+        global leafNo
+        leafNo += 1
+        return (leafNo, label[0][0])
     if np.shape(data[0])[0] == 1:
-        return values[np.argmax(counts)]
+        leafNo += 1
+        return (leafNo, values[np.argmax(counts)])
     uqFeat = optimize(data, label, valiData, valiLabel)
     uqFeatLabel = feat_label[uqFeat]
     tree = {uqFeatLabel: {}}
@@ -96,9 +125,14 @@ def classify(data, tree):
 
 def pred(data, tree):
     pred_label = []
+    i = 0
     for x in data:
+        i += 1
         label = classify(x, tree)
-        pred_label.append(label)
+        if label != None:
+            pred_label.append(label)
+        else:
+            pred_label.append((-1, 'uacc'))
     return pred_label
 
 
@@ -107,22 +141,71 @@ def test(data, tree, label):
     num = len(label)
     count = 0
     for i in range(num):
-        if label[i] == pred_label[i]:
+        if label[i] == pred_label[i][1]:
             count += 1
     acc = count/num
     return acc
 
 
-def draw_ROC(pred_label, label):
-    if len(pred_label) != len(label):
-        print("[Error] length mismatch.")
-        return -1
-    values = np.unique(label)
-    for x in values:
+def cal_ROC(predLabel, label):
+    #label = np.array(label, dtype='int')
+    #label = label.tolist()
+    #label = [x[0] for x in label]
+    no1 = label.count(1)+1e-8
+    no0 = label.count(0)+1e-8
+    FP = TP = 0
+    for i in range(len(label)):
+        if label[i] == predLabel[i] == 1:
+            TP += 1
+        elif label[i] == 0 and predLabel[i] == 1:
+            FP += 1
+    return TP/no1, FP/no0
 
-        for i in range(len(label)):
-            if label[i] == pred_label[i] == x:
-                pass
+
+def draw_ROC(data, test_label, tree, leafNum):
+    values = np.unique(test_label)
+    num = len(test_label)
+    k=0
+    for x in values:
+        label=[]
+        pred_label = pred(data, tree)
+        pred_leaf = []
+        for i in range(num):
+            label.append(1 if test_label[i] == x else 0)
+            pred_leaf.append(pred_label[i][0])
+        uqLeaf = np.unique(pred_leaf)
+        posAcc = []
+        for l in uqLeaf:
+            index = np.where(pred_leaf == l)[0]
+            posNum = 0
+            for ix in index:
+                if label[ix] == 1:
+                    posNum += 1
+            posAcc.append([l, posNum/len(index)])
+        maxLeaf = sorted(posAcc, key=lambda temp: temp[1], reverse=True)
+        maxLeaf=[y[0] for y in maxLeaf]
+        leaves = [0]*(leafNum+1)    # 按照排序后的叶节点顺序,表示该分类器下,对应所有叶节点的分类情况
+        xValue = []
+        yValue = []
+        for i in range(leafNum+1):
+            leaves[i] = 1
+            newPredLabel = []
+            for j in range(num):
+                tmp = pred_leaf[j]
+                ix = maxLeaf.index(tmp)
+                newPredLabel.append(leaves[ix])
+            Tp, Fp = cal_ROC(newPredLabel, label)
+            xValue.append(Fp)
+            yValue.append(Tp)
+        fig=plt.figure(k)
+        ax = fig.add_subplot(1, 1, 1)
+        ax.set_xlabel('False Postive Rate')
+        ax.set_ylabel('True Postive Rate')
+        ax.set_title('ROC Curve of Decision Tree')
+        plt.plot(xValue, yValue)
+        plt.scatter(xValue,yValue,alpha=0.6)
+        plt.show()
+        k+=1
 
 
 data, label = load('traindata.txt', divide=True)
@@ -138,12 +221,15 @@ for i in range(k):
 
     feat_label = [0, 1, 2, 3, 4, 5]
     # feat=optimize(train_data,train_label,valiData,valiLabel)
+    leafNo = -1
     tree = plant(train_data, train_label, feat_label, valiData, valiLabel)
     acc = test(valiData, tree, valiLabel)
     print('acc =', acc)
     accs.append(acc)
     trees.append(tree)
 
+
+draw_ROC(train_data, train_label, tree, leafNo+1)
 
 tree = trees[accs.index(max(accs))]
 test_data = load('testdata.txt', divide=False)
