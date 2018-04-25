@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 #import draw_Tree as draw
 k = 10
 leafNo = -1
-
+newLeafNo=-1
 
 def load(f_name, divide):
     data = np.loadtxt("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
@@ -147,6 +147,37 @@ def test(data, tree, label):
     return acc
 
 
+def cut(tree, data, label):
+    global newLeafNo
+    for x in tree.keys():
+        ix = x
+    dict = tree[ix]
+    flag=0
+    for key in dict.keys():
+        tmpData = []
+        tmpLabel = []
+        for i in range(len(data)):
+            if data[i][ix] == key:
+                tmpData.append(data[i])
+                tmpLabel.append(label[i])
+        tmpData=np.array(tmpData)
+        tmpLabel=np.array(tmpLabel)
+        if type(dict[key]).__name__ == 'dict':
+            new_tree = cut(dict[key], tmpData, tmpLabel)
+            tree[ix][key]=new_tree
+            flag=1
+            return tree
+    if flag==0:
+        value,count=np.unique(label,return_counts=True)
+        tmp = np.argmax(count)
+        newAcc = count[tmp]/len(label)
+        oldAcc = test(data, tree, label)
+        if newAcc > oldAcc:
+            tree[ix]=(newLeafNo,value[tmp])
+            newLeafNo-=1
+        return tree
+
+
 def cal_ROC(predLabel, label):
     #label = np.array(label, dtype='int')
     #label = label.tolist()
@@ -165,9 +196,9 @@ def cal_ROC(predLabel, label):
 def draw_ROC(data, test_label, tree, leafNum):
     values = np.unique(test_label)
     num = len(test_label)
-    k=0
+    k = 0
     for x in values:
-        label=[]
+        label = []
         pred_label = pred(data, tree)
         pred_leaf = []
         for i in range(num):
@@ -183,7 +214,7 @@ def draw_ROC(data, test_label, tree, leafNum):
                     posNum += 1
             posAcc.append([l, posNum/len(index)])
         maxLeaf = sorted(posAcc, key=lambda temp: temp[1], reverse=True)
-        maxLeaf=[y[0] for y in maxLeaf]
+        maxLeaf = [y[0] for y in maxLeaf]
         leaves = [0]*(leafNum+1)    # 按照排序后的叶节点顺序,表示该分类器下,对应所有叶节点的分类情况
         xValue = []
         yValue = []
@@ -197,15 +228,15 @@ def draw_ROC(data, test_label, tree, leafNum):
             Tp, Fp = cal_ROC(newPredLabel, label)
             xValue.append(Fp)
             yValue.append(Tp)
-        fig=plt.figure(k)
+        fig = plt.figure(k)
         ax = fig.add_subplot(1, 1, 1)
         ax.set_xlabel('False Postive Rate')
         ax.set_ylabel('True Postive Rate')
         ax.set_title('ROC Curve of Decision Tree')
         plt.plot(xValue, yValue)
-        plt.scatter(xValue,yValue,alpha=0.6)
+        plt.scatter(xValue, yValue, alpha=0.6)
         plt.show()
-        k+=1
+        k += 1
 
 
 data, label = load('traindata.txt', divide=True)
@@ -223,13 +254,16 @@ for i in range(k):
     # feat=optimize(train_data,train_label,valiData,valiLabel)
     leafNo = -1
     tree = plant(train_data, train_label, feat_label, valiData, valiLabel)
-    acc = test(valiData, tree, valiLabel)
+
+    newTree=cut(tree,valiData,valiLabel)
+    acc = test(valiData, newTree, valiLabel)
     print('acc =', acc)
     accs.append(acc)
-    trees.append(tree)
+    trees.append(newTree)
 
+print(tree)
 
-draw_ROC(train_data, train_label, tree, leafNo+1)
+#draw_ROC(train_data, train_label, tree, leafNo+1)
 
 tree = trees[accs.index(max(accs))]
 test_data = load('testdata.txt', divide=False)
