@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 #import draw_Tree as draw
 k = 10
 leafNo = -1
-newLeafNo=-1
+newLeafNo = -1
+
 
 def load(f_name, divide, delimiter):
     data = np.loadtxt("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
@@ -61,31 +62,31 @@ def optimize(data, label, valiData, valiLabel):
         if gain > maxGain:
             maxGain = gain
             uqFeat = i
-    
-    '''#调试中发现,如果进行预剪枝,将会导致决策树层数很浅,严重导致欠拟合,因此不作预剪枝步骤,以下代码仅作记录:
-    # 开始预剪枝:若不对结点进行划分,该节点对应的叶节点为:
-    values, counts = np.unique(label, return_counts=True)
-    value=values[np.argmax(counts)]
-    values, counts = np.unique(valiLabel, return_counts=True)
-    acc1=counts[np.where(values==value)[0]]/len(valiLabel)
 
-    _,new_label,featValue=divide(data,label,uqFeat)
-    n=len(featValue)
-    tmpLabel=[]
+    # 调试中发现,如果进行预剪枝,直接一刀就剪没了.....将会导致决策树层数很浅,严重欠拟合,因此不作预剪枝步骤,以下代码仅作记录:
+    # 开始预剪枝:若不对结点进行划分,该节点对应的叶节点为:
+    '''values, counts = np.unique(label, return_counts=True)
+    maxValue = values[np.argmax(counts)]
+    values, counts = np.unique(valiLabel, return_counts=True)
+    acc1 = counts[np.where(values == maxValue)[0]]/len(valiLabel)
+
+    _, new_label, featValue = divide(data, label, uqFeat)
+    n = len(featValue)
+    tmpLabel = []
     for i in range(n):
         values, counts = np.unique(new_label[i], return_counts=True)
         value = values[np.argmax(counts)]
         tmpLabel.append(value)
-    count=0
+    count = 0
     for i in range(len(valiLabel)):
         for j in range(n):
             if featValue[j] == valiData[i][uqFeat] and tmpLabel[j] == valiLabel[i]:
-               count+=1
-    acc2=count/len(valiLabel)
-    if acc1<=acc2:
+                count += 1
+    acc2 = count/len(valiLabel)
+    if acc1 <= acc2:
         return uqFeat
     else:
-        return -1'''
+        return maxValue'''
     return uqFeat
 
 
@@ -99,6 +100,10 @@ def plant(data, label, feat_label, valiData, valiLabel):
         leafNo += 1
         return (leafNo, values[np.argmax(counts)])
     uqFeat = optimize(data, label, valiData, valiLabel)
+    if type(uqFeat).__name__ != 'int':
+        leafNo += 1
+        return (leafNo, uqFeat)
+
     uqFeatLabel = feat_label[uqFeat]
     tree = {uqFeatLabel: {}}
     del(feat_label[uqFeat])
@@ -149,7 +154,7 @@ def test(data, tree, label):
 
 def cut(tree, data, label):
     global newLeafNo
-    if len(label)==0:
+    if len(label) == 0:
         return tree
     for x in tree.keys():
         ix = x
@@ -161,19 +166,19 @@ def cut(tree, data, label):
             if data[i][ix] == key:
                 tmpData.append(data[i])
                 tmpLabel.append(label[i])
-        tmpData=np.array(tmpData)
-        tmpLabel=np.array(tmpLabel)
+        tmpData = np.array(tmpData)
+        tmpLabel = np.array(tmpLabel)
         if type(dict[key]).__name__ == 'dict':
             new_tree = cut(dict[key], tmpData, tmpLabel)
-            tree[ix][key]=new_tree
+            tree[ix][key] = new_tree
         else:
-            value,count=np.unique(label,return_counts=True)
+            value, count = np.unique(label, return_counts=True)
             tmp = np.argmax(count)
             newAcc = count[tmp]/len(label)
             oldAcc = test(data, tree, label)
             if newAcc > oldAcc:
-                tree=(newLeafNo,value[tmp])
-                newLeafNo-=1
+                tree = (newLeafNo, value[tmp])
+                newLeafNo -= 1
                 return tree
     return tree
 
@@ -228,8 +233,8 @@ def draw_ROC(data, test_label, tree, leafNum):
         leaves = [0]*(leafNum+1)    # 按照排序后的叶节点顺序,表示该分类器下,对应所有叶节点的分类情况
         x_ROC = []
         y_ROC = []
-        x_PR=[]
-        y_PR=[]
+        x_PR = []
+        y_PR = []
         for i in range(leafNum+1):
             leaves[i] = 1
             newPredLabel = []
@@ -238,29 +243,28 @@ def draw_ROC(data, test_label, tree, leafNum):
                 ix = maxLeaf.index(tmp)
                 newPredLabel.append(leaves[ix])
             Tp, Fp = cal_ROC(newPredLabel, label)
-            p1,p2=cal_PR(newPredLabel,label)
+            p1, p2 = cal_PR(newPredLabel, label)
             x_ROC.append(Fp)
             y_ROC.append(Tp)
             x_PR.append(p1)
             y_PR.append(p2)
         fig = plt.figure(k)
         ax = fig.add_subplot(1, 1, 1)
-        
-        '''ax.set_xlabel('False Postive Rate')
+
+        ax.set_xlabel('False Postive Rate')
         ax.set_ylabel('True Postive Rate')
-        ax.set_title('ROC Curve of Decision Tree (post-pruning)')
+        ax.set_title('ROC Curve of Decision Tree (pre-pruning)')
         plt.plot(x_ROC, y_ROC)
         plt.scatter(x_ROC, y_ROC, alpha=0.6)
-        plt.show()'''
+        plt.show()
 
-        ax.set_xlabel('P')
+        '''ax.set_xlabel('P')
         ax.set_ylabel('R')
-        ax.set_title('PR Curve of Decision Tree (post-pruning)')
+        ax.set_title('PR Curve of Decision Tree (pre-pruning)')
         plt.plot(x_PR, y_PR)
         plt.scatter(x_PR, y_PR, alpha=0.6)
         plt.show()
-        k += 1
-
+        k += 1'''
 
 
 data, label = load('traindata.txt', divide=True, delimiter=' ')
@@ -285,10 +289,8 @@ for i in range(k):
     trees.append(tree)
 
 
-
 tree = trees[accs.index(max(accs))]
-tmpData,tmpLabel=load('tmp.txt',divide=True,delimiter=',')
-newTree = cut(tree, tmpData, tmpLabel)
+newTree = cut(tree, train_data, train_label)
 draw_ROC(train_data, train_label, newTree, leafNo+1)
 acc = test(valiData, newTree, valiLabel)
 print(acc)
@@ -296,5 +298,6 @@ print(acc)
 test_data = load('testdata.txt', divide=False, delimiter=' ')
 pred_label = pred(test_data, tree)
 
-'''acc = test(tmpData, tree, tmpLabel)
+'''tmpData,tmpLabel=load('tmp.txt',divide=True,delimiter=',')
+acc = test(tmpData, tree, tmpLabel)
 print(acc)'''
