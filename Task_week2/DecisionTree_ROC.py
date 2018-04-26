@@ -297,6 +297,7 @@ print(acc)
 
 test_data = load('testdata.txt', divide=False, delimiter=' ')
 pred_label = pred(test_data, tree)
+print(pred_label)
 
 '''tmpData,tmpLabel=load('tmp.txt',divide=True,delimiter=',')
 acc = test(tmpData, tree, tmpLabel)
