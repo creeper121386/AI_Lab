@@ -43,32 +43,40 @@ class Net(object):
             chldList = [x for x in range(length) if self.matrix[i][x] != 0]
             prtList = [x for x in range(length) if slice[x] != 0]
             nodeSlice = data[:, i:i+1]
-            nodeValue = np.unique(nodeSlice)
+            nodeValue,count = np.unique(nodeSlice,return_counts=True)
             node = Node(i, prtList, chldList, nodeValue)
             j = 0
-            for prtNo in prtList:
-                prob = []
-                prtSlice = data[:, prtNo:prtNo+1]
-                prtValue = np.unique(prtSlice)
-                for prt in prtValue:
-                    tmp = []
-                    prtData = [x for x in data if x[prtNo] == prt]
-                    for chld in nodeValue:
-                        chldData = [x for x in prtData if x[i] == chld]
-                        p = len(chldData)/len(prtData)
-                        tmp.append(p)
-                    prob.append(tmp)
-                prob = np.array(prob)
-                node.prob[j] = prob
-                j += 1
+            if len(prtList)==0:
+                node.prob=count/len(data)
+            else:
+                for prtNo in prtList:
+                    prob = []
+                    prtSlice = data[:, prtNo:prtNo+1]
+                    prtValue = np.unique(prtSlice)
+                    for prt in prtValue:
+                        tmp = []
+                        prtData = [x for x in data if x[prtNo] == prt]
+                        for chld in nodeValue:
+                            chldData = [x for x in prtData if x[i] == chld]
+                            p = len(chldData)/len(prtData)
+                            tmp.append(p)
+                        prob.append(tmp)
+                    prob = np.array(prob)
+                    node.prob[j] = prob
+                    j += 1
             nodeList.append(node)
         self.nodes = nodeList
 
     def optim(self, data):
         pass
 
-    def pred(self, feat):
-        
+    def calProb(self, feat):
+        prob=1
+        for i in range(varNum):
+            if len(self.nodes[i].prt)==0:
+            for prt in :
+                pass
+
 
 
 def load(divide):
