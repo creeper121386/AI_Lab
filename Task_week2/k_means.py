@@ -1,7 +1,7 @@
 import numpy as np
 import csv
 import matplotlib.pyplot as plt
-k=3
+k=2
 
 def load():
     with open("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/melon4.0.csv", "r") as f:

@@ -70,12 +70,13 @@ class Net(object):
     def optim(self, data):
         pass
 
-    def calProb(self, feat):
-        prob=1
+    def calProb(self):
+        valueNum=[len(x.value) for x in self.nodes]
+        JointProb=np.ones(tuple(valueNum))
         for i in range(varNum):
-            if len(self.nodes[i].prt)==0:
-            for prt in :
-                pass
+            node = self.nodes[i]
+            
+            
 
 
 
@@ -98,3 +99,5 @@ while 1:
         break
 net.init(data)
 testData, testLabel = load(divide=True)
+
+net.calProb(data[-1])
