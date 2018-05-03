@@ -2,8 +2,7 @@ import matplotlib as plt
 import pandas as pd
 import numpy as np
 import math
-size = (5, 10, 1)
-batchSize = 4
+batchSize = 8
 alpha = 0.01
 epoch = 100
 
@@ -12,30 +11,28 @@ class Net(object):
     def __init__(self, size):
         self.weights = [np.random.randn(x, y)
                         for x, y in zip(size[:-1], size[1:])]
-        self.bias = [np.random.random(num) for num in size[1:]]
+        self.bias = [np.random.randn(num) for num in size[1:]]
         self.num = len(size)
         self.size = size
 
     def pred(self, input):
         tmp = input
-        for i in range(self.num):
-            tmp = sig(np.dot(np.transpose(self.weights[i]), tmp)+np.transpose(self.bias[i]))
-            '''weight = np.transpose(self.weights[i])
-            data = tmp
-            b = np.transpose(self.bias[i])
-            tmp = sig(np.dot(self.weights[i], np.transpose(tmp))+self.bias[i])'''
+        for i in range(self.num-1):
+            tmp = sig(np.dot(tmp, self.weights[i])+self.bias[i])
         return tmp
 
-    def GD(self, trainData, trainLabel, epoch, batchSize, alpha):
-        for i in range(len(trainLabel)/batchSize):
-            batchData = trainData[:, i:i+batchSize]
-            batchLabel = trainLabel[:, i:i+batchSize]
-            predLabel = [self.pred(x) for x in batchData]
-            loss = np.fabs(batchLabel-np.array(predLabel))
+    def BP(self, trainData, trainLabel, epoch, batchSize, alpha):
+        for j in range(epoch):
+            for i in range(int(len(trainLabel)/batchSize)):
+                batchData = trainData[i:i+batchSize, :]
+                batchLabel = trainLabel[i:i+batchSize]
+                predLabel = [self.pred(x) for x in batchData]
+                loss = np.sum((batchLabel-np.array(predLabel))**2)/2
 
 
 
-
+                self.weights+=deltaW
+                self.bias+=deltaB
 
 def load(sheetNo):
     df = pd.read_excel(
@@ -43,15 +40,15 @@ def load(sheetNo):
     data = np.array(df.as_matrix())
     label = data[:, -1:]
     values = np.unique(label).tolist()
-    label = [values.index(x) for x in label]
-    return np.array(data[:, :-1],dtype='float'), label
+    label = [[1 if y == x else 0 for y in values] for x in label]
+    return np.array(data[:, :-1], dtype='float'), np.array(label), len(values)
 
 
 def sig(x):
     return 1.0/(1.0+np.exp(-x))
 
 
-trainData, trainLabel = load(1)
-nn = Net(size)
-tmp=nn.pred(trainData[1])
-pass
+trainData, trainLabel, cateNum = load(1)
+nn = Net((5, 10, cateNum))
+nn.pred(trainData[1])
+nn.BP(trainData, trainLabel, epoch, batchSize, alpha)
