@@ -12,18 +12,18 @@ class Net(object):
     def __init__(self, size):
         self.weights = [np.random.randn(x, y)
                         for x, y in zip(size[:-1], size[1:])]
-        self.bias = [np.random.random((num, 1)) for num in size[1:]]
+        self.bias = [np.random.random(num) for num in size[1:]]
         self.num = len(size)
         self.size = size
 
     def pred(self, input):
         tmp = input
         for i in range(self.num):
-            #tmp = sig(np.dot(np.transpose(self.weights[i]), tmp)+np.transpose(self.bias[i]))
-            weight = self.weights[i]
-            data = np.transpose(tmp)
-            b = self.bias[i]
-            tmp = sig(np.dot(self.weights[i], np.transpose(tmp))+self.bias[i])
+            tmp = sig(np.dot(np.transpose(self.weights[i]), tmp)+np.transpose(self.bias[i]))
+            '''weight = np.transpose(self.weights[i])
+            data = tmp
+            b = np.transpose(self.bias[i])
+            tmp = sig(np.dot(self.weights[i], np.transpose(tmp))+self.bias[i])'''
         return tmp
 
     def GD(self, trainData, trainLabel, epoch, batchSize, alpha):
