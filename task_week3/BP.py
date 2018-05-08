@@ -6,7 +6,7 @@ batch = 8
 alpha = 0.01
 epoch = 100
 normalize = False
-size = [5, 16, 4]
+size = [5, 3, 4]
 
 
 class Net(object):
@@ -14,6 +14,9 @@ class Net(object):
         self.weights = [np.random.randn(x, y)
                         for x, y in zip(size[:-1], size[1:])]
         self.bias = [np.random.randn(num) for num in size[1:]]
+        '''self.weights = [np.ones((x, y))
+                        for x, y in zip(size[:-1], size[1:])]
+        self.bias = [np.ones(num) for num in size[1:]]'''
         self.num = len(size)
         self.size = size
 
@@ -58,6 +61,24 @@ class Net(object):
                 for k in range(self.num-1):
                     self.weights[k] += deltaW[k]/batch
                     self.bias[k] += deltaB[k]/batch
+            print('training: epoch', j, 'loss:', loss)
+
+    def AEBP(self, trainData, trainLabel, epoch, alpha):
+        length = len(trainLabel)
+        for j in range(epoch):
+            deltaW = [x*0 for x in self.weights]
+            deltaB = [x*0 for x in self.bias]
+            nerve = [self.pred(x) for x in trainData]
+            predLabel = [x[-1] for x in nerve]
+            loss = np.sum((trainLabel-np.array(predLabel))**2)/length
+            for x, y in zip(trainLabel, nerve):
+                w, b = self.update(x, y, alpha)
+                for k in range(self.num-1):
+                    deltaW[k] += w[k]
+                    deltaB[k] += b[k]
+            for k in range(self.num-1):
+                self.weights[k] += deltaW[k]/length
+                self.bias[k] += deltaB[k]/length
             print('training: epoch', j, 'loss:', loss)
 
     def test(self, testData, testLabel):
@@ -115,7 +136,8 @@ def getArgs():
 trainData, trainLabel = load(1, normalize)
 testData, testLabel = load(2, normalize)
 nn = Net(size)
-nn.BP(trainData, trainLabel, epoch, batch, alpha)
-acc = nn.test(trainData, trainLabel)
-#acc = nn.test(testData, testLabel)
+nn.AEBP(trainData, trainLabel, epoch, alpha)
+# nn.BP(trainData, trainLabel, epoch, batch, alpha)
+# acc = nn.test(trainData, trainLabel)
+acc = nn.test(testData, testLabel)
 print('test finished. acc:', acc*100, '%')
