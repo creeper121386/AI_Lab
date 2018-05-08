@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import math
 batch = 8
-alpha = 0.01
 epoch = 100
-normalize = False
+alpha = 0.01
 size = [5, 3, 4]
+normalize = False
 
 
 class Net(object):
