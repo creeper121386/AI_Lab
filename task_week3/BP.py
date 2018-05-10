@@ -2,10 +2,10 @@ import matplotlib as plt
 import pandas as pd
 import numpy as np
 import math
-batch = 8
-epoch = 100
+batch = 4
+epoch = 200
 alpha = 0.01
-size = [5, 3, 4]
+size = [5, 10, 4]
 normalize = False
 
 
