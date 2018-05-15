@@ -56,7 +56,7 @@ class power(node):
 class sigmoid(node):
     id = 5
 
-    def __init__(self, x, index):
+    def __init__(self, x):
         self.forwdValue = 1/(1+np.exp(-x))
         self.backValue = 1/(1+np.exp(-x))*(1-1/(1+np.exp(-x)))
 
@@ -72,7 +72,7 @@ class reLU(node):
 class dot(node):
 
     def __init__(self, x, y):
-        self.forwdValue = np.exp(x)
+        self.forwdValue = np.dot(x, y)
         self.backValue = np.exp(x)
 
 
