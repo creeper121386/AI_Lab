@@ -4,6 +4,7 @@ sigma = 2
 beta = 1    # sigmoid核参数
 d = 3   # 多项式核的指数
 
+
 def liner(x, y):
     return np.dot(x, y)
 
@@ -13,16 +14,12 @@ def multi(x, y):
 
 
 def Gauss(x, y):
-    return np.exp(-(np.abs(x-y)**2/2*sigma))
+    return np.exp(-np.linalg.norm(x-y.transpose())**2/(2*sigma**2))
 
 
 def Laplace(x, y):
-    return np.exp(-(np.abs(x-y))/sigma)
+    return np.exp(-(np.linalg.norm(x-y.transpose()))/sigma)
 
 
 def sigmoid(x, y):
     return np.tanh(beta*np.dot(x, y)+theta)
-
-
-global K 
-K = [None, liner, multi, Gauss, Laplace, sigmoid]

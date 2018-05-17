@@ -28,7 +28,7 @@ def classify(train_data, train_label, test_data):
     return result
 
 
-with open("pima-indians-diabetes.data.csv", "r") as f:
+with open("/run/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week1/pima-indians-diabetes.data.csv", "r") as f:
     reader = csv.reader(f)
     data = [x for x in reader]
 data = np.array(data, dtype="float64")
