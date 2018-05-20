@@ -62,10 +62,10 @@ $$
 w=\sum_{i=1}^n\alpha_ix_iy_i\\[2ex]
 0=\sum_{i=1}^n\alpha_iy_i
 \end{cases}
-\qquad(4)
+\qquad(4.1)
 $$
 
-根据式$(4)$，可以消去$w$得到$L:f(x)=\sum_{i=1}^n\alpha_i y_i\left \langle x_i,x\right\rangle+b$，其中$\left \langle x_i,x\right\rangle$表示向量$x$与$x_i$的内积。这个表达式与之前的$L$表达式完全等价，之后就不必再考虑$w$，只要求出最优解对应的$\alpha$，就可以根据$(4)$计算得到$w$。另一方面，注意到式$(3.2)$是不等式约束关系。在拉格朗日算子法的使用中，出现不等式约束关系时，要求必须要满足**KKT条件(Karush-Kuhn-Tucker)**。在这里，对应的KKT条件是：
+根据式$(4.1)$，可以消去$w$得到$L:f(x)=\sum_{i=1}^n\alpha_i y_i\left \langle x_i,x\right\rangle+b$，其中$\left \langle x_i,x\right\rangle$表示向量$x$与$x_i$的内积。这个表达式与之前的$L$表达式完全等价，之后就不必再考虑$w$，只要求出最优解对应的$\alpha$，就可以根据$(4.1)$计算得到$w$。另一方面，注意到式$(3.2)$是不等式约束关系。在拉格朗日算子法的使用中，出现不等式约束关系时，要求必须要满足**KKT条件(Karush-Kuhn-Tucker)**。在这里，对应的KKT条件是：
 $$
 \begin{cases}
 \alpha_i\geqslant0,\\[2ex]
@@ -96,7 +96,46 @@ $$\min_{w,b}\frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i,\qquad(2.3)$$
 
 $$ s.t.\;\ y_i(w^Tx_i+b)\geqslant1-\xi_i,\; (x_i,y_i)\in\Bbb D,\xi_i\geqslant0 \qquad(3.3)$$
 
-其中$C$是一个事先确定好的常数，用于控制目标函数中两项(“寻找间隔最大超平面”和“保证数据点偏差量最小”)之间的权重。这样就完成了软间隔处理。
+其中$C$是一个事先确定好的常数，用于控制目标函数中两项(“寻找间隔最大超平面”和“保证数据点偏差量最小”)之间的权重。由于目标函数和约束条件发生了变化，因此构造新的拉格朗日函数：
+$$\mathcal L(w,b,\alpha,\mu)=\frac12||w||^2+\sum_{i=1}^n \alpha_i(1-y_i(w^Tx_i+b))-\sum_{i=1}^n\mu_i\xi_i$$
+
+分别各个变量求偏导数，得到：
+$$
+\begin{cases}
+\frac{\partial \mathcal L}{\partial w}=0\\[2ex]
+\frac{\partial \mathcal L}{\partial b}=0\\[2ex]
+\frac{\partial \mathcal L}{\partial \xi}=0
+\end{cases}
+\;\Rightarrow\;
+\begin{cases}
+w=\sum_{i=1}^n\alpha_ix_iy_i\\[2ex]
+0=\sum_{i=1}^n\alpha_iy_i\\[2ex]
+C=\alpha_i+\mu_i
+\end{cases}
+\qquad(4.2)
+$$
+
+同样的，由于约束条件是不等式，因此要满足KKT条件。此处的KKT条件为：
+$$
+\begin{cases}
+\alpha_i\geqslant0,\;\mu_i\geqslant0,\\
+y_if(x_i)-1+\xi_i\geqslant0,\\
+\alpha_i(y_if(x_i)-1+\xi_i)=0,\\
+\xi_i\geqslant0,\; \mu_i\xi_i=0.
+\end{cases}
+\qquad(5.3)
+$$
+
+根据式$(5.3)$可以得到，当$\alpha_i$的取值不同时，要满足的式子也不同。与之前类似，不同$\alpha$的取值下，要满足的条件分别为：
+$$
+\begin{cases}
+y_if(x_i)\geqslant1,\qquad\text{if }\;\alpha_i=0  \\
+y_if(x_i)=1,\qquad\text{if }\;0<\alpha_i<C \\
+y_if(x_i)\leqslant1,\qquad\text{if }\;\alpha_i>C 
+\end{cases}
+\qquad(5.4)
+$$
+
 
 ## 核函数
 
@@ -107,22 +146,83 @@ $$ s.t.\;\ y_i(w^Tx_i+b)\geqslant1-\xi_i,\; (x_i,y_i)\in\Bbb D,\xi_i\geqslant0 \
 ![](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3799746487,1412905946&fm=27&gp=0.jpg)
 
 我们之前在极值问题中得到过消去$w$，使用$\alpha$表达的$L$的方程：$f(x)=\sum_{i=1}^n\alpha_i y_i\left \langle x_i,x\right\rangle+b$。在数据映射到高维空间后，方程变为：
-$$f(x)=\sum_{i=1}^n\alpha_i y_i\left \langle \phi x_i,\phi x\right\rangle+b$$
+$$f(x)=\sum_{i=1}^n\alpha_i y_i\left \langle \phi x_i,\phi x\right\rangle+b\qquad(6)$$
 
 其中$\phi x_i,\phi x$是映射后的特征向量和自变量。可以看到，其中涉及到了$\phi x_i$和$\phi x$内积的计算，也即是矩阵的乘法计算。这就面临一个问题：如果映射之后的特征空间维度很高，那么进行矩阵计算将会相当耗时。为了解决这一问题，我们使用核函数的方法。
 
 ### 核方法
 
-核方法的思想是：为了避免在高维空间中进行矩阵运算，那么在原空间中是否可以找到这么一个函数$k(x_i,x)$，使得$k(x_i,x)$恰好等于高维空间中$\left \langle x_i,x\right\rangle$的值呢？如果函数$k$存在的话，就可以直接在低维空间中计算内积，不必计算高维向量的乘法了。这个函数$k$就称为**核函数**。
+核方法的思想是：为了避免在高维空间中进行矩阵运算，那么在原空间中是否可以找到这么一个函数$k(x_i,x)$，使得$k(x_i,x)$恰好等于高维空间中$\left \langle x_i,x\right\rangle$的值呢？如果函数$k(\dot\;,\dot\;)$存在的话，就可以直接在低维空间中计算内积，不必计算高维向量的乘法了。这个函数$k$就称为**核函数**。
 
-$k$的确是存在的，而且还不止一种。下面是一些常用的核函数：
+$k$的确是存在的，而且还不止一种。假设有核函数$k(\dot\;,\dot\;)$，那么定义核矩阵$K$：
+$$
+K=
+  \begin{pmatrix}
+   k(x_1,x_1) &  \cdots & k(x_1,x_n)\\[2ex]
+  \vdots & \ddots & \vdots \\
+   k(x_j,x_1)  & \cdots & k(x_j,x_n)  \\[2ex]
+   \vdots & \ddots & \vdots \\
+   k(x_n,x_1)  & \cdots & k(x_n,x_n)  \\
+  \end{pmatrix}
+$$
+
+可以证明，只要对于任意数据集$D$，$K$都是半正定矩阵，那么$k(\dot\;,\dot\;)$就可以作为核函数。此外，两个核函数的线性组合、两个核函数的直积也是核函数。下面给出一些常用的核函数：
 |函数名称|表达式|参数|
-|--|--|--|
-|线性核|$k(x,y)=x^Ty$||
-|多项式核|$k(x,y)=$||
-|高斯核|$k(x,y)=$||
-|拉普拉斯核|$k(x,y)=$||
-|Sigmoid核|$k(x,y)=$||
+|:--:|:--:|:--:|
+|线性核|$k(x,y)=x^Ty$|$None$|
+|多项式核|$k(x,y)=(x^Ty)^d$|$d\geqslant1$，是多项式的次数|
+|高斯核|$k(x,y)=exp(-\frac{\|x-y\|^2}{2\sigma^2})$|$\sigma>0$，是高斯核的带宽|
+|拉普拉斯核|$k(x,y)=exp(-\frac{\|x-y\|}{\sigma})$|$\sigma>0$|
+|Sigmoid核|$k(x,y)=tanh(\beta x^Ty+\theta)$|$tanh$是s双曲正切函数，$\beta>0,\theta<0$|
+
+上述函数都满足核函数的条件，也即$k(x_i,x)=\left \langle x_i,x\right\rangle$。使用核函数的好处在于，当我们使用特定的核函数$k$时，就已经隐式地把数据映射到了某一个高维空间中去了，不必再进行复杂的映射变换，也无需关注映射后的数据是怎样分布的。使用不同的核函数，就可以把数据映射到不同的高维特征空间。因此，核函数的选取就成为了影响SVM性能的一个重要因素。
+
+进行核函数映射之后，极值问题中所有涉及到向量内积的计算，就可以全部用核函数代替，接下来，就可以进行对极值问题的具体求解了。
+
+## 序列最小化优化算法(SMO)
+
+### 对偶问题
+
+接下来，我们就要对这个复杂的极值问题就行求解了。首先再次梳理该极值问题的条件。我们要求的目标函数和约束条件分别为：
+$$\min_{w,b}\frac{1}{2}||w||^2+C\sum_{i=1}^n\xi_i,\qquad(2.3)$$
+
+$$ s.t.\;\ y_i(w^Tx_i+b)\geqslant1-\xi_i,\; (x_i,y_i)\in\Bbb D,\xi_i\geqslant0 \qquad(3.3)$$
+
+由该问题构造拉格朗日函数并对各项求偏导数，以及求出相应的KKT条件，再进行相应化简和推导，这些条件综合起来，得到的是式$(4.2),(5.4)$：
+$$
+\begin{cases}
+w=\sum_{i=1}^n\alpha_ix_iy_i\\
+0=\sum_{i=1}^n\alpha_iy_i\\
+C=\alpha_i+\mu_i
+\end{cases}(4.2)\quad\&\quad
+\begin{cases}
+y_if(x_i)\geqslant1,\quad\text{if }\;\alpha_i=0  \\
+y_if(x_i)=1,\quad\text{if }\;0<\alpha_i<C \\
+y_if(x_i)\leqslant1,\quad\text{if }\;\alpha_i>C 
+\end{cases}
+\quad(5.4)
+$$
+
+并且由于引入了核函数，消去$w$，得到用$\alpha$表示的超平面$L$表达式为：
+$$f(x)=\sum_{i=1}^n\alpha_i y_ik(x_i,x)+b\qquad(6)$$
+
+这就是我们所拥有的所有条件。将式$(4.2)$代入$(2.3)$，可以消去$w,b$,得到该极值问题的对偶问题：
+$$\max_{\alpha}\sum_{i=1}^n\alpha_i-\frac12 \sum_{i=1}^n\sum_{j=1}^n\alpha_i\alpha_jy_iy_jk(x_i,x_j),\qquad(2.4)$$
+
+$$ s.t.\sum_{i=1}^n\alpha_iy_i=0,\; (x_i,y_i)\in\Bbb D,\;0\leqslant\alpha\leqslant C \qquad(3.4)$$
+
+该问题和原来的极值问题完全等价。可以看到，对偶问题中，只有向量$\alpha$一个变量，只要求出$\alpha$，就可以根据
+$$
+\begin{cases}
+w=\sum_{i=1}^n\alpha_ix_iy_i\\
+b=-\frac12{(\max_{i:y_i=-1}w^Tx_i+min_{i:y_i=1}w^Tx_i)}
+\end{cases}
+\qquad(7)
+$$
+
+来得到$w$和$b$，进而得到最优超平面$L^*$。
+
+### 求解$\alpha$
 
 
 ## 支持向量回归
