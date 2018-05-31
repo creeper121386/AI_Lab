@@ -11,17 +11,16 @@ import copy
 
 
 imgSize = 200
+num_steps = 300
+contentWeight = 1
+styleWeight = 1e5
 contentLayers = ['conv_4']
 styleLayers = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
-unloader = transforms.ToPILImage()
 loader = transforms.Compose(
     [transforms.Resize(imgSize), transforms.CenterCrop(imgSize), transforms.ToTensor()])
 rootPath = "/run/media/why/DATA/why的程序测试/AI_Lab/Task/task_week5/"
 cnn = (models.vgg19(pretrained=True).features).cuda().eval()
-styleWeight = 1e3
-contentWeight = 1
-num_steps = 300
-
+unloader = transforms.ToPILImage()
 
 
 def loadImg(fname):
@@ -30,24 +29,22 @@ def loadImg(fname):
     return img
 
 
-def show(tensor, title=None):
+def show(tensor):
     image = tensor.cpu().clone()
     image = image.squeeze(0)      # remove the fake batch dimension
     image = unloader(image)
     plt.imshow(image)
-    if title is not None:
-        plt.title(title)
     plt.pause(0.1)  # pause a bit so that plots are updated
 
 
-def calGram(input):
-    bSize, mapNum, m, n = input.size()
-    feat = input.view(bSize*mapNum, m*n)
+def calGram(featmap):
+    bSize, mapNum, m, n = featmap.size()
+    feat = featmap.view(bSize*mapNum, m*n)
     G = torch.mm(feat, feat.t())
     return G.div(bSize*mapNum*m*n)
 
 
-class C_lossLayer(nn.Module):
+class contentLoss(nn.Module):
     def __init__(self, content, weight):
         super().__init__()
         self.weight = weight
@@ -57,13 +54,13 @@ class C_lossLayer(nn.Module):
     def forward(self, input):
         self.loss = self.func(input * self.weight, self.content)
         return input
-    
+
     def backward(self):
         self.loss.backward(retain_graph=True)
         return self.loss
 
 
-class S_lossLayer(nn.Module):
+class styleLoss(nn.Module):
     def __init__(self, target, weight):
         super().__init__()
         self.weight = weight
@@ -103,17 +100,16 @@ def calLoss(cnn, origin, target):
 
         if name in contentLayers:
             contentFeat = model(origin).detach()
-            C_loss = C_lossLayer(contentFeat, contentWeight)
-            model.add_module("C_lossLayer{}".format(i), C_loss)
+            C_loss = contentLoss(contentFeat, contentWeight)
+            model.add_module("contentLoss{}".format(i), C_loss)
             C_losses.append(C_loss)
 
         if name in styleLayers:
             styleFeat = model(target).detach()
-            S_loss = S_lossLayer(styleFeat, styleWeight)
-            model.add_module("S_lossLayer{}".format(i), S_loss)
+            S_loss = styleLoss(styleFeat, styleWeight)
+            model.add_module("styleLoss{}".format(i), S_loss)
             S_losses.append(S_loss)
     return model, C_losses, S_losses
-
 
 
 def transfer(cnn, origin, target, inputImg):
@@ -148,10 +144,10 @@ def transfer(cnn, origin, target, inputImg):
 plt.ion()
 target = loadImg("target.jpg")
 origin = loadImg("origin.jpg")
-inputImg = origin.clone()
-out = transfer(cnn, origin, target, inputImg)
+img = origin.clone()
+out = transfer(cnn, origin, target, img)
 plt.figure()
-show(out, title='Output Image')
+show(out)
 plt.savefig('/run/media/why/DATA/why的程序测试/AI_Lab/Task/task_week5/result.jpg')
 plt.ioff()
 plt.show()
