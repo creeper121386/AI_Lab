@@ -16,14 +16,14 @@ contentWeight = 1
 styleWeight = 1e5
 contentLayers = ['conv_4']
 styleLayers = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
-loader = transforms.Compose(
-    [transforms.Resize(imgSize), transforms.CenterCrop(imgSize), transforms.ToTensor()])
 rootPath = "/run/media/why/DATA/why的程序测试/AI_Lab/Task/task_week5/"
 cnn = (models.vgg19(pretrained=True).features).cuda().eval()
 unloader = transforms.ToPILImage()
 
 
 def loadImg(fname):
+    loader = transforms.Compose(
+    [transforms.Resize(imgSize), transforms.CenterCrop(imgSize), transforms.ToTensor()])
     img = Image.open(rootPath+fname)
     img = (loader(img).unsqueeze(0)).to("cuda", torch.float)
     return img
@@ -130,7 +130,7 @@ def transfer(cnn, origin, target, inputImg):
                 contentScore += cl.backward()
 
             run[0] += 1
-            if run[0] % 50 == 0:
+            if run[0] % 100 == 0:
                 print("run {}:".format(run))
                 print('Style Loss : {:4f} Content Loss: {:4f}'.format(
                     styleScore.data[0], contentScore.data[0]))
