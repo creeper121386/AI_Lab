@@ -2,15 +2,18 @@ import torchvision.transforms as T
 import torchvision.datasets as dSet
 import torch.nn as nn
 import torch
+ndf = 64
+ngf = 64
 lr = 0.01
 cuda = True
 batchSize = 4
-transform = T.Compose([T.Normalize(0, 0.5), T.ToTensor()])
+transform = T.Compose([T.ToTensor(), T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 trainData = dSet.MNIST(root='/run/media/why/DATA/why的程序测试/AI_Lab/DataSet',
-                       train=True, transform=None, download=True)
+                       train=True, transform=transform, download=True)      # size = 28*28
 trainLoader = torch.utils.data.DataLoader(dataset=trainData,
                                           batch_size=batchSize,
                                           shuffle=True)
+
 
 class D(nn.Module):
     def __init__(self, nc, ndf):
@@ -25,3 +28,7 @@ class D(nn.Module):
         self.layer3 = nn.Sequential(
             nn.BatchNorm2d(ndf*4),
             nn.LeakyReLU(0.2, inplace=True))
+
+
+for x in trainLoader:
+    pass
