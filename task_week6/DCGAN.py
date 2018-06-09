@@ -83,3 +83,4 @@ D_optim = optim.Adam(dNet.parameters(), lr=lr, betas=(0.5, 0.999))
 G_optim = optim.Adam(gNet.parameters(), lr=lr, betas=(0.5, 0.999))
 criterion = nn.BCELoss()
 
+
