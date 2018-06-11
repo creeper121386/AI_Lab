@@ -9,8 +9,8 @@
 * `Tensor.data`: 张量的数据本体
 * `Tensor.grad`: 该张量处的梯度（如果有的话）
 * `Tensor.grad_fn`: 指向在该张量处进行的函数计算（计算图中的计算节点），进行梯度反向传播时会用到。如果是由用户创建的tensor，则`grad_fn = None`。
-* `Tensor.grad_fn.next_function`: 上一级节点处的`grad_fn`。
 
+* `Tensor.grad_fn.next_function`: 上一级节点处的`grad_fn`。
 ## Autograd
 
 * 设置`Tensor.requires_grad = True`时，pytorch会自动追踪对该张量进行的计算。只要调用`Tensor.backward()`即可反向计算出所有节点处的梯度。

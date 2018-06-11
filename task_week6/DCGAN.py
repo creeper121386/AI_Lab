@@ -12,17 +12,17 @@ nc = 1         # channel数
 ndf = 64      # 网络D的feature map数量
 ngf = 64       # 网络G的feature map数量
 imgSize = 28
-batchSize = 4
+batchSize = 10
 device = torch.device("cuda:0" if cuda else "cpu")
 transform = T.Compose(
     [T.ToTensor(), T.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+path = '/run/media/why/DATA/why的程序测试/AI_Lab/Task/task_week6/img'
 trainData = dSet.MNIST(root='/run/media/why/DATA/why的程序测试/AI_Lab/DataSet',
-                       train=True, transform=transform, download=True)      # size = 28*28
+                       train=True, transform=transform, download=False)      # size = 28*28
 trainLoader = torch.utils.data.DataLoader(dataset=trainData,
                                           batch_size=batchSize,
                                           shuffle=True)
 
-path = '/run/media/why/DATA/why的程序测试/AI_Lab/Task/task_week6/img'
 
 
 class D(nn.Module):
@@ -79,6 +79,7 @@ class G(nn.Module):
     def forward(self, input):
         return self.layers(input)
 
+
 gNet = G()
 dNet = D()
 if cuda:
@@ -94,13 +95,13 @@ for j in range(epoch):
     for i, data in enumerate(trainLoader, 0):
         dNet.zero_grad()
         real = data[0].to(device)
-        label = torch.full((batchSize,), 1).cuda()
+        label = torch.full((batchSize,), 1, device=device)
         output = dNet(real)
         err_D = criterion(output, label)
         err_D.backward()
         Dx = output.mean().item()
 
-        noise = torch.randn(batchSize, nz, 1, 1).cuda()
+        noise = torch.randn(batchSize, nz, 1, 1, device=device)
         fake = gNet(noise)
         label.fill_(0)
         output = dNet(fake.detach())
@@ -124,11 +125,11 @@ for j in range(epoch):
 
         if i % 100 == 0:
             torchvision.utils.save_image(real,
-                    '%s/real_samples.png' % path,
+                    '%s/realSamples.png' % path,
                     normalize=True)
             fake = gNet(fixed_noise)
             torchvision.utils.save_image(fake.detach(),
-                    '%s/fake_samples_epoch_%03d.png' % (path, j),
+                    '%s/fakeSamples_epoch_%03d.png' % (path, j),
                     normalize=True)
 
 
