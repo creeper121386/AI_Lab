@@ -34,7 +34,7 @@ for j in range(epoch):
     for i, (img, _) in enumerate(trainLoader, 0):
         # 训练识别器：
         dNet.zero_grad()                        # 初始化所有梯度
-        real = img.to(device)                  # 训练集中抽取的真图片
+        real = img.to(device)                   # 训练集中抽取的真图片
         label = torch.full((batchSize,), 1, device=device)          # 为所有真图片标记1
         output = dNet(real)
         err_D = criterion(output, label)        # 计算loss
