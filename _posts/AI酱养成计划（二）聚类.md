@@ -1,0 +1,223 @@
+---
+title: AI酱养成计划(二) 聚类
+date: 2018-05-08 13:25:16
+tags:
+- 机器学习
+- python
+categories: 机器学习
+---
+
+# #2聚类
+
+***
+
+>物以类聚，人以群分。
+
+![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525072990450&di=f2e3fc8df0192d022138a5d4c83137d5&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D4234043830%2C4080829188%26fm%3D214%26gp%3D0.jpg)
+
+<!-- more -->
+
+## 算法思想
+
+与监督学习不同，聚类代表的是无监督学习(unsupervised learning)。所谓‘无监督’，指的是训练样本没有标签标记。在聚类任务中，模型需要自己找出他们之间的区别，并完成分类的任务--由于没有标签，我们有时无从知道这些类别的代表的含义，但是这种无标记的训练方法，往往可以揭示数据的内在规律。
+
+聚类的思想是，假设训练数据构成集合$\Bbb D=\{x_1,x_2...x_n\}$，包含$n$个没有标记的样本，每个样本包含的$m$个特征构成m维特征向量$x_i=\{x_{i1},x_{i2}...x_{in}\}$，聚类的思想是：假设要将数据集划分为k类，首先选取k个样本$P=\{\lambda_1,\lambda_2...\lambda_k\}$作为**样本中心点**（将来其他样本要向这k个中心点聚集），通过**某种判断标准**（后面会介绍），将每一个样本$x_i$与样本中心点集合$P$的每个元素之间进行比较，根据该标准选取出合适的中心点$\lambda$，并将样本$x_i$划分到以$\lambda$为中心的子集中。这样不断循环，最终将整个数据集$\Bbb D$划分成了k个子集。其中，每一个子集称为一个**簇**，直观来看，相当于所有样本“聚集”到了相应的簇中。
+
+## 划分标准
+
+那么，以何种方式对集合进行划分呢？以分类问题为例，我们希望聚类之后的每一个簇中都属于同一类别，因此，需要找到一种衡量样本之间相似程度的方法：这就引入距离度量的概念。
+
+对样本$x_i=\{x_{i1},x_{i2}...x_{in}\}$，可以表示为由特征向量张成的n维空间中的一个点。特征越相似的样本，在空间中的点距离就越近。因此，可以通过计算空间中样本点的距离（通常使用欧氏距离），来判断两个样本的相似程度，并以此为依据来进行划分。
+
+距离度量可以根据实际需求有所变化。这里所说的“距离”，实际上指的是闵可夫斯基距离————也即是两个向量的差向量的范数。n维向量$x=(x_1,x_2,...x_n)$和$y=(y_1,y_2,...y_n)$之间的闵可夫斯基距离定义为：
+$$D(x,y)=(\sum_{i=1}^n(x_i-y_i)^p)^{\frac{1}{p}}$$
+
+根据范数取法的不同，闵可夫斯基距离也表现出不同的形式：
+
+* $p=1$时，$D$表现为曼哈顿距离：$$D(x,y)=\sum_{i=1}^{n}(x_i-y_i)$$
+* $p=2$时 $D$表现为欧氏距离：$$D(x,y)=\sqrt{(\sum_{i=1}^n(x_i-y_i)^2)}$$
+* $p\to\infty$时，$D$是向量$x-y$的无穷范数：$$D=max_i(|x_i-y_i|)$$
+
+要注意的是，对于连续属性，可以方便地进行距离计算，对于离散属性（特别是没有大小之分的离散值），样本间的距离就变得难以计算。并且对离散属性而言，往往距离不满足直递性（《机器学习》p201）。因此对于离散型变量，我们采用另外的处理办法。
+        （待续）
+
+## 准备：数据导入和处理
+
+这里我们使用西瓜数据集4.0来进行训练，该数据集的聚类任务是通过西瓜的含糖量和密度，推断西瓜是否是好瓜。数据集如下所示：
+
+|编号|密度|含糖量|编号|密度|含糖量|编号|密度|含糖量|
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|1|0.697|0.460|11|0.245|0.057|21|0.748|0.232|
+|2|0.774|0.376|12|0.343|0.099|22|0.714|0.346|
+|3|0.634|0.264|13|0.639|0.161|23|0.483|0.312|
+|4|0.608|0.318|14|0.657|0.198|24|0.478|0.437|
+|5|0.556|0.215|15|0.360|0.370|25|0.525|0.369|
+|6|0.403|0.237|16|0.593|0.042|26|0.751|0.489|
+|7|0.481|0.149|17|0.719|0.103|27|0.532|0.472|
+|8|0.437|0.211|18|0.359|0.188|28|0.473|0.376|
+|9|0.666|0.091|19|0.339|0.241|29|0.725|0.445|
+|10|0.243|0.267|20|0.282|0.257|30|0.446|0.459|
+
+将数据集导入为numpy数组。此处以k-means算法为例，进行聚类的实现。由于数据都是连续值，性质十分优良，无需进行特殊处理。导入数据的python代码如下所示：
+
+```python
+def load():
+    with open("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/melon4.0.csv", "r") as f:
+        reader = csv.reader(f)
+        data = [x for x in reader]
+    data = np.array(data, dtype="float64")
+    return data
+```
+
+
+## k-means算法
+
+有了数据集和划分标准，接下来就可以进行聚类了.我们知道了划分标准是选择样本点之间的最近距离，那么问题来了：该把哪一个点作为样本中心点呢？k-means算法给出的答案是：先随机找k个点，再通过不断优化修正中心点的位置，得出最终的k个中心点。之所以叫做k-means，是因为该算法把各个簇中样本的均值向量作为中心点。对于蔟$C$，其均值向量$\mu$定义为：
+
+$$\mu=\frac{1}{|C|}\sum_{x\in C}{x}$$
+
+对于集合$\Bbb D$划分得到的蔟集合$\{C_1,C_2...C_k\}$，k-means算法的目的是通过优化，使得其平方误差最小化。平方误差$E$定义为：
+
+$$E=\sum_{i=1}^k\sum_{x\in C_i}||x-\mu_i||_2^2$$
+
+可以用来衡量蔟内样本围绕中心点的紧密程度（越小越好）。
+
+据此得到k-means的算法的步骤如下：
+1. 初始化：从$\Bbb D$中随机选取$k$个样本作为中心点
+2. 聚集：以其他样本和各个中心点之间的距离为标准，找出每个样本离哪个中心点最近，将样本划分到该中心点所在的簇中
+3. 优化：划分结束后，计算出每个蔟的均值向量作为新的样本中心点，重复步骤2，直到均值向量不再变化为止。
+
+k均值算法的代码如下所示：
+
+```python
+def divide(data, k):
+    num = len(data)
+    ave = np.ones((k, 2))
+    category = []
+    for i in range(k):
+        category.append([])
+        ix = np.random.choice(range(num), replace=False)
+        ave[i] = data[ix]
+    for j in range(100):
+        for i in range(k):
+            category[i] = []
+        for x in data:
+            d = [np.linalg.norm(x - y) for y in ave]
+            category[d.index(min(d))].append(x)
+        new_ave = np.ones((k, 2))
+        for i in range(k):
+            new_ave[i] = np.mean(category[i], axis=0)
+        tmp = np.mean(new_ave-ave)
+        if np.fabs(tmp) < 1e-60:
+            break
+        else:
+            ave = new_ave
+    return ave, category
+```
+我们使用matplotlib库对聚类之后的样本数据进行绘制，不同的类别用不同颜色表示，s使用蓝色表示样本中心点。当k=2时，聚类结果如下所示：
+
+![](https://raw.githubusercontent.com/creeper121386/blog-file/master/Figure_kkk.png)
+
+## 性能度量
+
+由于聚类的数据集没有进行标记，因此无法像之前的机器学习算法一样计算AUC或ACC。对于聚类，我们有单独的度量标准。
+
+###外部标准
+
+有时候，我们也会使用有标记的数据进行聚类。但是不使用acc等评价标准———因为他们评价的是模型的预测能力，而我们需要一些单独针对聚类的评价指标。假设带有标记的样本真实的类别划分为：$C^*=\{C^*_1,C^*_2,...C^*_s\}$，共$S$类。我们把训练集中的样本两两配对，对于每一个样本对$(x,y)$，分别用$a,b,c,d$来表示：
+
+* 在$C$和$C^*$中都属于同一个簇的样本对的数目
+* 在$C$中属于同一个簇，但在$C^*$中属于不同簇的样本对的数目
+* 在$C^*$中属于同一个簇，但在$C$中属于不同簇的样本对的数目
+* 在$C$和$C^*$中都属于不同簇的样本对的数目
+
+并令$a+b+c+d=\frac{m(m-1)}{2}$，那么，有以下几种度量标准：
+
+* jaccard系数：
+
+$$\mathrm {JC}=\frac{a}{a+b+c}$$
+
+* FM指数：
+
+$$\mathrm {FMI}=\sqrt{\frac{a}{a+b}\cdot\frac{a}{a+c}}$$
+
+* Rand指数：
+
+$$\mathrm {RI}=\frac{2(a+d)}{m(m-1)}$$
+
+这些指标的取值范围都在$[0,1]$区间，值越大越好。以JC指数为例，给出计算聚类外部评价标准的代码：
+
+```python
+def cal_JC(category, cate_label, label, k):
+    index = []
+    num = len(label)
+    est_label = [0]*num
+    for x in cate_label:
+        index.append(max(x, key=x.count))
+    for i in range(k):
+        for y in category[i]:
+            for j in range(num):
+                if (data[j]).all()==y.all():
+                    ix=j; break
+            est_label[ix] = index[i]
+    a = b = c = 0
+    for i in range(num):
+        for j in range(num):
+            if i == j:  continue
+            if label[i] == label[j]:
+                if est_label[i] == est_label[j]:    a += 1
+                else:   b += 1
+            elif est_label[i] == est_label[j]:  c += 1
+    JC = a/(a+b+c)
+    return JC
+```
+
+### 内部标准
+
+对于集合$\Bbb D$划分得到的蔟集合$\{C_1,C_2...C_k\}$，定义以下参数：
+
+* $avg(C)=\frac{2}{|C|(|C|-1)}\sum_{1\leqslant i<j\leqslant |C|}dist(x_i,x_j)$
+* $diam(C)=max_{1\leqslant i<j\leqslant |C|}dist(x_i,x_j)$
+* $d_{min}(C_i,C_j)=min_{x_i\in C_i,x_j\in C_j}dist(x_i,x_j)$
+* $d_{cen}(C_i,C_j)=dist(\mu_i,\mu_j)$
+
+则有下列内部评价指标：
+
+* DB指数：
+
+$$\mathrm  {DBI}=\frac{1}{k}\sum_{i=1}^kmax_{j\neq i} \left(\frac{avg(C_i)+avg(C_j)}{d_{cen}(C_i,C_j)}\right)$$
+
+* Dunn指数：
+
+$$\mathrm {DI}=min_{1\leqslant i \leqslant k}\left\{\max_{j\neq i} \left(\frac{d_{min}(C_i,C_j)}{max_{1\leqslant i<j\leqslant k}diam(C_l)}\right) \right\}$$
+
+其中，DBI的值越小越好，DI的值越大越好。以DBI为例，计算内部评价标准的代码如下所示：
+
+```python
+def cal_DBI(category, ave, k):
+    avg = []
+    DBI = 0
+    for ix in range(k):
+        num = len(category[ix])
+        sum_dist = 0
+        for x in category[ix]:
+            for y in category[ix]:
+                sum_dist += np.fabs(np.linalg.norm(x - y))
+        avg.append((sum_dist)/(num*(num-1)))
+    for i in range(k):
+        DBI += max([(avg[i]+avg[j])/np.fabs((np.linalg.norm(ave[i]-ave[j])))
+                    for j in range(k) if j != i])
+    DBI /= k
+    return DBI
+```
+到这里，我们就完成了k-means聚类的所有工作。
+
+## 其他：原型聚类
+
+我们这里介绍的k-means算法，事实上属于**原型聚类**的一种。所谓原型聚类，就是“基于原型的聚类”。这种算法相信数据集中的不同类别可以用一组原型来刻画（比如k-means中的均值向量）。原型聚类的算法具有一致性：通常都是先进行初始化，然后对原型进行迭代优化，得出最终结果。原型表示方法不同，优化方法不同时，可以产生不同的原型聚类算法。除了k-means之外，还有学习向量量化法（LVQ）以及高斯混合聚类，密度聚类等原型聚类算法。这些算我们法将在今后深入研究。
+
+***
+
+${2018.4.30}$ ${by}$ ${WHY}$
+
+
