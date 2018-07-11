@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 #import draw_Tree as draw
 k = 10
 leafNo = -1
@@ -7,7 +8,7 @@ newLeafNo = -1
 
 
 def load(f_name, divide, delimiter):
-    data = np.loadtxt("/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
+    data = np.loadtxt("/run/media/why/DATA/why的程序测试/AI_Lab/Task/Task_week2/tree/" +
                       f_name, dtype=np.str, delimiter=delimiter)
     data = data[1:, :]
     if divide:
@@ -47,13 +48,13 @@ def divide(data, label, uqFeat):
 
 
 # 寻找划分一个数据集的最佳方式(传入参数是一个数据集和其对应的标签)
-def optimize(data, label, valiData, valiLabel):
+def optimize(data, label, k, valiData=False, valiLabel=False):
     num = len(label)
     length = len(data[0])
     originEnt = cal_ent(label)
     maxGain = 0.0
     uqFeat = 0  # <-作为最佳划分依据的特征
-    for i in range(length):
+    for i in random.sample(range(length), k):
         _, new_label, _ = divide(data, label, i)
         sigma = 0
         for x in new_label:
@@ -90,7 +91,7 @@ def optimize(data, label, valiData, valiLabel):
     return uqFeat
 
 
-def plant(data, label, feat_label, valiData, valiLabel):
+def plant(data, label, feat_label, valiData=False, valiLabel=False):
     values, counts = np.unique(label, return_counts=True)
     if np.shape(values)[0] == 1:
         global leafNo
@@ -99,7 +100,7 @@ def plant(data, label, feat_label, valiData, valiLabel):
     if np.shape(data[0])[0] == 1:
         leafNo += 1
         return (leafNo, values[np.argmax(counts)])
-    uqFeat = optimize(data, label, valiData, valiLabel)
+    uqFeat = optimize(data, label, int(np.log2(len(data[0]))), valiData, valiLabel)     # 适应随机森林的改造。
     if type(uqFeat).__name__ != 'int':
         leafNo += 1
         return (leafNo, uqFeat)
@@ -267,6 +268,8 @@ def draw_ROC(data, test_label, tree, leafNum):
         k += 1'''
 
 
+########################### 执行程序： ##############################
+'''
 data, label = load('traindata.txt', divide=True, delimiter=' ')
 num = len(label)
 trees = []
@@ -279,7 +282,6 @@ for i in range(k):
     train_label = np.vstack((label[:i, :], label[ix:, :]))
 
     feat_label = [0, 1, 2, 3, 4, 5]
-    # feat=optimize(train_data,train_label,valiData,valiLabel)
     leafNo = -1
     tree = plant(train_data, train_label, feat_label, valiData, valiLabel)
 
@@ -291,14 +293,9 @@ for i in range(k):
 
 tree = trees[accs.index(max(accs))]
 newTree = cut(tree, train_data, train_label)
-draw_ROC(train_data, train_label, newTree, leafNo+1)
+# draw_ROC(train_data, train_label, newTree, leafNo+1)
 acc = test(valiData, newTree, valiLabel)
 print(acc)
 
-test_data = load('testdata.txt', divide=False, delimiter=' ')
-pred_label = pred(test_data, tree)
-print(pred_label)
-
-'''tmpData,tmpLabel=load('tmp.txt',divide=True,delimiter=',')
-acc = test(tmpData, tree, tmpLabel)
-print(acc)'''
+# test_data = load('testdata.txt', divide=False, delimiter=' ')
+'''

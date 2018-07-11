@@ -9,17 +9,14 @@ categories: 机器学习
 
 # #4 支持向量机（SVM）
 
->——有人觉得这是现成的最好的分类器
 
-***
-
-![SVM示意图](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527170673&di=1dcc82cd28132c6c53838482d49ce094&imgtype=jpg&er=1&src=http%3A%2F%2Fs1.sinaimg.cn%2Fmw690%2F002xlA0Pgy6TFXnKcVi70%26amp%3B690)
+![也许是现成的最好的分类器](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527170673&di=1dcc82cd28132c6c53838482d49ce094&imgtype=jpg&er=1&src=http%3A%2F%2Fs1.sinaimg.cn%2Fmw690%2F002xlA0Pgy6TFXnKcVi70%26amp%3B690)
 
 ***
 
 <!-- more -->
 
-**$\mathrm{Warning:}$ 以下内容包含大量数学公式，有任何不懂之处，请反复推敲数学公式。**
+**$\mathrm{Warning:}$ 以下内容包含大量数学公式，若有不解之处，请反复阅读。**
 
 ## 线性可分问题
 

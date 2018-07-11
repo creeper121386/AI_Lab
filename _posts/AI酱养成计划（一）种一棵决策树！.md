@@ -9,11 +9,9 @@ categories: 机器学习
 
 # #1 种一棵决策树!
 
-大家一起愉快地种树吧！OvO
+![大家一起愉快地种树吧！OvO](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524672521034&di=816e0cf3992a6f3d5ab1438a9feb67ed&imgtype=0&src=http%3A%2F%2Fimg.aichengxu.com%2F1%2F21%2F21353.png)
 
 ***
-
-![一棵决策树](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524672521034&di=816e0cf3992a6f3d5ab1438a9feb67ed&imgtype=0&src=http%3A%2F%2Fimg.aichengxu.com%2F1%2F21%2F21353.png)
 
 <!-- more -->
 
