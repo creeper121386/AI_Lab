@@ -9,7 +9,7 @@ num = 1
 pageNum = 30
 localPath = '/run/media/why/DATA/why的程序测试/AI_Lab/DataSet/爬虫_landscape/'
 rootURL = 'http://konachan.net/'
-url = 'http://konachan.net/post?tags=landscape+sunset'
+url = 'http://konachan.net/post?page=1&tags=sunset+nobody'
 
 
 def craw(soup, pageNO):

@@ -4,7 +4,7 @@ nz = 100        # 白噪声向量的长度
 nc = 1         # channel数
 ndf = 64      # 网络D的feature map数量
 ngf = 64       # 网络G的feature map数量
-imgSize = 500
+imgSize = 400
 batchSize = 10
 
 class D(nn.Module):

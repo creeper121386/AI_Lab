@@ -48,7 +48,7 @@ for j in range(epoch):
         err_Dfake = criterion(output, label)    # 计算loss
         err_Dfake.backward()                    # 反向计算梯度
         # z1 = output.mean().item()
-        errD = err_Dfake + err_D                # 综合考虑loss
+        errD = err_Dfake + err_D                # 综合loss
         D_optim.step()                          # 更新识别器的参数
         # 训练生成器：
         gNet.zero_grad()                        # 初始化梯度
