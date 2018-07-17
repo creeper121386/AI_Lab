@@ -5,7 +5,6 @@ nc = 1         # channel数
 ndf = 64      # 网络D的feature map数量
 ngf = 64       # 网络G的feature map数量
 imgSize = 500
-batchSize = 10
 
 class D(nn.Module):
     def __init__(self):
@@ -29,7 +28,8 @@ class D(nn.Module):
 
     def forward(self, x):
         # return self.layers(input).view(-1, 1).squeeze(1)
-        return self.layers(x)
+        x = self.layers(x)
+        return x
 
 
 class G(nn.Module):
