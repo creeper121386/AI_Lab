@@ -7,13 +7,14 @@ tags:
 - python
 categories: 机器学习
 ---
-# #3 多层全连接网络与BP算法
 
 ***
 
 ![科学是通过一次又一次的葬礼前进的　　——普朗克](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525757979450&di=758e34fbd42cc487788231e77ca5eae5&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Flib%2FuploadImg%2F20170907%2F20170907172602_811.png)
 
 <!-- more -->
+
+# #3 多层全连接网络与BP算法
 
 ## 神经元模型
 

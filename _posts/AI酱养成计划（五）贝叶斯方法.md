@@ -7,13 +7,14 @@ tags:
 categories: 机器学习
 ---
 
-# #5 贝叶斯方法&概率论模型
 
 ![概率论只不过是把常识用数学公式表达了出来。——拉普拉斯](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531027306977&di=68a2665db7a9d7be828978cf286329eb&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0330%2FCDB922FBF5536ECAC4536C05BA6C87776ACBA145_size21_w468_h263.jpeg)
 
 ***
 
 <!--more-->
+
+# #5 贝叶斯方法&概率论模型
 
 $\mathbf{Attention:}$阅读本文需要一些概率论知识(。・・)ノ
 

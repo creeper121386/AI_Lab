@@ -7,11 +7,13 @@ tags:
 categories: 机器学习
 ---
 
-# $Bagging$集成学习 $\& $ 随机森林
-
 ![植树造林，从我做起](https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1842044919,4282973571&fm=27&gp=0.jpg)
 
 ***
+
+<!--more-->
+
+# $Bagging$集成学习 & 随机森林
 
 ## 集成学习
 

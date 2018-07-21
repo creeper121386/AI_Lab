@@ -3,6 +3,7 @@ title: whyの学习笔记:Python
 date: 2018-04-10 10:38:51
 tags:
 - 编程
+- python
 categories: python
 thumbnail: "why的python学习记录！/python.jpg"
 ---
@@ -26,6 +27,7 @@ thumbnail: "why的python学习记录！/python.jpg"
 * [高级操作](#t7)
 * [文件I/O](#t8)
 * [面向对象(OOP)](#t9)
+* [多进程&多线程](#t10)
 
 ***
 
@@ -48,7 +50,35 @@ atom安装Python插件，或者使用IDE (spyder,pycharm)。程序运行的两�
 ```python
 print(“hello %s”%(“world!”))。
 ```
-特别地，%s除了表示字符串以外，也可以表示list。`a=input(“xxxxxxx”)`表示把输入的数据赋值给a，并在输入前显示一行提示语句。在python3中input函数默认将键盘输入作为str看待，若想接受int类型，应当使用`int(input())`.
+
+**打印彩色&粗体&高亮字体：**
+```python
+print("this is a \033[显示方式;字体颜色;背景颜色m text \033[0m  other text")
+```
+
+相关参数如下：
+
+字体色|背景色|颜色描述
+:-:|:--:|:--:|
+30 |40|黑色  |
+31 |41|红色  |
+32 |42|绿色  |
+33 |43|黃色  |
+34 |44|蓝色  |
+35 |45|紫红色|
+36 |46|青蓝色|
+37 |47|白色  |
+
+显示方式     |      效果
+:---------:|:--------:
+0           |     终端默认设置
+1           |     高亮显示
+4           |     使用下划线
+5           |     闪烁
+7           |     反白显示
+8           |     不可见
+
+特别地，`%s`除了表示字符串以外，也可以表示`list`。`a=input(“xxxxxxx”)`表示把输入的数据赋值给a，并在输入前显示一行提示语句。在`python3`中`input`函数默认将键盘输入作为`str`看待，若想接受int类型，应当使用`int(input())`.
 返回字符串长度/列表元素个数：`len()`
 
 **条件函数if：**
@@ -147,7 +177,9 @@ Key不可变，且不能重复，因此set的元素都是不可变对象，并�
 
 **可迭代对象：** 包括集合数据类型，如list、tuple、dict、set、str等；
 以及generator，包括生成器和带yield的generator function。可以使用函数`isinstance()`来判断一个对象是否是可迭代对象。可以被`next()`函数不断返回下一个值的对象称为迭代器（iterator）。For循环本质就是不断调用next函数来实现的。
+
 ***
+
 <h2 id="t6">自定义函数</h2>
 
 函数定义语句：
@@ -232,25 +264,35 @@ def person(name, age, *, city='Beijing', job)
 * 或者加入嵌套循环：`[m + n for m in 'ABC' for n in 'XYZ']`
 也即是[元素 条件]的格式。
 
-**生成器（generator）：** 产生列表生成式的机制（算法）。定义方法：
+**生成器（generator）：** 一种动态的结构。与列表生成式直接生成所有数据不同生成器是记录下列表中元素的规则，动态生成，这样节省了存储空间。定义方法：
 
-*  将列表生成式最外层的[]变为()即可。
-*  在函数中包含yield关键字。这样定义的生成器在执行时不会做函数调用，遇到yield语句时中断并返回值，下次执行时从yield语句继续迭代。
+*  元素的生成规则比较简单，可以用列表生成式表示的时候，直接将列表生成式最外层的`[]`变为`()`。
+* 元素的生成规则比较复杂时（如斐波那契数列），可以使用定义函数形式的生成器：只要在在函数中使用`yield`关键字，`yield`有些类似`print`，假如把`yeild`替换成`print`，那么每次打印出的值就是生成器的各个元素的值。
 
-调用生成器的方法：
+获取生成器中元素的方法：
 
-*  使用next(生成器名)函数。
-*  使用for x in 生成器名循环语句（生成器是可迭代对象）。
+*  使用`next(生成器名)`，会从头开始返回生成器中的下一个元素
+*  生成器是可迭代对象，可以使用使用`for x in 生成器`。
 
 ### 模块
-导入：`import 模块名`，单独导入部分模块：`from 模块名 import 名称`
+
+导入：`import 模块名 as 缩写名`，单独导入部分模块：`from 模块名 import 子模块/子类/子函数`
+
+导入自己的模块：
+
+* 在模块中添加`main()`函数，并加入以下语句：
+    ```python
+    if __name == '__main__':
+        main()
+    ```
+    这表示当该程序直接启动时，执行`main()`，作为模块导入该程序时，不执行`main()`
 
 ### 高阶函数
 函数本身可以赋值给变量（类似指向函数的指针），函数名也是变量。函数也可以接受另一个函数名作为参数。函数名的数据类型实际上是<font color= 'red'>function类</font>。
 
-python的骚操作：
+python的高级操作：
 
-*  **Map函数：** 可以迭代使用函数。函数原型为：`map(函数名f，可迭代对象a)`，map将会把函数f依次作用在a的每一个元素上，然后返回新的可迭代对象b。
+*  **Map函数：** 可以迭代使用函数。函数原型为：`map(函数名f，可迭代对象a, 可迭代对象b...)`，map的作用是多次调用`f`，`a，b...`是多个可迭代对象，每一组`a[i], b[i]...`构成传给f的参数，如果`a,b...`不等长，会自动截断，`map`会返回由各个返回值构成的可迭代对象`c`。
 *  **Reduce函数：** 可以递归使用函数。函数原型为reduce(函数名f，可迭代对象a)，假设a=[x1,x2,x3,x4]，那么reduce的作用相当于:`f(f(f(x1, x2), x3), x4)`
 *  **匿名函数：** 格式为`(lambda x: 关于x的表达式)`，例如`(lambda x: x*x)`，一般用于只使用一次的函数，以及担心函数名冲突的时候。可以把匿名函数表达式赋值给变量，然后通过该变量来调用函数。
 *  **Filter函数：** 用于过滤序列，函数原型为filter(函数名f,序列a)，filter将传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。
@@ -307,11 +349,96 @@ Open函数可以打开一个文件（同c语言）。函数原型为`open(‘文
 定义一个类：
 ```python
 class Class1(object):			#要求首字母大写且要有冒号。
-Name=’.......’
-Value=.......
-......						#类的属性。
+    Name=’.......’
+    Value=.......
+    ......						#类的属性。
 ```
 其中object表示该类是从哪个类继承下来的。类的定义中可以有def语句定义函数。在创建该类的一个实例时（对象）
+
+<h2 id="t10">多进程&多线程</h2>
+
+### 多线程
+
+需要导入`threading`模块
+
+* `threading.active_count()`可以返回当前的活跃线程数目
+* `threading.current_thread()`查看正在运行的线程。
+
+#### 使用多线程
+
+* 添加线程`thread = threading.Thread(target = func, args = (args))`，`func`是该线程要运行的工作。
+* 为线程添加功能：定义上面的`func`函数，参数`args`是由要传给`func`的参数组成的可迭代对象。
+    * 所以只有一个参数时，为了保证传入可迭代对象，使用`args=(a, )`。
+* 如果函数需要返回值，不能直接返回，一般使用队列(`queue`)的方法来保存多线程的返回值。
+    * 队列对象使用`queue.Queue`封装
+    * 使用`queue.put(x)`来把`x`放入队列
+    * 使用`queue.get(x)`来输出队列中的内容
+    使用队列的多线程如下：
+    
+    ```python
+    from queue import Queue
+
+    def func(queue):
+        [我是代码]
+        queue.put(返回值)
+
+    queue = Queue()
+    for _ in range(n):
+        t = threading.Thread(target=func, args=queue)
+        t.start()
+    print(queue.get())
+    ```
+
+* 运行线程`thread.start()`。
+
+#### 调度
+
+* 正常情况下，各个多线程时同时工作的。
+* 使用`thread1.join()`语句，将`thread1`加入主线程，即主线程运行到该语句处，会等待`thread1`完成任务，主线程再运行之后的代码。
+* 使用锁控制线程的运行顺序`lock = threading.Lock()`，在线程对应的函数中，使用:
+    ```python
+    lock = threading.Lock()
+    def func():
+        global lock
+        lock.acquire()
+        [我是代码]
+        lock.release()
+    ```
+
+### 多进程
+
+需要`multiprocessing`模块，`import multiprocessing as mp`
+
+* 创建进程`process = mp.Process(target=func, args=args)`，参数含义和多线程相同。
+    * `func`的返回值也需要队列来完成。这里使用的队列直接使用`multiprocessing`中的队列对象，即`queue = mp.Queue()`，其他操作与多线程相同。
+    * 这里的参数
+* 开始进程`process.start()`
+* 加入主进程`process.join()`
+* **注意：**多进程必须在`if __name__ == '__main__'`下运行。
+
+#### 全局锁
+
+* 多进程执行中，如果有需要多个之间共享的变量，需要使用`mp.Value()`封装。具体细节见文档。
+* 如果不加锁，各个进程之间使用共享内存会起冲突。建立一个全局锁：`l = mp.Lock()`。使用全局锁就是在某个进程对应的`func`中按如下所示：
+    ```python
+    l = threading.Lock()
+    def func():
+        global l
+        l.acquire()
+        [我是代码]
+        l.release()
+    ```
+
+
+#### 进程池`Pool`
+
+* 普通的多进程操作：创建进程->运行进程->加入主进程->使用队列得到返回值
+* 使用进程池，把要运行的任务放入池中，可以自动实现多进程计算.
+    * 创建进程池：`pool = mp.Pool(processes=n)`，`processes`表示进程数，默认和`cpu`核心数相等
+    * 把函数放入池：
+        * 如果需要重复执行某个函数，并且该函数只有一个参数，可以使用`return_value = pool.map(func, 可迭代对象)`。这里的可迭代对象是由函数参数构成的（与`python`中的`map`函数类似）
+        * 如果只执行一次函数，但函数有多个参数，也可以使用异步非阻塞运行：`res = pool.apply(func, args=(args1, args2...))`，`args`是由各个参数组成的 可迭代对象。
+        * 一般使用效率更高的`map`和`apply`异步方法`res = pool.map_async()`和`res = pool.apply_async()`。除了名字不同以外，参数传递完全相同。异步方法不能直接获取返回值，需要用`res.get()` 来获取。
 
 ***
 

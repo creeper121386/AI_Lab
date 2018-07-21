@@ -7,7 +7,6 @@ tags:
 categories: 机器学习
 ---
 
-# #4 支持向量机（SVM）
 
 
 ![也许是现成的最好的分类器](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527170673&di=1dcc82cd28132c6c53838482d49ce094&imgtype=jpg&er=1&src=http%3A%2F%2Fs1.sinaimg.cn%2Fmw690%2F002xlA0Pgy6TFXnKcVi70%26amp%3B690)
@@ -15,6 +14,8 @@ categories: 机器学习
 ***
 
 <!-- more -->
+
+# #4 支持向量机（SVM）
 
 **$\mathrm{Warning:}$ 以下内容包含大量数学公式，若有不解之处，请反复阅读。**
 

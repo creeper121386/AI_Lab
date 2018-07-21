@@ -3,15 +3,15 @@ import torch
 import torchvision
 device = torch.device(
     'cuda') if torch.cuda.is_available() else torch.device('cpu')
-randZ = True
+randZ = False 
 nz = 100
 batchSize = 64
-batchNum = 2
+batchNum = 1
 # modelNum = [x*10+1 for x in range(10)]+[100]
-modelNum = [6, 11, 16, 20]
+modelNum = [1, 6, 10, 11, 16, 20]
 workDir = '/run/media/why/DATA/why的程序测试/AI_Lab/Task/Task_Extra/avator'
 savePath = workDir + '/img'
-modelPath = workDir + '/model-epoch100'
+modelPath = workDir + '/model'
 #################################################
 
 class TestNet(object):

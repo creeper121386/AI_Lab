@@ -1,5 +1,5 @@
 ---
-title: AI酱养成计划(二) 聚类
+title: AI酱养成计划(二) 物以类聚——聚类
 date: 2018-05-08 13:25:16
 tags:
 - 机器学习
@@ -7,13 +7,13 @@ tags:
 categories: 机器学习
 ---
 
-# #2聚类
-
 ***
 
 ![物以类聚，人以群分。](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525072990450&di=f2e3fc8df0192d022138a5d4c83137d5&imgtype=jpg&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D4234043830%2C4080829188%26fm%3D214%26gp%3D0.jpg)
 
 <!-- more -->
+
+# #2聚类
 
 ## 算法思想
 

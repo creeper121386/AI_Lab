@@ -10,28 +10,34 @@ from model2 import G, D
 import PIL.Image as Image
 import os
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 # from torchvision.models import resnet18
-saveModel = False
-saveImg = False 
+
+############### 超参数#################
+saveModel = True
+saveImg = False
 cuda = True
 sampleNum = False    # set False to use all samples
 epoch = 20
-lr = 0.001
+lr = 0.0002
 nz = 100        # 噪声的长度
 imgSize = 64
 batchSize = 64
-shotNum = 100
-saveNum = 5
+shotNum = 100       # 每个epoch中每多少轮记录信息
+saveImgNum = 300    # 每个epoch中每多少轮保存生成的图片
+saveModelNum = 5    # 每多少个epoch保存一次模型
+k = 3       # 每一轮训练多少次G
+
+############### Path ######################
 # workDir = '/disk/unique/why'
 #imgPath = '/run/media/why/DATA/why的程序测试/AI_Lab/DataSet/faces'
 workDir = os.getcwd()
 imgPath = workDir + '/faces'
-savePath = workDir + '/avator'
+savePath = workDir + '/saveImg'
 modelPath = workDir + '/model'
-plotPath = workDir + '/plot.png'
+dataPath = workDir + '/data'
 
-
+################## Func ########################
 lossFunc = nn.BCELoss()
 device = torch.device(
     'cuda') if torch.cuda.is_available() and cuda else torch.device('cpu')
@@ -62,73 +68,68 @@ def show(img):
     plt.show()
 
 
-def draw(x, G, D):
-    plt.figure()
-    plt.ylabel('Loss')
-    plt.xlabel('trainning epoch')
-    plt.plot(x, G, linewidth=1.5, label='G_loss', color='blue', alpha = 0.8)
-    plt.plot(x, D, linewidth=1.5, label='D_loss', color='green', alpha = 0.8)
-    plt.scatter(x, G, c='blue', edgecolors='black', alpha = 0.8)
-    plt.scatter(x, D, c='green', edgecolors='black', alpha = 0.8)
-    plt.legend()
-    plt.xlim((0,len(x)))
-    plt.savefig(plotPath)
+def write(path, G, D):
+    G = np.array(G)
+    D = np.array(D)
+    np.savetxt(path+'/Gdata.txt', G)
+    np.savetxt(path+'/Ddata.txt', D)
 
 
 def train(Dnn, Gnn, trainLoader):
     z = torch.randn(batchSize, nz, 1, 1).to(device)
-    D_lossList = []
-    G_lossList = []
+    D_lossList_all = []
+    G_lossList_all = []
     for j in range(epoch):
-        sumD = 0
-        sumG = 0
+        D_lossList = []
+        G_lossList = []
         for i, (img, _) in enumerate(trainLoader, 0):
             Dnn.zero_grad()
             real = img.to(device)
             pred1 = Dnn(real)
+            # Edit here to change the REAL&FAKE LABEL!
             realLabel = torch.full((batchSize, ), 1, device=device)
+            fakeLabel = torch.full((batchSize, ), 0, device=device)
             D_loss1 = lossFunc(pred1, realLabel)
             D_loss1.backward()
 
             noise = torch.randn(batchSize, nz, 1, 1).to(device)
-            fakeLabel = torch.full((batchSize, ), 0, device=device)
             fake = Gnn(noise)
             pred2 = Dnn(fake.detach())
             D_loss2 = lossFunc(pred2, fakeLabel)
             D_loss2.backward()
             D_optim.step()
+            D_loss = D_loss1 + D_loss2
+            D_lossList.append(float(D_loss))
 
             Gnn.zero_grad()
-            D_loss = D_loss1 + D_loss2
-            sumD += D_loss
             pred3 = Dnn(fake)
             G_loss = lossFunc(pred3, realLabel)
-            sumG += G_loss
+            G_lossList.append(float(G_loss))
             G_loss.backward()
             G_optim.step()
 
-            if not(i % shotNum):
-                print('[{},epoch:{}]  G_loss:{},  D_loss:{}'.format(
-                    i, j, G_loss, D_loss))
+            if not(1 % saveImgNum) and saveImg:
                 if saveImg:
                     torchvision.utils.save_image(
                         Gnn(z).detach(), savePath+'/epoch{}-num{}.jpg'.format(j+1, i), normalize=True)
                     tmp = torch.randn(batchSize, nz, 1, 1).to(device)
                     torchvision.utils.save_image(
                         Gnn(tmp).detach(), savePath+'/rand-epoch{}-num{}.jpg'.format(j+1, i), normalize=True)
-        
-        D_lossList.append(sumD/(i+1))
-        G_lossList.append(sumG/(i+1))
-        if not(j % saveNum) and saveModel:
-            torch.save(Gnn.state_dict(),
-                       modelPath+"/Gnn-epoch{}.pkl".format(j+1))
-            torch.save(Gnn.state_dict(),
-                       modelPath+"/Dnn-epoch-{}.pkl".format(j+1))
-    
-    G_lossList = [float(x) for x in G_lossList]
-    D_lossList = [float(x) for x in D_lossList]
-    draw(list(range(len(G_lossList))), G_lossList, D_lossList)
-    print('train finish')
+            if not(i % shotNum):
+                print('[{},epoch:{}]  G_loss:{},  D_loss:{}'.format(
+                    i, j, G_loss, D_loss))
+
+
+        D_lossList_all.append(D_lossList)
+        G_lossList_all.append(G_lossList)
+        if not(j % saveModelNum) and saveModel:
+            torch.save(Gnn.state_dict(), modelPath +
+                       "/Gnn-epoch{}.pkl".format(j+1))
+            torch.save(Dnn.state_dict(), modelPath +
+                       "/Dnn-epoch{}.pkl".format(j+1))
+    write(dataPath, G_lossList_all, D_lossList_all)
+    #draw(list(range(len(G_lossList))), G_lossList, D_lossList)
+    print('train finish!')
     return Dnn, Gnn
 
 
@@ -146,6 +147,6 @@ if __name__ == '__main__':
 
     if saveModel:
         torch.save(Gnn.state_dict(),
-                modelPath+"/Gnn-epoch{}.pkl".format(epoch))
-        torch.save(Gnn.state_dict(),
-                modelPath+"/Dnn-epoch-{}.pkl".format(epoch))
+                   modelPath+"/Gnn-epoch{}.pkl".format(epoch))
+        torch.save(Dnn.state_dict(),
+                   modelPath+"/Dnn-epoch-{}.pkl".format(epoch))
