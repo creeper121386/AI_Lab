@@ -1,12 +1,12 @@
 import torch.nn as nn
 import torch
-# epoch == 10左右已经收敛，效果最好的情况在epoch == 60和80处，epoch == 100开始出现大量随机噪声
+# [DCGAN info] epoch == 10左右已经收敛，效果最好的情况在epoch == 60和80处，epoch == 100开始出现大量随机噪声
 
 
-nz = 100        # 白噪声向量的长度
+nz = 100        # size of z
 nc = 3         # channel数
-ndf = 64      # 网络D的feature map数量
-ngf = 64       # 网络G的feature map数量
+ndf = 64      # D的feature map数量
+ngf = 64       # G的feature map数量
 batchSize = 8
 device = torch.device(
     'cuda') if torch.cuda.is_available() else torch.device('cpu')
