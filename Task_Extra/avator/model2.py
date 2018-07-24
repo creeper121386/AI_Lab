@@ -7,7 +7,6 @@ nz = 100        # size of z
 nc = 3         # channel数
 ndf = 64      # D的feature map数量
 ngf = 64       # G的feature map数量
-batchSize = 8
 device = torch.device(
     'cuda') if torch.cuda.is_available() else torch.device('cpu')
 

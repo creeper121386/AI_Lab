@@ -13,24 +13,26 @@ from model2 import G, D
 # from torchvision.models import resnet18
 
 ############### Hyper Param #################
-saveModel = True
+saveModel = False
 saveImg = False
+writeData = True
 cuda = True
-sampleNum = False    # set False to use all samples
-epoch = 20
+sampleNum = 10    # set False to use all samples
+epoch = 10
+batchSize = 8
 lr = 0.0001
 n_D = 5     # train D_net 5 times in a iteration.
 nz = 100        # size of noise
 imgSize = 64
-batchSize = 64
 shotNum = 100       # save loss info per 100 iterations
 saveNum = 5     # save current model per 5 times
+nc = 3      # num of channels
 
 ############### Path ######################
 # workDir = '/disk/unique/why'
-#imgPath = '/run/media/why/DATA/why的程序测试/AI_Lab/DataSet/faces'
 workDir = os.getcwd()
 imgPath = workDir + '/faces'
+imgPath = '/run/media/why/DATA/why的程序测试/AI_Lab/DataSet/faces'
 savePath = workDir + '/saveImg'
 modelPath = workDir + '/model'
 dataPath = workDir + '/data'
@@ -58,19 +60,20 @@ class whyDataset(Dataset):
 
 
 class GP_loss(nn.Module):
-    def __init__(self, lamda):
+    def __init__(self, lamda=10):
         super(GP_loss, self).__init__()
         self.lamda = lamda
         return
 
-    def forward(self, D_output1, D_output2, D_grad):
-        tmp = self.lamda * (torch.sqrt(D_grad) - 1)**2
-        return torch.mean(D_output1+D_output2+tmp)
+    def forward(self, D_output1, D_output2, x_grad):
+        tmp = self.lamda * (torch.sqrt(x_grad) - 1)**2
+        return torch.mean(D_output1-D_output2+tmp)
+        # Loss = D(x_new)-D(x)+lambda(||grad(D(x_new))||-1)^2, for D(x_new)=D_output1, D(x)=D_output2.
 
 
 def show(img):
-    img = img.numpy()
     # img = T.ToPILImage(img)
+    img = img.numpy()
     plt.imshow(np.transpose(img, (1, 2, 0)))
     # plt.axis('off')
     plt.show()
@@ -85,10 +88,33 @@ def writeInfo(path, G, D):
 
 class WGAN(object):
     def __init__(self):
-        self.Dnn = D().to(device)
-        self.Gnn = G().to(device)
-        self.D_optim = optim.Adam(Dnn.parameters(), lr=lr, betas=(0.0, 0.9))
-        self.G_optim = optim.Adam(Gnn.parameters(), lr=lr, betas=(0.0, 0.9))
+        Dnn = D()
+        Gnn = G()
+        self.Dnn = Dnn.to(device)
+        self.Gnn = Gnn.to(device)
+        self.D_optim = optim.Adam(
+            self.Dnn.parameters(), lr=lr, betas=(0.0, 0.9))
+        self.G_optim = optim.Adam(
+            self.Gnn.parameters(), lr=lr, betas=(0.0, 0.9))
+
+    def step_D(self, real):
+        gploss = GP_loss()
+        noise = torch.randn(batchSize, nz, 1, 1).to(device)
+        self.Dnn.zero_grad()
+        fake = self.Gnn(noise)
+        new = torch.zeros(real.size())      # batchSize * n * imgSize * imgSize
+        for k in range(batchSize):
+            sigma = float(torch.rand(1, 1))
+            new[k] = sigma*real[k] + (1-sigma)*fake[k]
+        pred = self.Dnn(new)
+        x_grad = torch.ones((batchSize, 1))
+        for k in range(batchSize):
+            pred[k].backward()
+            x_grad[k] = new.grad[k]
+        D_loss = gploss(pred, self.Dnn(real), x_grad)
+        self.Dnn.zero_grad()
+        D_loss.backward()
+        self.D_optim.setp()
 
     def train(self, trainLoader):
         z = torch.randn(batchSize, nz, 1, 1).to(device)
@@ -98,38 +124,13 @@ class WGAN(object):
             D_lossList = []
             G_lossList = []
             for i, (img, _) in enumerate(trainLoader, 0):
+                real = img.to(device)
                 for _ in range(n_D):
-                    noise = torch.randn(batchSize, nz, 1, 1).to(device)
-                    sigma = torch.rand(batchSize, 1)
-                    real = img.to(device)
-                    self.Dnn.zero_grad()
-                    fake = self.Gnn(noise)
-                    new = sigma*real + (1-sigma)*new
-                    
-
-
-
-
-
-                pred1 = self.Dnn(real)
-                # Edit here to change the REAL&FAKE LABEL!
-                realLabel = torch.full((batchSize, ), 1, device=device)
-                fakeLabel = torch.full((batchSize, ), 0, device=device)
-                D_loss1 = GP_loss(pred1, realLabel)
-                D_loss1.backward()
-
-                fake = self.Gnn(noise)
-                pred2 = self.Dnn(fake.detach())
-                D_loss2 = GP_loss(pred2, fakeLabel)
-                D_loss2.backward()
-                self.D_optim.step()
-
-                self.Gnn.zero_grad()
-                D_loss = D_loss1 + D_loss2
-                D_lossList.append(float(D_loss))
-                pred3 = self.Dnn(fake)
-                G_loss = GP_loss(pred3, realLabel)
-                G_lossList.append(float(G_loss))
+                    self.step_D(real)
+                
+                noise = torch.randn(batchSize, nz, 1, 1).to(device)
+                self.Gnn.zerograd()
+                G_loss = torch.mean(-self.Dnn(self.Gnn(noise)))
                 G_loss.backward()
                 self.G_optim.step()
 
@@ -152,7 +153,8 @@ class WGAN(object):
                            "/WGAN_G-epoch{}.pkl".format(j+1))
                 torch.save(self.Dnn.state_dict(), modelPath +
                            "/WGAN_D-epoch{}.pkl".format(j+1))
-        writeInfo(dataPath, G_lossList_all, D_lossList_all)
+        if writeData:
+            writeInfo(dataPath, G_lossList_all, D_lossList_all)
         #draw(list(range(len(G_lossList))), G_lossList, D_lossList)
         print('############### train finish ! ################')
 
