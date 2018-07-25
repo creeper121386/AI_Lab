@@ -41,8 +41,8 @@ def plot():
         G_all.append(np.average(G[i]))
         D_all.append(np.average(D[i]))
     draw(G_all, D_all, 'training epoch', 'all.png')
-
+    print('/033[1;36;40m plot over! /033[0m')
 
 if __name__ == '__main__':
     plot()
-    print('/033[1;36;40m plot over! /033[0m')
+    
