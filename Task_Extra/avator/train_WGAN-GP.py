@@ -68,12 +68,15 @@ class WGAN(object):
             self.Gnn.parameters(), lr=lr, betas=(0.0, 0.9))
         self.G_loss = []
         self.D_loss = []
+        self.one = torch.FloatTensor([1]).to(device)
+        self.n_one = self.one * -1
 
     def saveModel(self, No):
         torch.save(self.Gnn.state_dict(), modelPath +
                    "/WGAN_G-epoch{}.pkl".format(No))
         torch.save(self.Dnn.state_dict(), modelPath +
                    "/WGAN_D-epoch{}.pkl".format(No))
+        print("[save] WGAN_G-epoch{}.pkl, WGAN_D-epoch{}.pkl saved.".format(No, No))
 
     def saveLoss(self, path):
         if writeData:
@@ -83,7 +86,7 @@ class WGAN(object):
             np.savetxt(path+'/Ddata-WGAN.txt', D)
 
     def calc_gradient_penalty(self, real_data, fake_data):
-        alpha = torch.rand(batchSize, 1)
+        alpha = torch.rand(batchSize, 1).to(device)
         alpha = alpha.expand(batchSize, real_data.nelement(
         )/batchSize).contiguous().view(batchSize, 3, imgSize, imgSize)
 
@@ -120,11 +123,14 @@ class WGAN(object):
     def step_D_new(self, real):
         noise = torch.randn(batchSize, nz, 1, 1).to(device)
         fake = self.Gnn(noise)      # batchSize * n * imgSize * imgSize
+        pred_fake = self.Dnn(fake).mean()
+        pred_real = self.Dnn(real).mean()
+        pred_real.backward(self.n_one)
+        pred_fake.backward(self.one)
         D_loss = self.calc_gradient_penalty(real, fake)
-        self.Dnn.zero_grad()
         D_loss.backward()
         self.D_optim.step()
-        return D_loss
+        return pred_fake - pred_real + D_loss
 
     def train(self, trainLoader):
         z = torch.randn(batchSize, nz, 1, 1).to(device)
@@ -138,13 +144,13 @@ class WGAN(object):
                 if not i % n_D:
                     self.Gnn.zero_grad()
                     noise = torch.randn(batchSize, nz, 1, 1).to(device)
-                    G_loss = torch.mean(-self.Dnn(self.Gnn(noise)))
-                    G_loss.backward()
+                    G_loss = torch.mean(self.Dnn(self.Gnn(noise)))
+                    G_loss.backward(self.n_one)
+                    G_loss = - G_loss
                     self.G_optim.step()
 
                 if not i % shotNum:
-                    print('[{},epoch:{}]  G_loss:{},  D_loss:{}'.format(
-                        i, j, G_loss, D_loss))
+                    print('[%03d,epoch%2d]  G_loss:%.6f,  D_loss:%.6f' % (i, j, G_loss, D_loss))
                     if saveImg:
                         save_image(self.Gnn(z).detach(), savePath +
                                    '/epoch{}-num{}.jpg'.format(j+1, i), normalize=True)

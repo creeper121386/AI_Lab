@@ -1,3 +1,4 @@
+#  [WGAN-GP] 效果较差，收敛不稳定。epoch == 25 左右取得较好的效果。
 import time
 import torch.optim as optim
 from torch.utils.data.dataset import Dataset

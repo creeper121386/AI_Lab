@@ -12,8 +12,8 @@ proc getFile {root name} {
     interact
 }
 
-getFile $rootName data
 getFile $rootName saveImg
-getFile $rootName model
+getFile $rootName data
+# getFile $rootName model
 
 
