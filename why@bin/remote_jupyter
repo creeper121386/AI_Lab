@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+set timeout 10
+spawn ssh -N  -L localhost:8889:localhost:8888 unique@115.156.207.244
+expect "*yes/no*"
+send "yes\r"
+expect "*password*"
+send "unique\r"
+
+interact

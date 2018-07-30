@@ -1,0 +1,23 @@
+#!/bin/expect
+
+
+set timeout 20
+
+spawn sudo cp -rf source/_posts /run/media/why/DATA/why的程序测试/AI_Lab/Task
+expect "*sudo*"
+send "why11037\r"
+interact
+
+cd /home/why/myBlog
+
+spawn sudo hexo d -g
+expect "*sudo*"
+send "why11037\r"
+expect "*Username*"
+send "creeper121386\r"
+expect "*Password*"
+send "why11037\r"
+
+interact
+
+

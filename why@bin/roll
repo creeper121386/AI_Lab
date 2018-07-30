@@ -1,0 +1,7 @@
+#!/bin/expect
+
+set timeout 5
+spawn sudo pacman -Syu
+expect "*sudo*"
+send "why11037\r"
+interact

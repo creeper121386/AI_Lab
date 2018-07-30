@@ -4,7 +4,7 @@ import os
 saveModel = False
 saveImg = False
 writeData = False
-cuda = True
+cuda = False
 sampleNum = 10    # set False to use all samples
 epoch = 10
 batchSize = 8

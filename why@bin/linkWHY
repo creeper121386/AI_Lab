@@ -1,0 +1,12 @@
+#!/bin/expect
+
+set timeout 10
+spawn ssh why@138.68.236.204
+expect "*(yes/no)*"
+send "yes\r"
+expect "*password:"
+send "why11037\r"
+expect "$"
+send "ssserver -c shadowsocks.json\r"
+interact
+
