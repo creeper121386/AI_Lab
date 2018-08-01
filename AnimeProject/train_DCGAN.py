@@ -97,8 +97,8 @@ def train(Dnn, Gnn, trainLoader):
 
                 
             if not(i % shotNum):
-                print('[{},epoch:{}]  G_loss:{},  D_loss:{}'.format(
-                    i, j, G_loss, D_loss))
+                print('[epoch %03d]  G_loss:%.6f,  D_loss:%.6f' % (
+                    j, G_loss, D_loss))
 
 
         D_lossList_all.append(D_lossList)

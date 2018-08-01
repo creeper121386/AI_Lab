@@ -5,6 +5,7 @@ saveModel = False
 saveImg = True
 writeData = False
 cuda = False
+load_model = True
 sampleNum = 10    # set False to use all samples
 epoch = 10
 batchSize = 8
