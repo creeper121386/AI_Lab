@@ -1,3 +1,7 @@
+'''
+[LL trainning log] epoch==500, size==64*64
+epoch == 420时效果下降。epoch 200~400之间效果基本一致。
+'''
 import time
 import torch.optim as optim
 from torch.utils.data.dataset import Dataset
@@ -6,7 +10,7 @@ import torchvision
 import torchvision.transforms as T
 import torch.nn as nn
 import torch
-from model2 import G, D
+from model64 import G, D
 import PIL.Image as Image
 import os
 import numpy as np
@@ -14,6 +18,7 @@ from config import *
 #import matplotlib.pyplot as plt
 # from torchvision.models import resnet18
 ################## Func ########################
+save_all_model = False
 lossFunc = nn.BCELoss()
 device = torch.device(
     'cuda') if torch.cuda.is_available() and cuda else torch.device('cpu')
@@ -48,6 +53,15 @@ def show(data):
         plt.show()
 
 
+def saveModel(Dnn, Gnn, modelPath, num, save_all=False):
+    if save_all:
+        torch.save(Gnn, modelPath+"/Gnn-epoch{}.pkl".format(num))
+        torch.save(Dnn, modelPath+"/Dnn-epoch{}.pkl".format(num))
+    else:
+        torch.save(Gnn.state_dict(), modelPath+"/Gnn-epoch{}.pkl".format(num))
+        torch.save(Dnn.state_dict(), modelPath+"/Dnn-epoch{}.pkl".format(num))
+
+
 def write(path, G, D):
     G = np.array(G)
     D = np.array(D)
@@ -55,7 +69,12 @@ def write(path, G, D):
     np.savetxt(path+'/Ddata.txt', D)
 
 
-def train(Dnn, Gnn, trainLoader):
+def train(Dnn, Gnn):
+    trainLoader = DataLoader(
+        dataset=trainData, batch_size=batchSize, shuffle=True, drop_last=True)
+    D_optim = optim.Adam(Dnn.parameters(), lr=lr, betas=(0.5, 0.999))
+    G_optim = optim.Adam(Gnn.parameters(), lr=lr, betas=(0.5, 0.999))
+
     z = torch.randn(batchSize, nz, 1, 1).to(device)
     D_lossList_all = []
     G_lossList_all = []
@@ -122,14 +141,10 @@ if __name__ == '__main__':
     Gnn.to(device)
     trainData = whyDataset(imgPath)
     #show(trainData)
-
-    trainLoader = DataLoader(
-        dataset=trainData, batch_size=batchSize, shuffle=True, drop_last=True)
-    D_optim = optim.Adam(Dnn.parameters(), lr=lr, betas=(0.5, 0.999))
-    G_optim = optim.Adam(Gnn.parameters(), lr=lr, betas=(0.5, 0.999))
-    Dnn, Gnn = train(Dnn, Gnn, trainLoader)
-
+    
+    Dnn, Gnn = train(Dnn, Gnn)
     if saveModel:
+        saveModel()
         torch.save(Gnn.state_dict(),
                    modelPath+"/Gnn-epoch{}.pkl".format(epoch))
         torch.save(Dnn.state_dict(),

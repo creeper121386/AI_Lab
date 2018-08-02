@@ -1,10 +1,11 @@
 #!/bin/expect
 
-set rootName /disk/unique/why/AnimeProject
 set timeout 3
+#set remotePath root@47.106.247.165:/disk/unique/why/AnimeProject
+set remotePath unique@115.156.207.244:/disk/unique/why/AnimeProject
 
-proc sendFile {root name} {
-    spawn scp -r remote unique@115.156.207.244:$root/$name .
+proc sendFile {path name} {
+    spawn scp $name  $path
     expect {
         "(yes/no)" { send "yes\r"; exp_continue }
         "password:" { send "unique\r" }
@@ -12,5 +13,5 @@ proc sendFile {root name} {
     interact
 }
 
-sendFile $rootName model2.py
-sendFile $rootName train_DCGAN.py
+sendFile $remotePath model2.py
+sendFile $remotePath train_DCGAN.py

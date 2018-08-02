@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-#dataPath = os.getcwd()
-workDir = '/run/media/why/DATA/why的程序测试/AI_Lab/Task/Task_Extra/avator'
+workDir = os.getcwd()
+#workDir = '/run/media/why/DATA/why的程序测试/AI_Lab/Task/Task_Extra/avator'
 dataPath = workDir + '/data'
 plotPath = workDir + '/plot'
 linewidth = 1

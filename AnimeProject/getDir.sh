@@ -13,7 +13,7 @@ proc getFile {root name} {
 }
 
 getFile $rootName img
-getFile $rootName data
+# getFile $rootName data
 # getFile $rootName model
 
 
