@@ -1,0 +1,1248 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+1.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	1;"	kind:file	line:1
+AEBP	../task_weeks/task_week3/BP.py	/^    def AEBP(self, trainData, trainLabel, epoch, alpha):$/;"	kind:member	line:65
+API	../task_weeks/Task_week2/RandForest.py	/^import DecisionTree as API$/;"	kind:namespace	line:1
+Axes3D	../WebCrawler/tmp.py	/^from mpl_toolkits.mplot3d import Axes3D$/;"	kind:namespace	line:3
+BASE	../AnimeProject/demo3_pokemon/crawl.1.py	/^BASE = 'https:\/\/wiki.52poke.com'$/;"	kind:variable	line:9
+BOT_NAME	../WebCrawler/scrapyTestWhy/scrapyTestWhy/settings.py	/^BOT_NAME = 'scrapyTestWhy'$/;"	kind:variable	line:12
+BP	../task_weeks/task_week3/BP.py	/^    def BP(self, trainData, trainLabel, epoch, batch, alpha):$/;"	kind:member	line:43
+BP.py	../task_weeks/task_week3/BP.py	1;"	kind:file	line:1
+Bayes.py	../task_weeks/Task_week1/Bayes.py	1;"	kind:file	line:1
+Bayes.py	../task_weeks/task_week4/Bayes.py	1;"	kind:file	line:1
+BayesNet.py	../task_weeks/Task_week2/BayesNet.py	1;"	kind:file	line:1
+BeautifulSoup	../AnimeProject/demo2_DCGAN/crawl.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:2
+BeautifulSoup	../AnimeProject/demo3_pokemon/crawl.1.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:2
+BeautifulSoup	../WebCrawler/konachan检索页面爬虫.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:5
+BeautifulSoup	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^from bs4 import BeautifulSoup$/;"	kind:namespace	line:2
+C	../task_weeks/task_week4/SVM.py	/^C = 1e5$/;"	kind:variable	line:7
+CUDA	../AnimeProject/demo1_AnimeGAN/run.py	/^CUDA = True$/;"	kind:variable	line:9
+D	../AnimeProject/demo2_DCGAN/model64.py	/^class D(nn.Module):$/;"	kind:class	line:6
+D	../AnimeProject/demo2_DCGAN/test.py	/^from model64 import G, D$/;"	kind:namespace	line:2
+D	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^from model64 import G, D$/;"	kind:namespace	line:9
+D	../AnimeProject/demo3_pokemon/model32.py	/^class D(nn.Module):$/;"	kind:class	line:6
+D	../AnimeProject/demo3_pokemon/model64.py	/^class D(nn.Module):$/;"	kind:class	line:6
+D	../AnimeProject/demo3_pokemon/test.py	/^from model64 import G, D$/;"	kind:namespace	line:2
+D	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^from model64 import G, D$/;"	kind:namespace	line:9
+D	../GAN/avator/model2.py	/^class D(nn.Module):$/;"	kind:class	line:13
+D	../GAN/avator/test.py	/^from model2 import G, D$/;"	kind:namespace	line:1
+D	../GAN/avator/train_DCGAN.py	/^from model2 import G, D$/;"	kind:namespace	line:10
+D	../GAN/avator/train_WGAN-GP.py	/^from model2 import G, D$/;"	kind:namespace	line:13
+D	../task_weeks/task_week6/DCGAN.py	/^from model import G, D$/;"	kind:namespace	line:4
+D	../task_weeks/task_week6/infoGAN.py	/^class D(nn.Module):$/;"	kind:class	line:17
+D	../task_weeks/task_week6/infoGAN.py	/^import torch.utils.data as D$/;"	kind:namespace	line:5
+D	../task_weeks/task_week6/model.py	/^class D(nn.Module):$/;"	kind:class	line:9
+DBI	../task_weeks/Task_week2/k_means_plus.py	/^DBI = []$/;"	kind:variable	line:72
+DCGAN.py	../task_weeks/task_week6/DCGAN.py	1;"	kind:file	line:1
+DIR	../AnimeProject/demo1_AnimeGAN/run.py	/^DIR = os.getcwd()$/;"	kind:variable	line:11
+D_G_z1	../AnimeProject/demo1_AnimeGAN/main.py	/^        D_G_z1 = output.data.mean()$/;"	kind:variable	line:182
+D_G_z2	../AnimeProject/demo1_AnimeGAN/main.py	/^        D_G_z2 = output.data.mean()$/;"	kind:variable	line:198
+D_optim	../GAN/avator/train_DCGAN.py	/^    D_optim = optim.Adam(Dnn.parameters(), lr=lr, betas=(0.5, 0.999))$/;"	kind:variable	line:145
+D_optim	../task_weeks/task_week6/DCGAN.py	/^D_optim = optim.Adam(dNet.parameters(), lr=lr, betas=(0.5, 0.999))$/;"	kind:variable	line:28
+D_x	../AnimeProject/demo1_AnimeGAN/main.py	/^        D_x = output.data.mean()$/;"	kind:variable	line:169
+DataLoader	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^from torch.utils.data.dataloader import DataLoader$/;"	kind:namespace	line:4
+DataLoader	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^from torch.utils.data.dataloader import DataLoader$/;"	kind:namespace	line:4
+DataLoader	../GAN/avator/train_DCGAN.py	/^from torch.utils.data.dataloader import DataLoader$/;"	kind:namespace	line:5
+DataLoader	../GAN/avator/train_WGAN-GP.py	/^from torch.utils.data.dataloader import DataLoader$/;"	kind:namespace	line:5
+Dataset	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^from torch.utils.data.dataset import Dataset$/;"	kind:namespace	line:3
+Dataset	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^from torch.utils.data.dataset import Dataset$/;"	kind:namespace	line:3
+Dataset	../GAN/avator/train_DCGAN.py	/^from torch.utils.data.dataset import Dataset$/;"	kind:namespace	line:4
+Dataset	../GAN/avator/train_WGAN-GP.py	/^from torch.utils.data.dataset import Dataset$/;"	kind:namespace	line:4
+DecisionTree.py	../task_weeks/Task_week2/DecisionTree.py	1;"	kind:file	line:1
+Discriminator	../PyTorch-SRGAN-master/models.py	/^class Discriminator(nn.Module):$/;"	kind:class	line:77
+Discriminator	../PyTorch-SRGAN-master/test.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:16
+Discriminator	../PyTorch-SRGAN-master/train.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:19
+Dnn	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    Dnn = D()$/;"	kind:variable	line:134
+Dnn	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    Dnn = D()$/;"	kind:variable	line:131
+Dnn	../GAN/avator/train_DCGAN.py	/^    Dnn = D()$/;"	kind:variable	line:138
+F	../PyTorch-SRGAN-master/models.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:6
+F	../task_weeks/task_week4/Bayes.py	/^import function as F $/;"	kind:namespace	line:2
+F	../task_weeks/task_week4/QDA.py	/^import function as F$/;"	kind:namespace	line:1
+F	../task_weeks/task_week4/SVM.py	/^import function as F$/;"	kind:namespace	line:1
+F	../task_weeks/task_week5/imageTranser.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+F	../task_weeks/task_week6/infoGAN.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+FeatureExtractor	../PyTorch-SRGAN-master/models.py	/^class FeatureExtractor(nn.Module):$/;"	kind:class	line:12
+FeatureExtractor	../PyTorch-SRGAN-master/test.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:16
+FeatureExtractor	../PyTorch-SRGAN-master/train.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:19
+Forest	../task_weeks/Task_week2/RandForest.py	/^class Forest(object):$/;"	kind:class	line:25
+G	../AnimeProject/demo2_DCGAN/model64.py	/^class G(nn.Module):$/;"	kind:class	line:44
+G	../AnimeProject/demo2_DCGAN/test.py	/^from model64 import G, D$/;"	kind:namespace	line:2
+G	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^from model64 import G, D$/;"	kind:namespace	line:9
+G	../AnimeProject/demo3_pokemon/model32.py	/^class G(nn.Module):$/;"	kind:class	line:39
+G	../AnimeProject/demo3_pokemon/model64.py	/^class G(nn.Module):$/;"	kind:class	line:44
+G	../AnimeProject/demo3_pokemon/test.py	/^from model64 import G, D$/;"	kind:namespace	line:2
+G	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^from model64 import G, D$/;"	kind:namespace	line:9
+G	../GAN/avator/model2.py	/^class G(nn.Module):$/;"	kind:class	line:51
+G	../GAN/avator/test.py	/^from model2 import G, D$/;"	kind:namespace	line:1
+G	../GAN/avator/train_DCGAN.py	/^from model2 import G, D$/;"	kind:namespace	line:10
+G	../GAN/avator/train_WGAN-GP.py	/^from model2 import G, D$/;"	kind:namespace	line:13
+G	../task_weeks/task_week6/DCGAN.py	/^from model import G, D$/;"	kind:namespace	line:4
+G	../task_weeks/task_week6/infoGAN.py	/^class G(nn.Module):$/;"	kind:class	line:44
+G	../task_weeks/task_week6/model.py	/^class G(nn.Module):$/;"	kind:class	line:35
+GP_loss	../GAN/avator/train_WGAN-GP.py	/^class GP_loss(nn.Module):$/;"	kind:class	line:38
+G_optim	../GAN/avator/train_DCGAN.py	/^    G_optim = optim.Adam(Gnn.parameters(), lr=lr, betas=(0.5, 0.999))$/;"	kind:variable	line:146
+G_optim	../task_weeks/task_week6/DCGAN.py	/^G_optim = optim.Adam(gNet.parameters(), lr=lr, betas=(0.5, 0.999))$/;"	kind:variable	line:29
+Gan	../GAN/avator/train_WGAN-GP.py	/^    Gan = WGAN()$/;"	kind:variable	line:175
+Gauss	../task_weeks/task_week4/kernel.py	/^def Gauss(x, y):$/;"	kind:function	line:16
+Generator	../PyTorch-SRGAN-master/models.py	/^class Generator(nn.Module):$/;"	kind:class	line:44
+Generator	../PyTorch-SRGAN-master/test.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:16
+Generator	../PyTorch-SRGAN-master/train.py	/^from models import Generator, Discriminator, FeatureExtractor$/;"	kind:namespace	line:19
+Gnn	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    Gnn = G()$/;"	kind:variable	line:135
+Gnn	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    Gnn = G()$/;"	kind:variable	line:132
+Gnn	../GAN/avator/train_DCGAN.py	/^    Gnn = G()$/;"	kind:variable	line:139
+IMG_DIR	../AnimeProject/demo2_DCGAN/clip.py	/^IMG_DIR = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/LL' $/;"	kind:variable	line:4
+IMG_PATH	../AnimeProject/demo3_pokemon/crop.py	/^IMG_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/Task\/AnimeProject\/demo3_pokemon\/icon_180103.png'$/;"	kind:variable	line:3
+Image	../AnimeProject/demo1_AnimeGAN/run.py	/^from PIL import Image$/;"	kind:namespace	line:2
+Image	../AnimeProject/demo2_DCGAN/clip.py	/^from PIL import Image$/;"	kind:namespace	line:2
+Image	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import PIL.Image as Image$/;"	kind:namespace	line:10
+Image	../AnimeProject/demo3_pokemon/crop.py	/^import PIL.Image as Image$/;"	kind:namespace	line:2
+Image	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import PIL.Image as Image$/;"	kind:namespace	line:10
+Image	../GAN/avator/train_DCGAN.py	/^import PIL.Image as Image$/;"	kind:namespace	line:11
+Image	../GAN/avator/train_WGAN-GP.py	/^import PIL.Image as Image$/;"	kind:namespace	line:11
+Image	../animeGAN-master/build_face_dataset.py	/^from PIL import Image$/;"	kind:namespace	line:3
+Image	../task_weeks/task_week5/imageTranser.py	/^from PIL import Image$/;"	kind:namespace	line:7
+InfoGAN	../task_weeks/task_week6/infoGAN.py	/^class InfoGAN(object):$/;"	kind:class	line:66
+K	../task_weeks/task_week4/SVM.py	/^K = [None, k.liner, k.multi, k.Gauss, k.Laplace, k.sigmoid]$/;"	kind:variable	line:8
+Laplace	../task_weeks/task_week4/kernel.py	/^def Laplace(x, y):$/;"	kind:function	line:20
+Laplace-bayes.py	../task_weeks/Task_week2/Laplace-bayes.py	1;"	kind:file	line:1
+MP	../AnimeProject/demo2_DCGAN/crawl.py	/^MP = True$/;"	kind:variable	line:10
+MP_NUM	../AnimeProject/demo3_pokemon/crawl.1.py	/^MP_NUM = 0$/;"	kind:variable	line:8
+N	../task_weeks/Task_week1/Tree.py	/^N = 350$/;"	kind:variable	line:4
+N	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^N = 350$/;"	kind:variable	line:4
+N	../task_weeks/Task_week1/kNN_未处理数据.py	/^N = 350$/;"	kind:variable	line:4
+N	../task_weeks/Task_week2/k_means_HR.py	/^N = 5000$/;"	kind:variable	line:4
+NEWSPIDER_MODULE	../WebCrawler/scrapyTestWhy/scrapyTestWhy/settings.py	/^NEWSPIDER_MODULE = 'scrapyTestWhy.spiders'$/;"	kind:variable	line:15
+Net	../task_weeks/Task_week2/BayesNet.py	/^class Net(object):$/;"	kind:class	line:23
+Net	../task_weeks/task_week3/BP.py	/^class Net(object):$/;"	kind:class	line:11
+Next	../task_weeks/task_week3/calGraph.py	/^    Next = None$/;"	kind:variable	line:10
+Node	../task_weeks/Task_week2/BayesNet.py	/^class Node(object):$/;"	kind:class	line:14
+PIL	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import PIL.Image as Image$/;"	kind:namespace	line:10
+PIL	../AnimeProject/demo3_pokemon/crop.py	/^import PIL.Image as Image$/;"	kind:namespace	line:2
+PIL	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import PIL.Image as Image$/;"	kind:namespace	line:10
+PIL	../GAN/avator/train_DCGAN.py	/^import PIL.Image as Image$/;"	kind:namespace	line:11
+PIL	../GAN/avator/train_WGAN-GP.py	/^import PIL.Image as Image$/;"	kind:namespace	line:11
+Pool	../animeGAN-master/build_face_dataset.py	/^from multiprocessing import Pool$/;"	kind:namespace	line:2
+PredFunc	../task_weeks/task_week4/Bayes.py	/^class PredFunc(object):$/;"	kind:class	line:6
+PredFunc	../task_weeks/task_week4/QDA.py	/^class PredFunc(object):$/;"	kind:class	line:5
+QDA.py	../task_weeks/task_week4/QDA.py	1;"	kind:file	line:1
+ROBOTSTXT_OBEY	../WebCrawler/scrapyTestWhy/scrapyTestWhy/settings.py	/^ROBOTSTXT_OBEY = True$/;"	kind:variable	line:22
+ROOT_URL	../AnimeProject/demo2_DCGAN/crawl.py	/^ROOT_URL = 'https:\/\/db.loveliv.es\/card\/number\/'$/;"	kind:variable	line:7
+ROOT_URL	../AnimeProject/demo3_pokemon/crawl.1.py	/^ROOT_URL = 'http:\/\/wiki.52poke.com\/wiki\/%E5%AE%9D%E5%8F%AF%E6%A2%A6%E5%88%97%E8%A1%A8%EF%BC%88%E6%8C%89%E5%85%A8%E5%9B%BD%E5%9B%BE%E9%89%B4%E7%BC%96%E5%8F%B7%EF%BC%89'$/;"	kind:variable	line:10
+RandForest.py	../task_weeks/Task_week2/RandForest.py	1;"	kind:file	line:1
+SAVE_METHOD	../AnimeProject/demo2_DCGAN/crawl.py	/^SAVE_METHOD = 0$/;"	kind:variable	line:11
+SAVE_PATH	../AnimeProject/demo2_DCGAN/crawl.py	/^SAVE_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/LL'$/;"	kind:variable	line:8
+SAVE_PATH	../AnimeProject/demo3_pokemon/crawl.1.py	/^SAVE_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/pokemon\/'$/;"	kind:variable	line:11
+SAVE_PATH	../AnimeProject/demo3_pokemon/crop.py	/^SAVE_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/icon'$/;"	kind:variable	line:4
+SEEN_PATH	../AnimeProject/demo2_DCGAN/crawl.py	/^SEEN_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/LL_old'$/;"	kind:variable	line:9
+SEEN_PATH	../AnimeProject/demo3_pokemon/crawl.1.py	/^SEEN_PATH = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/pokemon_old'$/;"	kind:variable	line:12
+SET_Z	../AnimeProject/demo1_AnimeGAN/run.py	/^SET_Z = False$/;"	kind:variable	line:10
+SHOW	../AnimeProject/demo2_DCGAN/config.py	/^SHOW = True$/;"	kind:variable	line:10
+SPIDER_MODULES	../WebCrawler/scrapyTestWhy/scrapyTestWhy/settings.py	/^SPIDER_MODULES = ['scrapyTestWhy.spiders']$/;"	kind:variable	line:14
+SVM.py	../task_weeks/task_week4/SVM.py	1;"	kind:file	line:1
+ScrapytestwhyDownloaderMiddleware	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^class ScrapytestwhyDownloaderMiddleware(object):$/;"	kind:class	line:59
+ScrapytestwhyItem	../WebCrawler/scrapyTestWhy/scrapyTestWhy/items.py	/^class ScrapytestwhyItem(scrapy.Item):$/;"	kind:class	line:11
+ScrapytestwhyPipeline	../WebCrawler/scrapyTestWhy/scrapyTestWhy/pipelines.py	/^class ScrapytestwhyPipeline(object):$/;"	kind:class	line:9
+ScrapytestwhySpiderMiddleware	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^class ScrapytestwhySpiderMiddleware(object):$/;"	kind:class	line:11
+Spider	../AnimeProject/demo2_DCGAN/crawl.py	/^class Spider(object):$/;"	kind:class	line:13
+Spider	../AnimeProject/demo3_pokemon/crawl.1.py	/^class Spider(object):$/;"	kind:class	line:15
+T	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:6
+T	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:6
+T	../GAN/avator/train_DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:7
+T	../GAN/avator/train_WGAN-GP.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:10
+T	../task_weeks/task_week6/DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:2
+T	../task_weeks/task_week6/infoGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:2
+TestNet	../AnimeProject/demo2_DCGAN/test.py	/^class TestNet(object):$/;"	kind:class	line:18
+TestNet	../AnimeProject/demo3_pokemon/test.py	/^class TestNet(object):$/;"	kind:class	line:18
+TestNet	../GAN/avator/test.py	/^class TestNet(object):$/;"	kind:class	line:17
+Tree.py	../task_weeks/Task_week1/Tree.py	1;"	kind:file	line:1
+Variable	../AnimeProject/demo1_AnimeGAN/main.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:15
+Variable	../PyTorch-SRGAN-master/models.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:7
+Variable	../PyTorch-SRGAN-master/test.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:9
+Variable	../PyTorch-SRGAN-master/train.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:11
+Visualizer	../PyTorch-SRGAN-master/train.py	/^from utils import Visualizer$/;"	kind:namespace	line:20
+Visualizer	../PyTorch-SRGAN-master/utils.py	/^class Visualizer:$/;"	kind:class	line:12
+WGAN	../GAN/avator/train_WGAN-GP.py	/^class WGAN(object):$/;"	kind:class	line:59
+WhyspiderSpider	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	/^class WhyspiderSpider(scrapy.Spider):$/;"	kind:class	line:5
+__getitem__	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    def __getitem__(self, ix):$/;"	kind:member	line:35
+__getitem__	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    def __getitem__(self, ix):$/;"	kind:member	line:33
+__getitem__	../GAN/avator/train_DCGAN.py	/^    def __getitem__(self, ix):$/;"	kind:member	line:57
+__getitem__	../GAN/avator/train_WGAN-GP.py	/^    def __getitem__(self, ix):$/;"	kind:member	line:31
+__init__	../AnimeProject/demo1_AnimeGAN/models.py	/^    def __init__(self, ngpu, nz, nc , ndf):$/;"	kind:member	line:115
+__init__	../AnimeProject/demo1_AnimeGAN/models.py	/^    def __init__(self, ngpu, nz, nc , ngf):$/;"	kind:member	line:157
+__init__	../AnimeProject/demo1_AnimeGAN/models.py	/^    def __init__(self, ngpu, nz, nc , ngf):$/;"	kind:member	line:214
+__init__	../AnimeProject/demo1_AnimeGAN/models.py	/^    def __init__(self, ngpu, nz, nc , ngf, n_extra_layers_g):$/;"	kind:member	line:16
+__init__	../AnimeProject/demo1_AnimeGAN/models.py	/^    def __init__(self, ngpu, nz, nc, ndf,  n_extra_layers_d):$/;"	kind:member	line:67
+__init__	../AnimeProject/demo2_DCGAN/crawl.py	/^    def __init__(self):$/;"	kind:member	line:14
+__init__	../AnimeProject/demo2_DCGAN/model64.py	/^    def __init__(self):$/;"	kind:member	line:45
+__init__	../AnimeProject/demo2_DCGAN/model64.py	/^    def __init__(self):$/;"	kind:member	line:7
+__init__	../AnimeProject/demo2_DCGAN/test.py	/^    def __init__(self):$/;"	kind:member	line:19
+__init__	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    def __init__(self, imgPath):$/;"	kind:member	line:28
+__init__	../AnimeProject/demo3_pokemon/crawl.1.py	/^    def __init__(self):$/;"	kind:member	line:16
+__init__	../AnimeProject/demo3_pokemon/model32.py	/^    def __init__(self):$/;"	kind:member	line:40
+__init__	../AnimeProject/demo3_pokemon/model32.py	/^    def __init__(self):$/;"	kind:member	line:7
+__init__	../AnimeProject/demo3_pokemon/model64.py	/^    def __init__(self):$/;"	kind:member	line:45
+__init__	../AnimeProject/demo3_pokemon/model64.py	/^    def __init__(self):$/;"	kind:member	line:7
+__init__	../AnimeProject/demo3_pokemon/test.py	/^    def __init__(self):$/;"	kind:member	line:19
+__init__	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    def __init__(self, imgPath):$/;"	kind:member	line:26
+__init__	../GAN/avator/model2.py	/^    def __init__(self):$/;"	kind:member	line:14
+__init__	../GAN/avator/model2.py	/^    def __init__(self):$/;"	kind:member	line:52
+__init__	../GAN/avator/test.py	/^    def __init__(self):$/;"	kind:member	line:18
+__init__	../GAN/avator/train_DCGAN.py	/^    def __init__(self, imgPath):$/;"	kind:member	line:50
+__init__	../GAN/avator/train_WGAN-GP.py	/^    def __init__(self):$/;"	kind:member	line:60
+__init__	../GAN/avator/train_WGAN-GP.py	/^    def __init__(self, imgPath):$/;"	kind:member	line:24
+__init__	../GAN/avator/train_WGAN-GP.py	/^    def __init__(self, lamda=10):$/;"	kind:member	line:39
+__init__	../PyTorch-SRGAN-master/models.py	/^    def __init__(self):$/;"	kind:member	line:78
+__init__	../PyTorch-SRGAN-master/models.py	/^    def __init__(self, cnn, feature_layer=11):$/;"	kind:member	line:13
+__init__	../PyTorch-SRGAN-master/models.py	/^    def __init__(self, in_channels, out_channels):$/;"	kind:member	line:36
+__init__	../PyTorch-SRGAN-master/models.py	/^    def __init__(self, in_channels=64, k=3, n=64, s=1):$/;"	kind:member	line:22
+__init__	../PyTorch-SRGAN-master/models.py	/^    def __init__(self, n_residual_blocks, upsample_factor):$/;"	kind:member	line:45
+__init__	../PyTorch-SRGAN-master/utils.py	/^    def __init__(self, show_step=10, image_size=30):$/;"	kind:member	line:13
+__init__	../task_weeks/Task_week2/BayesNet.py	/^    def __init__(self, matrix):$/;"	kind:member	line:24
+__init__	../task_weeks/Task_week2/BayesNet.py	/^    def __init__(self, no, prt, chld, value):$/;"	kind:member	line:15
+__init__	../task_weeks/Task_week2/RandForest.py	/^    def __init__(self, trainData, testData, trainLabel, testLabel):$/;"	kind:member	line:26
+__init__	../task_weeks/task_week3/BP.py	/^    def __init__(self, size):$/;"	kind:member	line:12
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, data):$/;"	kind:member	line:5
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x):$/;"	kind:member	line:35
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x):$/;"	kind:member	line:43
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x):$/;"	kind:member	line:59
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x):$/;"	kind:member	line:67
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x, index):$/;"	kind:member	line:51
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x, y):$/;"	kind:member	line:19
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x, y):$/;"	kind:member	line:27
+__init__	../task_weeks/task_week3/calGraph.py	/^    def __init__(self, x, y):$/;"	kind:member	line:74
+__init__	../task_weeks/task_week4/Bayes.py	/^    def __init__(self, miu, sigma, Pc, label):$/;"	kind:member	line:7
+__init__	../task_weeks/task_week4/QDA.py	/^    def __init__(self, ave, sigma, pi, label):$/;"	kind:member	line:6
+__init__	../task_weeks/task_week5/imageTranser.py	/^    def __init__(self, content, weight):$/;"	kind:member	line:48
+__init__	../task_weeks/task_week5/imageTranser.py	/^    def __init__(self, target, weight):$/;"	kind:member	line:64
+__init__	../task_weeks/task_week6/infoGAN.py	/^    def __init__(self):$/;"	kind:member	line:18
+__init__	../task_weeks/task_week6/infoGAN.py	/^    def __init__(self):$/;"	kind:member	line:45
+__init__	../task_weeks/task_week6/infoGAN.py	/^    def __init__(self, GNet, DNet):$/;"	kind:member	line:67
+__init__	../task_weeks/task_week6/model.py	/^    def __init__(self):$/;"	kind:member	line:10
+__init__	../task_weeks/task_week6/model.py	/^    def __init__(self):$/;"	kind:member	line:36
+__init__.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/__init__.py	1;"	kind:file	line:1
+__init__.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/__init__.py	1;"	kind:file	line:1
+__init__.py	../why@bin/pythonLib/whyAI/__init__.py	1;"	kind:file	line:1
+__len__	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    def __len__(self):$/;"	kind:member	line:32
+__len__	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    def __len__(self):$/;"	kind:member	line:30
+__len__	../GAN/avator/train_DCGAN.py	/^    def __len__(self):$/;"	kind:member	line:54
+__len__	../GAN/avator/train_WGAN-GP.py	/^    def __len__(self):$/;"	kind:member	line:28
+_netD_1	../AnimeProject/demo1_AnimeGAN/models.py	/^class _netD_1(nn.Module):$/;"	kind:class	line:66
+_netD_2	../AnimeProject/demo1_AnimeGAN/models.py	/^class _netD_2(nn.Module):$/;"	kind:class	line:114
+_netG_1	../AnimeProject/demo1_AnimeGAN/models.py	/^class _netG_1(nn.Module):$/;"	kind:class	line:15
+_netG_2	../AnimeProject/demo1_AnimeGAN/models.py	/^class _netG_2(nn.Module):$/;"	kind:class	line:156
+_netG_3	../AnimeProject/demo1_AnimeGAN/models.py	/^class _netG_3(nn.Module):$/;"	kind:class	line:213
+acc	../task_weeks/task_week3/BP.py	/^acc = nn.test(testData, testLabel)$/;"	kind:variable	line:141
+acc	../task_weeks/task_week4/Bayes.py	/^acc = F.test(testData, testLabel, func)$/;"	kind:variable	line:31
+acc	../task_weeks/task_week4/QDA.py	/^acc = F.test(testData, testLabel, func)$/;"	kind:variable	line:31
+acc	../task_weeks/task_week4/SVM.py	/^acc = test(testData, testLabel, trainData, trainLabel, alpha, b, kernel)$/;"	kind:variable	line:128
+adversarial_criterion	../PyTorch-SRGAN-master/test.py	/^adversarial_criterion = nn.BCELoss()$/;"	kind:variable	line:83
+adversarial_criterion	../PyTorch-SRGAN-master/train.py	/^adversarial_criterion = nn.BCELoss()$/;"	kind:variable	line:85
+allowed_domains	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	/^    allowed_domains = ['gelbooru.com']$/;"	kind:variable	line:7
+alpha	../AnimeProject/demo2_DCGAN/plot.py	/^alpha = 0.8$/;"	kind:variable	line:10
+alpha	../AnimeProject/demo3_pokemon/plot.py	/^alpha = 0.8$/;"	kind:variable	line:10
+alpha	../GAN/avator/plot.py	/^alpha = 0.8$/;"	kind:variable	line:10
+alpha	../task_weeks/task_week3/BP.py	/^alpha = 0.01$/;"	kind:variable	line:6
+animeface	../animeGAN-master/build_face_dataset.py	/^import animeface$/;"	kind:namespace	line:5
+argparse	../AnimeProject/demo1_AnimeGAN/main.py	/^import argparse$/;"	kind:namespace	line:5
+argparse	../PyTorch-SRGAN-master/test.py	/^import argparse$/;"	kind:namespace	line:3
+argparse	../PyTorch-SRGAN-master/train.py	/^import argparse$/;"	kind:namespace	line:3
+arrow	../task_weeks/Task_week2/draw_Tree.py	/^arrow = dict(arrowstyle = '<-')$/;"	kind:variable	line:7
+autograd	../GAN/avator/train_WGAN-GP.py	/^from torch import autograd$/;"	kind:namespace	line:8
+backValue	../task_weeks/task_week3/calGraph.py	/^    backValue = None$/;"	kind:variable	line:13
+backends	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.backends.cudnn as cudnn$/;"	kind:namespace	line:9
+backward	../task_weeks/task_week5/imageTranser.py	/^    def backward(self):$/;"	kind:member	line:58
+backward	../task_weeks/task_week5/imageTranser.py	/^    def backward(self):$/;"	kind:member	line:77
+base_dir	../animeGAN-master/build_face_dataset.py	/^base_dir = '\/home\/jielei\/gallery-dl\/danbooru'$/;"	kind:variable	line:96
+batch	../task_weeks/task_week3/BP.py	/^batch = 4$/;"	kind:variable	line:4
+batchNum	../AnimeProject/demo2_DCGAN/test.py	/^batchNum = 1$/;"	kind:variable	line:10
+batchNum	../AnimeProject/demo3_pokemon/test.py	/^batchNum = 1$/;"	kind:variable	line:10
+batchNum	../GAN/avator/test.py	/^batchNum = 1$/;"	kind:variable	line:9
+batchSize	../AnimeProject/demo2_DCGAN/config.py	/^batchSize = 8$/;"	kind:variable	line:13
+batchSize	../AnimeProject/demo2_DCGAN/test.py	/^batchSize = 64$/;"	kind:variable	line:9
+batchSize	../AnimeProject/demo3_pokemon/config_PM.py	/^batchSize = 64$/;"	kind:variable	line:10
+batchSize	../AnimeProject/demo3_pokemon/test.py	/^batchSize = 64$/;"	kind:variable	line:9
+batchSize	../GAN/avator/config.py	/^batchSize = 8$/;"	kind:variable	line:10
+batchSize	../GAN/avator/test.py	/^batchSize = 64$/;"	kind:variable	line:8
+batchSize	../GAN/avator/train_DCGAN.py	/^batchSize = 64$/;"	kind:variable	line:26
+batchSize	../task_weeks/task_week6/DCGAN.py	/^batchSize = 16$/;"	kind:variable	line:13
+batchSize	../task_weeks/task_week6/infoGAN.py	/^batchSize = 8$/;"	kind:variable	line:10
+batch_size	../AnimeProject/demo1_AnimeGAN/main.py	/^        batch_size = real_cpu.size(0)$/;"	kind:variable	line:162
+bernoulli_prob	../AnimeProject/demo1_AnimeGAN/main.py	/^    bernoulli_prob = torch.FloatTensor(opt.batchSize, nz, 1, 1).fill_(0.5)$/;"	kind:variable	line:128
+beta	../task_weeks/task_week4/kernel.py	/^beta = 1    # sigmoid核参数$/;"	kind:variable	line:4
+build_face_dataset.py	../animeGAN-master/build_face_dataset.py	1;"	kind:file	line:1
+cal	../task_weeks/Task_week1/Bayes.py	/^def cal(doc_vec, p_vec, pw_vec, doc_len):$/;"	kind:function	line:89
+cal	../task_weeks/task_week4/Bayes.py	/^    def cal(self, x):$/;"	kind:member	line:13
+cal	../task_weeks/task_week4/QDA.py	/^    def cal(self, x):$/;"	kind:member	line:12
+calGram	../task_weeks/task_week5/imageTranser.py	/^def calGram(featmap):$/;"	kind:function	line:40
+calGraph	../task_weeks/task_week3/calGraph.py	/^class calGraph(object):$/;"	kind:class	line:4
+calGraph.py	../task_weeks/task_week3/calGraph.py	1;"	kind:file	line:1
+calLoss	../task_weeks/task_week5/imageTranser.py	/^def calLoss(cnn, origin, target):$/;"	kind:function	line:82
+calProb	../task_weeks/Task_week2/BayesNet.py	/^    def calProb(self):$/;"	kind:member	line:73
+cal_DBI	../task_weeks/Task_week2/k_means_plus.py	/^def cal_DBI(category, ave, k):$/;"	kind:function	line:54
+cal_JC	../task_weeks/Task_week2/k_means_HR.py	/^def cal_JC(category, cate_label, label, k):$/;"	kind:function	line:41
+cal_PR	../task_weeks/Task_week2/DecisionTree.py	/^def cal_PR(predLabel, label):$/;"	kind:function	line:202
+cal_ROC	../task_weeks/Task_week2/DecisionTree.py	/^def cal_ROC(predLabel, label):$/;"	kind:function	line:187
+cal_ent	../task_weeks/Task_week1/Tree.py	/^def cal_ent(label):$/;"	kind:function	line:9
+cal_ent	../task_weeks/Task_week2/DecisionTree.py	/^def cal_ent(label):$/;"	kind:function	line:22
+cal_w	../task_weeks/task_week4/SVM.py	/^def cal_w(feat, alpha, trainData, trainLabel):$/;"	kind:function	line:12
+calc_gradient_penalty	../GAN/avator/train_WGAN-GP.py	/^    def calc_gradient_penalty(self, real_data, fake_data):$/;"	kind:member	line:88
+chooseAlpha	../task_weeks/task_week4/SVM.py	/^def chooseAlpha(trainData, trainLabel, b, alpha, index):$/;"	kind:function	line:23
+classify	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^def classify(train_data, train_label, test_data):$/;"	kind:function	line:8
+classify	../task_weeks/Task_week1/kNN_未处理数据.py	/^def classify(train_data, train_label, test_data):$/;"	kind:function	line:8
+classify	../task_weeks/Task_week2/DecisionTree.py	/^def classify(data, tree):$/;"	kind:function	line:119
+clip.py	../AnimeProject/demo2_DCGAN/clip.py	1;"	kind:file	line:1
+closure	../task_weeks/task_week5/imageTranser.py	/^        def closure():$/;"	kind:function	line:121
+cnn	../task_weeks/task_week5/imageTranser.py	/^cnn = (models.vgg19(pretrained=True).features).cuda().eval()$/;"	kind:variable	line:20
+config.py	../AnimeProject/demo2_DCGAN/config.py	1;"	kind:file	line:1
+config.py	../GAN/avator/config.py	1;"	kind:file	line:1
+config.py	../task_weeks/Task_week1/.ropeproject/config.py	1;"	kind:file	line:1
+config_PM.py	../AnimeProject/demo3_pokemon/config_PM.py	1;"	kind:file	line:1
+configure	../PyTorch-SRGAN-master/train.py	/^from tensorboard_logger import configure, log_value$/;"	kind:namespace	line:17
+contentLayers	../task_weeks/task_week5/imageTranser.py	/^contentLayers = ['conv_4']$/;"	kind:variable	line:17
+contentLoss	../task_weeks/task_week5/imageTranser.py	/^class contentLoss(nn.Module):$/;"	kind:class	line:47
+contentWeight	../task_weeks/task_week5/imageTranser.py	/^contentWeight = 1$/;"	kind:variable	line:15
+content_criterion	../PyTorch-SRGAN-master/test.py	/^content_criterion = nn.MSELoss()$/;"	kind:variable	line:82
+content_criterion	../PyTorch-SRGAN-master/train.py	/^content_criterion = nn.MSELoss()$/;"	kind:variable	line:84
+convert_img	../AnimeProject/demo1_AnimeGAN/run.py	/^def convert_img(img_tensor, nrow):$/;"	kind:function	line:21
+copy	../task_weeks/task_week5/imageTranser.py	/^import copy$/;"	kind:namespace	line:10
+craw	../WebCrawler/konachan检索页面爬虫.py	/^def craw(soup, pageNO):$/;"	kind:function	line:15
+crawl	../AnimeProject/demo2_DCGAN/crawl.py	/^    def crawl(self, num):$/;"	kind:member	line:47
+crawl	../AnimeProject/demo3_pokemon/crawl.1.py	/^    def crawl(self):$/;"	kind:member	line:43
+crawl.1.py	../AnimeProject/demo3_pokemon/crawl.1.py	1;"	kind:file	line:1
+crawl.py	../AnimeProject/demo2_DCGAN/crawl.py	1;"	kind:file	line:1
+crawl_all	../AnimeProject/demo2_DCGAN/crawl.py	/^    def crawl_all(self):$/;"	kind:member	line:52
+creatPlot	../task_weeks/Task_week2/draw_Tree.py	/^def creatPlot():$/;"	kind:function	line:14
+criterion	../AnimeProject/demo1_AnimeGAN/main.py	/^criterion = nn.BCELoss()$/;"	kind:variable	line:122
+criterion	../task_weeks/task_week6/DCGAN.py	/^criterion = nn.BCELoss()$/;"	kind:variable	line:14
+criterion_MSE	../AnimeProject/demo1_AnimeGAN/main.py	/^criterion_MSE = nn.MSELoss()$/;"	kind:variable	line:123
+crop	../AnimeProject/demo3_pokemon/crop.py	/^def crop(x, y, img):$/;"	kind:function	line:8
+crop.py	../AnimeProject/demo3_pokemon/crop.py	1;"	kind:file	line:1
+csv	../task_weeks/Task_week1/Tree.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week1/kNN_未处理数据.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week2/Laplace-bayes.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week2/k_means.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week2/k_means_HR.py	/^import csv$/;"	kind:namespace	line:2
+csv	../task_weeks/Task_week2/k_means_plus.py	/^import csv$/;"	kind:namespace	line:2
+cuda	../AnimeProject/demo2_DCGAN/config.py	/^cuda = False$/;"	kind:variable	line:7
+cuda	../AnimeProject/demo3_pokemon/config_PM.py	/^cuda = False$/;"	kind:variable	line:7
+cuda	../GAN/avator/config.py	/^cuda = False$/;"	kind:variable	line:7
+cuda	../GAN/avator/train_DCGAN.py	/^cuda = True$/;"	kind:variable	line:20
+cuda	../task_weeks/task_week6/DCGAN.py	/^cuda = True$/;"	kind:variable	line:8
+cudnn	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.backends.cudnn as cudnn$/;"	kind:namespace	line:9
+cut	../task_weeks/Task_week2/DecisionTree.py	/^def cut(tree, data, label):$/;"	kind:function	line:156
+d	../task_weeks/task_week4/kernel.py	/^d = 3   # 多项式核的指数$/;"	kind:variable	line:5
+dNet	../task_weeks/task_week6/DCGAN.py	/^    dNet = dNet.cuda()$/;"	kind:variable	line:26
+dNet	../task_weeks/task_week6/DCGAN.py	/^dNet = D()$/;"	kind:variable	line:24
+dSet	../task_weeks/task_week6/DCGAN.py	/^import torchvision.datasets as dSet$/;"	kind:namespace	line:1
+data	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.utils.data$/;"	kind:namespace	line:11
+data	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^        data = soup.find('img')$/;"	kind:variable	line:17
+data	../task_weeks/Task_week1/Tree.py	/^    data = [x for x in reader]$/;"	kind:variable	line:88
+data	../task_weeks/Task_week1/Tree.py	/^data = [x[0:-1] for x in data]$/;"	kind:variable	line:97
+data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^    data = [x for x in reader]$/;"	kind:variable	line:59
+data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^data = fill(data, length)$/;"	kind:variable	line:63
+data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^data = normalize(data, length)$/;"	kind:variable	line:64
+data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^data = np.array(data, dtype="float64")$/;"	kind:variable	line:60
+data	../task_weeks/Task_week1/kNN_未处理数据.py	/^    data = [x for x in reader]$/;"	kind:variable	line:33
+data	../task_weeks/Task_week1/kNN_未处理数据.py	/^data = np.array(data, dtype="float64")$/;"	kind:variable	line:34
+data	../task_weeks/Task_week2/BayesNet.py	/^data = load(divide=False)$/;"	kind:variable	line:95
+data	../task_weeks/Task_week2/k_means.py	/^data=load()$/;"	kind:variable	line:53
+data	../task_weeks/Task_week2/k_means_plus.py	/^data = load()$/;"	kind:variable	line:71
+dataNum	../task_weeks/Task_week2/RandForest.py	/^dataNum = 1000  # 训练集样本个数$/;"	kind:variable	line:5
+dataPath	../AnimeProject/demo2_DCGAN/config.py	/^dataPath = workDir + '\/data'/;"	kind:variable	line:33
+dataPath	../AnimeProject/demo2_DCGAN/plot.py	/^dataPath = workDir + '\/data'$/;"	kind:variable	line:7
+dataPath	../AnimeProject/demo3_pokemon/config_PM.py	/^dataPath = workDir + '\/data'/;"	kind:variable	line:28
+dataPath	../AnimeProject/demo3_pokemon/plot.py	/^dataPath = workDir + '\/data'$/;"	kind:variable	line:7
+dataPath	../GAN/avator/config.py	/^dataPath = workDir + '\/data'/;"	kind:variable	line:27
+dataPath	../GAN/avator/plot.py	/^dataPath = workDir + '\/data'$/;"	kind:variable	line:7
+dataPath	../GAN/avator/train_DCGAN.py	/^dataPath = workDir + '\/data'$/;"	kind:variable	line:39
+data_to_vector	../task_weeks/Task_week1/Bayes.py	/^def data_to_vector(word_list, data, num):  # 将每一篇文本转化为词向量$/;"	kind:function	line:54
+dataloader	../AnimeProject/demo1_AnimeGAN/main.py	/^dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batchSize,$/;"	kind:variable	line:101
+dataloader	../PyTorch-SRGAN-master/test.py	/^dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batchSize,$/;"	kind:variable	line:69
+dataloader	../PyTorch-SRGAN-master/train.py	/^dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batchSize,$/;"	kind:variable	line:71
+dataset	../AnimeProject/demo1_AnimeGAN/main.py	/^dataset = dset.ImageFolder($/;"	kind:variable	line:92
+dataset	../PyTorch-SRGAN-master/test.py	/^    dataset = datasets.CIFAR10(root=opt.dataroot, download=True, train=False, transform=transform)$/;"	kind:variable	line:64
+dataset	../PyTorch-SRGAN-master/test.py	/^    dataset = datasets.CIFAR100(root=opt.dataroot, download=True, train=False, transform=transform)$/;"	kind:variable	line:66
+dataset	../PyTorch-SRGAN-master/test.py	/^    dataset = datasets.ImageFolder(root=opt.dataroot, transform=transform)$/;"	kind:variable	line:62
+dataset	../PyTorch-SRGAN-master/train.py	/^    dataset = datasets.CIFAR10(root=opt.dataroot, train=True, download=True, transform=transform)$/;"	kind:variable	line:66
+dataset	../PyTorch-SRGAN-master/train.py	/^    dataset = datasets.CIFAR100(root=opt.dataroot, train=True, download=True, transform=transform)$/;"	kind:variable	line:68
+dataset	../PyTorch-SRGAN-master/train.py	/^    dataset = datasets.ImageFolder(root=opt.dataroot, transform=transform)$/;"	kind:variable	line:64
+dataset	../task_weeks/task_week6/infoGAN.py	/^import torchvision.datasets as dataset$/;"	kind:namespace	line:1
+datasets	../PyTorch-SRGAN-master/test.py	/^import torchvision.datasets as datasets$/;"	kind:namespace	line:12
+datasets	../PyTorch-SRGAN-master/train.py	/^import torchvision.datasets as datasets$/;"	kind:namespace	line:14
+demo.py	../RL/demo.py	1;"	kind:file	line:1
+device	../AnimeProject/demo1_AnimeGAN/run.py	/^device = torch.device('cuda') if CUDA else torch.device('cpu')$/;"	kind:variable	line:14
+device	../AnimeProject/demo2_DCGAN/test.py	/^device = torch.device($/;"	kind:variable	line:5
+device	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^device = torch.device($/;"	kind:variable	line:21
+device	../AnimeProject/demo3_pokemon/test.py	/^device = torch.device($/;"	kind:variable	line:5
+device	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^device = torch.device($/;"	kind:variable	line:19
+device	../GAN/avator/model2.py	/^device = torch.device($/;"	kind:variable	line:10
+device	../GAN/avator/test.py	/^device = torch.device($/;"	kind:variable	line:4
+device	../GAN/avator/train_DCGAN.py	/^device = torch.device($/;"	kind:variable	line:43
+device	../GAN/avator/train_WGAN-GP.py	/^device = torch.device($/;"	kind:variable	line:17
+device	../task_weeks/task_week6/DCGAN.py	/^device = torch.device("cuda" if cuda else "cpu")$/;"	kind:variable	line:15
+discriminator	../PyTorch-SRGAN-master/test.py	/^discriminator = Discriminator()$/;"	kind:variable	line:76
+discriminator	../PyTorch-SRGAN-master/train.py	/^discriminator = Discriminator()$/;"	kind:variable	line:78
+discriminator_loss	../PyTorch-SRGAN-master/test.py	/^                            adversarial_criterion(discriminator(Variable(high_res_fake.data)), target_fake)$/;"	kind:variable	line:128
+discriminator_loss	../PyTorch-SRGAN-master/train.py	/^                             adversarial_criterion(discriminator(Variable(high_res_fake.data)), target_fake)$/;"	kind:variable	line:181
+divide	../task_weeks/Task_week1/Tree.py	/^def divide(data, label, feature_no, mid_value):$/;"	kind:function	line:27
+divide	../task_weeks/Task_week2/DecisionTree.py	/^def divide(data, label, uqFeat):$/;"	kind:function	line:30
+divide	../task_weeks/Task_week2/k_means.py	/^def divide(data):$/;"	kind:function	line:14
+divide	../task_weeks/Task_week2/k_means_HR.py	/^def divide(data, label, k):$/;"	kind:function	line:70
+divide	../task_weeks/Task_week2/k_means_plus.py	/^def divide(data, k):$/;"	kind:function	line:15
+divide	../task_weeks/task_week4/function.py	/^def divide(trainData, trainLabel):$/;"	kind:function	line:22
+dot	../AnimeProject/demo2_DCGAN/plot.py	/^dot = False$/;"	kind:variable	line:11
+dot	../AnimeProject/demo3_pokemon/plot.py	/^dot = False$/;"	kind:variable	line:11
+dot	../GAN/avator/plot.py	/^dot = False$/;"	kind:variable	line:11
+dot	../task_weeks/task_week3/calGraph.py	/^class dot(node):$/;"	kind:class	line:72
+draw	../AnimeProject/demo2_DCGAN/plot.py	/^def draw(G, D, xlabel, name):$/;"	kind:function	line:20
+draw	../AnimeProject/demo3_pokemon/plot.py	/^def draw(G, D, xlabel, name):$/;"	kind:function	line:20
+draw	../GAN/avator/plot.py	/^def draw(G, D, xlabel, name):$/;"	kind:function	line:20
+draw_ROC	../task_weeks/Task_week2/DecisionTree.py	/^def draw_ROC(data, test_label, tree, leafNum):$/;"	kind:function	line:212
+draw_Tree.py	../task_weeks/Task_week2/draw_Tree.py	1;"	kind:file	line:1
+dset	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.datasets as dset$/;"	kind:namespace	line:12
+end_iter	../AnimeProject/demo1_AnimeGAN/main.py	/^        end_iter = time.time()$/;"	kind:variable	line:201
+env	../RL/demo.py	/^env = gym.make('CartPole-v0')$/;"	kind:variable	line:3
+epoch	../AnimeProject/demo2_DCGAN/config.py	/^epoch = 10$/;"	kind:variable	line:12
+epoch	../AnimeProject/demo3_pokemon/config_PM.py	/^epoch = 10$/;"	kind:variable	line:9
+epoch	../GAN/avator/config.py	/^epoch = 10$/;"	kind:variable	line:9
+epoch	../GAN/avator/train_DCGAN.py	/^epoch = 20$/;"	kind:variable	line:22
+epoch	../task_weeks/task_week3/BP.py	/^epoch = 200$/;"	kind:variable	line:5
+epoch	../task_weeks/task_week6/DCGAN.py	/^epoch = 10$/;"	kind:variable	line:9
+err	../AnimeProject/demo2_DCGAN/clip.py	/^    err = test()$/;"	kind:variable	line:38
+errD	../AnimeProject/demo1_AnimeGAN/main.py	/^        errD = errD_real + errD_fake$/;"	kind:variable	line:183
+errD	../task_weeks/task_week6/DCGAN.py	/^        errD = err_Dfake + err_D                # 综合loss$/;"	kind:variable	line:51
+errD_fake	../AnimeProject/demo1_AnimeGAN/main.py	/^        errD_fake = criterion(output, label)$/;"	kind:variable	line:180
+errD_real	../AnimeProject/demo1_AnimeGAN/main.py	/^        errD_real = criterion(output, label)$/;"	kind:variable	line:167
+errG	../AnimeProject/demo1_AnimeGAN/main.py	/^        errG = criterion(output, label)$/;"	kind:variable	line:192
+errG	../task_weeks/task_week6/DCGAN.py	/^        errG = criterion(output, label)         # 计算loss$/;"	kind:variable	line:58
+errG_z	../AnimeProject/demo1_AnimeGAN/main.py	/^            errG_z = criterion_MSE(z_prediction, noise)$/;"	kind:variable	line:196
+err_D	../task_weeks/task_week6/DCGAN.py	/^        err_D = criterion(output, label)        # 计算loss$/;"	kind:variable	line:40
+err_Dfake	../task_weeks/task_week6/DCGAN.py	/^        err_Dfake = criterion(output, label)    # 计算loss$/;"	kind:variable	line:48
+error	../task_weeks/Task_week1/Bayes.py	/^error = test(test_vector, test_label, p1_vec, p0_vec, pw_vec, 2*f_num[2])$/;"	kind:variable	line:117
+error	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^error = 0$/;"	kind:variable	line:75
+error	../task_weeks/Task_week1/kNN_未处理数据.py	/^error = 0$/;"	kind:variable	line:43
+exp	../task_weeks/task_week3/calGraph.py	/^class exp(node):$/;"	kind:class	line:32
+f	../WebCrawler/tmp.py	/^f = plt.figure()$/;"	kind:variable	line:5
+faceCrop	../animeGAN-master/build_face_dataset.py	/^def faceCrop(im,face_pos,m):$/;"	kind:function	line:11
+fake	../task_weeks/task_week6/DCGAN.py	/^            fake = gNet(fixed_noise)$/;"	kind:variable	line:68
+fake	../task_weeks/task_week6/DCGAN.py	/^        fake = gNet(noise)                      # 开始造假！$/;"	kind:variable	line:45
+fake_features	../PyTorch-SRGAN-master/test.py	/^    fake_features = feature_extractor(high_res_fake)$/;"	kind:variable	line:134
+fake_features	../PyTorch-SRGAN-master/train.py	/^        fake_features = feature_extractor(high_res_fake)$/;"	kind:variable	line:191
+fake_label	../AnimeProject/demo1_AnimeGAN/main.py	/^fake_label = 0$/;"	kind:variable	line:134
+feature_extractor	../PyTorch-SRGAN-master/test.py	/^feature_extractor =FeatureExtractor(torchvision.models.vgg19(pretrained=True))$/;"	kind:variable	line:81
+feature_extractor	../PyTorch-SRGAN-master/train.py	/^feature_extractor = FeatureExtractor(torchvision.models.vgg19(pretrained=True))$/;"	kind:variable	line:83
+fill	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^def fill(data, length):$/;"	kind:function	line:31
+findNext	../WebCrawler/konachan检索页面爬虫.py	/^def findNext(soup):$/;"	kind:function	line:30
+finder	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^finder = re.compile(r'\/\/gel.*view&id=.*')$/;"	kind:variable	line:6
+fixed_noise	../AnimeProject/demo1_AnimeGAN/main.py	/^    fixed_noise = torch.FloatTensor(opt.batchSize, nz, 1, 1).normal_(0, 1)$/;"	kind:variable	line:131
+fixed_noise	../AnimeProject/demo1_AnimeGAN/main.py	/^    fixed_noise = torch.bernoulli(bernoulli_prob)$/;"	kind:variable	line:129
+fixed_noise	../AnimeProject/demo1_AnimeGAN/main.py	/^fixed_noise = Variable(fixed_noise)$/;"	kind:variable	line:147
+fixed_noise	../task_weeks/task_week6/DCGAN.py	/^fixed_noise = torch.randn($/;"	kind:variable	line:30
+forest	../task_weeks/Task_week2/RandForest.py	/^forest = Forest(trainData, testData, trainLabel, testLabel)$/;"	kind:variable	line:62
+forward	../AnimeProject/demo1_AnimeGAN/models.py	/^    def forward(self, input):$/;"	kind:member	line:104
+forward	../AnimeProject/demo1_AnimeGAN/models.py	/^    def forward(self, input):$/;"	kind:member	line:147
+forward	../AnimeProject/demo1_AnimeGAN/models.py	/^    def forward(self, input):$/;"	kind:member	line:201
+forward	../AnimeProject/demo1_AnimeGAN/models.py	/^    def forward(self, input):$/;"	kind:member	line:249
+forward	../AnimeProject/demo1_AnimeGAN/models.py	/^    def forward(self, input):$/;"	kind:member	line:60
+forward	../AnimeProject/demo2_DCGAN/model64.py	/^    def forward(self, x):$/;"	kind:member	line:34
+forward	../AnimeProject/demo2_DCGAN/model64.py	/^    def forward(self, x):$/;"	kind:member	line:72
+forward	../AnimeProject/demo3_pokemon/model32.py	/^    def forward(self, x):$/;"	kind:member	line:29
+forward	../AnimeProject/demo3_pokemon/model32.py	/^    def forward(self, x):$/;"	kind:member	line:62
+forward	../AnimeProject/demo3_pokemon/model64.py	/^    def forward(self, x):$/;"	kind:member	line:34
+forward	../AnimeProject/demo3_pokemon/model64.py	/^    def forward(self, x):$/;"	kind:member	line:72
+forward	../GAN/avator/model2.py	/^    def forward(self, x):$/;"	kind:member	line:41
+forward	../GAN/avator/model2.py	/^    def forward(self, x):$/;"	kind:member	line:75
+forward	../GAN/avator/train_WGAN-GP.py	/^    def forward(self, D_output1, D_output2, x_grad):$/;"	kind:member	line:44
+forward	../PyTorch-SRGAN-master/models.py	/^    def forward(self, x):$/;"	kind:member	line:100
+forward	../PyTorch-SRGAN-master/models.py	/^    def forward(self, x):$/;"	kind:member	line:17
+forward	../PyTorch-SRGAN-master/models.py	/^    def forward(self, x):$/;"	kind:member	line:30
+forward	../PyTorch-SRGAN-master/models.py	/^    def forward(self, x):$/;"	kind:member	line:41
+forward	../PyTorch-SRGAN-master/models.py	/^    def forward(self, x):$/;"	kind:member	line:63
+forward	../task_weeks/task_week5/imageTranser.py	/^    def forward(self, input):$/;"	kind:member	line:54
+forward	../task_weeks/task_week5/imageTranser.py	/^    def forward(self, input):$/;"	kind:member	line:70
+forward	../task_weeks/task_week6/infoGAN.py	/^    def forward(self, x):$/;"	kind:member	line:34
+forward	../task_weeks/task_week6/infoGAN.py	/^    def forward(self, x):$/;"	kind:member	line:63
+forward	../task_weeks/task_week6/model.py	/^    def forward(self, x):$/;"	kind:member	line:29
+forward	../task_weeks/task_week6/model.py	/^    def forward(self, x):$/;"	kind:member	line:55
+forwdValue	../task_weeks/task_week3/calGraph.py	/^    forwdValue = None$/;"	kind:variable	line:12
+from_crawler	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def from_crawler(cls, crawler):$/;"	kind:member	line:17
+from_crawler	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def from_crawler(cls, crawler):$/;"	kind:member	line:65
+func	../task_weeks/task_week4/Bayes.py	/^func = train(trainData, trainLabel)$/;"	kind:variable	line:30
+func	../task_weeks/task_week4/QDA.py	/^func = train(trainData, trainLabel)$/;"	kind:variable	line:30
+function.py	../task_weeks/task_week4/function.py	1;"	kind:file	line:1
+gNet	../task_weeks/task_week6/DCGAN.py	/^    gNet = gNet.cuda()$/;"	kind:variable	line:27
+gNet	../task_weeks/task_week6/DCGAN.py	/^gNet = G()$/;"	kind:variable	line:23
+generator	../PyTorch-SRGAN-master/test.py	/^generator = Generator(16, opt.upSampling)$/;"	kind:variable	line:72
+generator	../PyTorch-SRGAN-master/train.py	/^generator = Generator(16, opt.upSampling)$/;"	kind:variable	line:74
+generator_adversarial_loss	../PyTorch-SRGAN-master/test.py	/^    generator_adversarial_loss = adversarial_criterion(discriminator(high_res_fake), target_real)$/;"	kind:variable	line:138
+generator_adversarial_loss	../PyTorch-SRGAN-master/train.py	/^        generator_adversarial_loss = adversarial_criterion(discriminator(high_res_fake), ones_const)$/;"	kind:variable	line:195
+generator_content_loss	../PyTorch-SRGAN-master/test.py	/^    generator_content_loss = content_criterion(high_res_fake, high_res_real) + 0.006*content_criterion(fake_features, real_features)$/;"	kind:variable	line:136
+generator_content_loss	../PyTorch-SRGAN-master/train.py	/^        generator_content_loss = content_criterion(high_res_fake, high_res_real) + 0.006*content_criterion(fake_features, real_features)$/;"	kind:variable	line:193
+generator_content_loss	../PyTorch-SRGAN-master/train.py	/^        generator_content_loss = content_criterion(high_res_fake, high_res_real)$/;"	kind:variable	line:130
+generator_total_loss	../PyTorch-SRGAN-master/test.py	/^    generator_total_loss = generator_content_loss + 1e-3*generator_adversarial_loss$/;"	kind:variable	line:141
+generator_total_loss	../PyTorch-SRGAN-master/train.py	/^        generator_total_loss = generator_content_loss + 1e-3*generator_adversarial_loss$/;"	kind:variable	line:198
+getArgs	../task_weeks/task_week3/BP.py	/^def getArgs():$/;"	kind:function	line:115
+getImg	../AnimeProject/demo2_DCGAN/crawl.py	/^    def getImg(self, imgUrl, num):$/;"	kind:member	line:34
+getImg	../AnimeProject/demo3_pokemon/crawl.1.py	/^    def getImg(self, url):$/;"	kind:member	line:21
+getUrl	../AnimeProject/demo2_DCGAN/crawl.py	/^    def getUrl(self, num):$/;"	kind:member	line:22
+getUrl	../AnimeProject/demo3_pokemon/crawl.1.py	/^    def getUrl(self):$/;"	kind:member	line:35
+graph	../task_weeks/task_week3/calGraph.py	/^graph = calGraph(0)$/;"	kind:variable	line:79
+gym	../RL/demo.py	/^import gym$/;"	kind:namespace	line:1
+high_res_fake	../PyTorch-SRGAN-master/test.py	/^        high_res_fake = generator(Variable(low_res))$/;"	kind:variable	line:123
+high_res_fake	../PyTorch-SRGAN-master/test.py	/^        high_res_fake = generator(Variable(low_res).cuda())$/;"	kind:variable	line:120
+high_res_fake	../PyTorch-SRGAN-master/train.py	/^            high_res_fake = generator(Variable(low_res))$/;"	kind:variable	line:125
+high_res_fake	../PyTorch-SRGAN-master/train.py	/^            high_res_fake = generator(Variable(low_res))$/;"	kind:variable	line:173
+high_res_fake	../PyTorch-SRGAN-master/train.py	/^            high_res_fake = generator(Variable(low_res).cuda())$/;"	kind:variable	line:122
+high_res_fake	../PyTorch-SRGAN-master/train.py	/^            high_res_fake = generator(Variable(low_res).cuda())$/;"	kind:variable	line:168
+high_res_real	../PyTorch-SRGAN-master/test.py	/^        high_res_real = Variable(high_res_real)$/;"	kind:variable	line:122
+high_res_real	../PyTorch-SRGAN-master/test.py	/^        high_res_real = Variable(high_res_real.cuda())$/;"	kind:variable	line:119
+high_res_real	../PyTorch-SRGAN-master/train.py	/^            high_res_real = Variable(high_res_real)$/;"	kind:variable	line:124
+high_res_real	../PyTorch-SRGAN-master/train.py	/^            high_res_real = Variable(high_res_real)$/;"	kind:variable	line:172
+high_res_real	../PyTorch-SRGAN-master/train.py	/^            high_res_real = Variable(high_res_real.cuda())$/;"	kind:variable	line:121
+high_res_real	../PyTorch-SRGAN-master/train.py	/^            high_res_real = Variable(high_res_real.cuda())$/;"	kind:variable	line:167
+i	../AnimeProject/demo3_pokemon/crawl.1.py	/^i = 0$/;"	kind:variable	line:7
+id	../task_weeks/task_week3/calGraph.py	/^    id = 0$/;"	kind:variable	line:17
+id	../task_weeks/task_week3/calGraph.py	/^    id = 1$/;"	kind:variable	line:25
+id	../task_weeks/task_week3/calGraph.py	/^    id = 2$/;"	kind:variable	line:33
+id	../task_weeks/task_week3/calGraph.py	/^    id = 3$/;"	kind:variable	line:41
+id	../task_weeks/task_week3/calGraph.py	/^    id = 4$/;"	kind:variable	line:49
+id	../task_weeks/task_week3/calGraph.py	/^    id = 5$/;"	kind:variable	line:57
+id	../task_weeks/task_week3/calGraph.py	/^    id = 6$/;"	kind:variable	line:65
+imageTranser.py	../task_weeks/task_week5/imageTranser.py	1;"	kind:file	line:1
+img	../AnimeProject/demo3_pokemon/crop.py	/^img = Image.open(IMG_PATH)$/;"	kind:variable	line:14
+img	../AnimeProject/demo3_pokemon/crop.py	/^img = img.copy()$/;"	kind:variable	line:15
+img	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^    img = finder.match(x['href'])$/;"	kind:variable	line:13
+img	../task_weeks/task_week5/imageTranser.py	/^img = origin.clone()$/;"	kind:variable	line:147
+imgPath	../AnimeProject/demo2_DCGAN/config.py	/^imgPath = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/LL'$/;"	kind:variable	line:30
+imgPath	../AnimeProject/demo2_DCGAN/config.py	/^imgPath = workDir + '\/faces'$/;"	kind:variable	line:29
+imgPath	../AnimeProject/demo3_pokemon/config_PM.py	/^imgPath = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/AnimeProject\/icon'$/;"	kind:variable	line:25
+imgPath	../GAN/avator/config.py	/^imgPath = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/faces'$/;"	kind:variable	line:24
+imgPath	../GAN/avator/config.py	/^imgPath = workDir + '\/faces'$/;"	kind:variable	line:23
+imgPath	../GAN/avator/train_DCGAN.py	/^imgPath = workDir + '\/faces'$/;"	kind:variable	line:36
+imgSize	../AnimeProject/demo2_DCGAN/config.py	/^imgSize = 64$/;"	kind:variable	line:17
+imgSize	../AnimeProject/demo3_pokemon/config_PM.py	/^imgSize = 32$/;"	kind:variable	line:13
+imgSize	../GAN/avator/config.py	/^imgSize = 64$/;"	kind:variable	line:14
+imgSize	../GAN/avator/train_DCGAN.py	/^imgSize = 64$/;"	kind:variable	line:25
+imgSize	../task_weeks/task_week5/imageTranser.py	/^imgSize = 200$/;"	kind:variable	line:13
+imgSize	../task_weeks/task_week6/DCGAN.py	/^imgSize = 32$/;"	kind:variable	line:12
+imgSize	../task_weeks/task_week6/model.py	/^imgSize = 500$/;"	kind:variable	line:7
+imgURL	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^        imgURL = img.group()$/;"	kind:variable	line:15
+imgs	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^imgs = response.find_all('a')$/;"	kind:variable	line:10
+infoGAN.py	../task_weeks/task_week6/infoGAN.py	1;"	kind:file	line:1
+init	../AnimeProject/demo2_DCGAN/test.py	/^    def init(self):$/;"	kind:member	line:24
+init	../AnimeProject/demo3_pokemon/test.py	/^    def init(self):$/;"	kind:member	line:24
+init	../GAN/avator/test.py	/^    def init(self):$/;"	kind:member	line:23
+init	../task_weeks/Task_week2/BayesNet.py	/^    def init(self, data):$/;"	kind:member	line:38
+input	../AnimeProject/demo1_AnimeGAN/main.py	/^input = Variable(input)$/;"	kind:variable	line:144
+input	../AnimeProject/demo1_AnimeGAN/main.py	/^input = torch.FloatTensor(opt.batchSize, 3, opt.imageSize, opt.imageSize)$/;"	kind:variable	line:125
+isDAG	../task_weeks/Task_week2/BayesNet.py	/^    def isDAG(self):$/;"	kind:member	line:27
+items.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/items.py	1;"	kind:file	line:1
+k	../GAN/avator/train_DCGAN.py	/^k = 3       # 每一轮训练多少次G$/;"	kind:variable	line:30
+k	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^k = 10$/;"	kind:variable	line:5
+k	../task_weeks/Task_week1/kNN_未处理数据.py	/^k = 10$/;"	kind:variable	line:5
+k	../task_weeks/Task_week2/DecisionTree.py	/^k = 10$/;"	kind:variable	line:5
+k	../task_weeks/Task_week2/RandForest.py	/^k = 3   # 选择k个特征比较信息熵$/;"	kind:variable	line:6
+k	../task_weeks/Task_week2/k_means.py	/^k=2$/;"	kind:variable	line:4
+k	../task_weeks/Task_week2/k_means_HR.py	/^k = 3$/;"	kind:variable	line:5
+k	../task_weeks/Task_week2/k_means_plus.py	/^k = DBI.index(min(DBI))$/;"	kind:variable	line:78
+k	../task_weeks/task_week4/SVM.py	/^import kernel as k$/;"	kind:namespace	line:2
+kNN_归一化＆缺失填充.py	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	1;"	kind:file	line:1
+kNN_未处理数据.py	../task_weeks/Task_week1/kNN_未处理数据.py	1;"	kind:file	line:1
+k_means.py	../task_weeks/Task_week2/k_means.py	1;"	kind:file	line:1
+k_means_HR.py	../task_weeks/Task_week2/k_means_HR.py	1;"	kind:file	line:1
+k_means_plus.py	../task_weeks/Task_week2/k_means_plus.py	1;"	kind:file	line:1
+kernel	../task_weeks/task_week4/SVM.py	/^kernel = 0  # 使用哪个核(0代表不使用，核函数编号见列表K)$/;"	kind:variable	line:6
+kernel.py	../task_weeks/task_week4/kernel.py	1;"	kind:file	line:1
+konachan检索页面爬虫.py	../WebCrawler/konachan检索页面爬虫.py	1;"	kind:file	line:1
+label	../AnimeProject/demo1_AnimeGAN/main.py	/^label = Variable(label)$/;"	kind:variable	line:145
+label	../AnimeProject/demo1_AnimeGAN/main.py	/^label = torch.FloatTensor(opt.batchSize)$/;"	kind:variable	line:132
+label	../task_weeks/Task_week1/Tree.py	/^label = [x[-1] for x in data]$/;"	kind:variable	line:96
+label	../task_weeks/task_week6/DCGAN.py	/^        label = torch.full((batchSize,), 1, device=device)          # 为所有真图片标记1$/;"	kind:variable	line:38
+lamda	../AnimeProject/demo2_DCGAN/config.py	/^lamda = 10$/;"	kind:variable	line:24
+lamda	../AnimeProject/demo3_pokemon/config_PM.py	/^lamda = 10$/;"	kind:variable	line:20
+lamda	../GAN/avator/config.py	/^lamda = 10$/;"	kind:variable	line:18
+leaf	../task_weeks/Task_week2/draw_Tree.py	/^leaf = dict(boxstyle = 'round4', fc = '0.8')$/;"	kind:variable	line:6
+leafNo	../task_weeks/Task_week2/DecisionTree.py	/^leafNo = -1$/;"	kind:variable	line:6
+length	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^length = len(data)$/;"	kind:variable	line:61
+liner	../task_weeks/task_week4/kernel.py	/^def liner(x, y):$/;"	kind:function	line:8
+linewidth	../AnimeProject/demo2_DCGAN/plot.py	/^linewidth = 1$/;"	kind:variable	line:9
+linewidth	../AnimeProject/demo3_pokemon/plot.py	/^linewidth = 1$/;"	kind:variable	line:9
+linewidth	../GAN/avator/plot.py	/^linewidth = 1$/;"	kind:variable	line:9
+load	../AnimeProject/demo1_AnimeGAN/run.py	/^def load(num):$/;"	kind:function	line:48
+load	../AnimeProject/demo2_DCGAN/plot.py	/^def load(path):$/;"	kind:function	line:14
+load	../AnimeProject/demo3_pokemon/plot.py	/^def load(path):$/;"	kind:function	line:14
+load	../GAN/avator/plot.py	/^def load(path):$/;"	kind:function	line:14
+load	../task_weeks/Task_week1/Bayes.py	/^def load():$/;"	kind:function	line:13
+load	../task_weeks/Task_week2/BayesNet.py	/^def load(divide):$/;"	kind:function	line:83
+load	../task_weeks/Task_week2/DecisionTree.py	/^def load(f_name, divide, delimiter):$/;"	kind:function	line:10
+load	../task_weeks/Task_week2/Laplace-bayes.py	/^def load():$/;"	kind:function	line:6
+load	../task_weeks/Task_week2/RandForest.py	/^def load(f_name, divide, delimiter):$/;"	kind:function	line:9
+load	../task_weeks/Task_week2/k_means.py	/^def load():$/;"	kind:function	line:6
+load	../task_weeks/Task_week2/k_means_HR.py	/^def load():$/;"	kind:function	line:8
+load	../task_weeks/Task_week2/k_means_plus.py	/^def load():$/;"	kind:function	line:7
+load	../task_weeks/task_week3/BP.py	/^def load(sheetNo, normalize):$/;"	kind:function	line:94
+load	../task_weeks/task_week4/function.py	/^def load(sheetNo, normalize):$/;"	kind:function	line:5
+loadImg	../task_weeks/task_week5/imageTranser.py	/^def loadImg(fname):$/;"	kind:function	line:24
+load_detect	../animeGAN-master/build_face_dataset.py	/^def load_detect(img_path):$/;"	kind:function	line:32
+load_model	../AnimeProject/demo2_DCGAN/config.py	/^load_model = True$/;"	kind:variable	line:8
+load_old	../AnimeProject/demo1_AnimeGAN/run.py	/^def load_old():$/;"	kind:function	line:29
+localPath	../WebCrawler/konachan检索页面爬虫.py	/^localPath = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet\/爬虫_landscape\/'$/;"	kind:variable	line:10
+log	../task_weeks/Task_week1/Tree.py	/^from math import log$/;"	kind:namespace	line:3
+log	../task_weeks/task_week3/calGraph.py	/^class log(node):$/;"	kind:class	line:40
+log_value	../PyTorch-SRGAN-master/train.py	/^from tensorboard_logger import configure, log_value$/;"	kind:namespace	line:17
+loopTimes	../task_weeks/task_week4/SVM.py	/^loopTimes = 4  # 更新alpha的循环次数$/;"	kind:variable	line:5
+lossFunc	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^lossFunc = nn.BCELoss()$/;"	kind:variable	line:20
+lossFunc	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^lossFunc = nn.BCELoss()$/;"	kind:variable	line:18
+lossFunc	../GAN/avator/train_DCGAN.py	/^lossFunc = nn.BCELoss()$/;"	kind:variable	line:42
+low_res	../PyTorch-SRGAN-master/test.py	/^low_res = torch.FloatTensor(opt.batchSize, 3, opt.imageSize, opt.imageSize)$/;"	kind:variable	line:98
+low_res	../PyTorch-SRGAN-master/train.py	/^low_res = torch.FloatTensor(opt.batchSize, 3, opt.imageSize, opt.imageSize)$/;"	kind:variable	line:104
+lr	../AnimeProject/demo2_DCGAN/config.py	/^lr = 0.0001$/;"	kind:variable	line:14
+lr	../AnimeProject/demo3_pokemon/config_PM.py	/^lr = 0.0001$/;"	kind:variable	line:11
+lr	../GAN/avator/config.py	/^lr = 0.0001$/;"	kind:variable	line:11
+lr	../GAN/avator/train_DCGAN.py	/^lr = 0.0002$/;"	kind:variable	line:23
+lr	../task_weeks/task_week6/DCGAN.py	/^lr = 0.01       # 学习率$/;"	kind:variable	line:10
+lr_scheduler	../PyTorch-SRGAN-master/train.py	/^import torch.optim.lr_scheduler as lr_scheduler$/;"	kind:namespace	line:9
+main.py	../AnimeProject/demo1_AnimeGAN/main.py	1;"	kind:file	line:1
+math	../task_weeks/Task_week2/Laplace-bayes.py	/^import math$/;"	kind:namespace	line:4
+math	../task_weeks/task_week3/BP.py	/^import math$/;"	kind:namespace	line:3
+matplotlib	../AnimeProject/demo2_DCGAN/clip.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	../AnimeProject/demo2_DCGAN/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+matplotlib	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    import matplotlib.pyplot as plt$/;"	kind:namespace	line:16
+matplotlib	../AnimeProject/demo3_pokemon/crop.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	../AnimeProject/demo3_pokemon/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+matplotlib	../GAN/avator/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+matplotlib	../PyTorch-SRGAN-master/utils.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:10
+matplotlib	../WebCrawler/tmp.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	../task_weeks/Task_week2/DecisionTree.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+matplotlib	../task_weeks/Task_week2/draw_Tree.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+matplotlib	../task_weeks/Task_week2/k_means.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+matplotlib	../task_weeks/Task_week2/k_means_HR.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+matplotlib	../task_weeks/Task_week2/k_means_plus.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+matplotlib	../task_weeks/task_week5/imageTranser.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:4
+matplotlib	../task_weeks/task_week6/infoGAN.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:4
+mean_discriminator_loss	../PyTorch-SRGAN-master/test.py	/^mean_discriminator_loss = 0.0$/;"	kind:variable	line:103
+mean_discriminator_loss	../PyTorch-SRGAN-master/train.py	/^    mean_discriminator_loss = 0.0$/;"	kind:variable	line:154
+mean_generator_adversarial_loss	../PyTorch-SRGAN-master/test.py	/^mean_generator_adversarial_loss = 0.0$/;"	kind:variable	line:101
+mean_generator_adversarial_loss	../PyTorch-SRGAN-master/train.py	/^    mean_generator_adversarial_loss = 0.0$/;"	kind:variable	line:152
+mean_generator_content_loss	../PyTorch-SRGAN-master/test.py	/^mean_generator_content_loss = 0.0$/;"	kind:variable	line:100
+mean_generator_content_loss	../PyTorch-SRGAN-master/train.py	/^    mean_generator_content_loss = 0.0$/;"	kind:variable	line:108
+mean_generator_content_loss	../PyTorch-SRGAN-master/train.py	/^    mean_generator_content_loss = 0.0$/;"	kind:variable	line:151
+mean_generator_total_loss	../PyTorch-SRGAN-master/test.py	/^mean_generator_total_loss = 0.0$/;"	kind:variable	line:102
+mean_generator_total_loss	../PyTorch-SRGAN-master/train.py	/^    mean_generator_total_loss = 0.0$/;"	kind:variable	line:153
+middlewares.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	1;"	kind:file	line:1
+min_resize_crop	../animeGAN-master/build_face_dataset.py	/^def min_resize_crop(im, min_side):$/;"	kind:function	line:23
+model.py	../task_weeks/task_week6/model.py	1;"	kind:file	line:1
+model2.py	../GAN/avator/model2.py	1;"	kind:file	line:1
+model32.py	../AnimeProject/demo3_pokemon/model32.py	1;"	kind:file	line:1
+model64.py	../AnimeProject/demo2_DCGAN/model64.py	1;"	kind:file	line:1
+model64.py	../AnimeProject/demo3_pokemon/model64.py	1;"	kind:file	line:1
+modelNum	../AnimeProject/demo1_AnimeGAN/run.py	/^modelNum = [0, 20, 40, 60, 80]$/;"	kind:variable	line:17
+modelNum	../AnimeProject/demo2_DCGAN/test.py	/^modelNum = [41, 61, 81, 101, 121, 141, 161, 181]$/;"	kind:variable	line:12
+modelNum	../AnimeProject/demo3_pokemon/test.py	/^modelNum = [25, 200]$/;"	kind:variable	line:12
+modelNum	../GAN/avator/test.py	/^modelNum = [1, 6, 10, 11, 16, 20]$/;"	kind:variable	line:11
+modelPath	../AnimeProject/demo2_DCGAN/config.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:32
+modelPath	../AnimeProject/demo2_DCGAN/test.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:15
+modelPath	../AnimeProject/demo3_pokemon/config_PM.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:27
+modelPath	../AnimeProject/demo3_pokemon/test.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:15
+modelPath	../GAN/avator/config.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:26
+modelPath	../GAN/avator/test.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:14
+modelPath	../GAN/avator/train_DCGAN.py	/^modelPath = workDir + '\/model'$/;"	kind:variable	line:38
+model_path	../AnimeProject/demo1_AnimeGAN/run.py	/^model_path = DIR + '\/Data\/'$/;"	kind:variable	line:12
+models	../AnimeProject/demo1_AnimeGAN/main.py	/^import models$/;"	kind:namespace	line:18
+models	../AnimeProject/demo1_AnimeGAN/run.py	/^import models$/;"	kind:namespace	line:7
+models	../task_weeks/task_week5/imageTranser.py	/^import torchvision.models as models$/;"	kind:namespace	line:2
+models.py	../AnimeProject/demo1_AnimeGAN/models.py	1;"	kind:file	line:1
+models.py	../PyTorch-SRGAN-master/models.py	1;"	kind:file	line:1
+mp	../AnimeProject/demo2_DCGAN/crawl.py	/^import multiprocessing as mp$/;"	kind:namespace	line:5
+mp	../AnimeProject/demo3_pokemon/crawl.1.py	/^import multiprocessing as mp$/;"	kind:namespace	line:5
+multi	../task_weeks/task_week4/kernel.py	/^def multi(x, y):$/;"	kind:function	line:12
+multi_construct_face_dataset	../animeGAN-master/build_face_dataset.py	/^def multi_construct_face_dataset(base_dir):$/;"	kind:function	line:84
+mutiply	../task_weeks/task_week3/calGraph.py	/^class mutiply(node):$/;"	kind:class	line:16
+n_D	../AnimeProject/demo2_DCGAN/config.py	/^n_D = 5     # train D_net 5 times in a iteration.$/;"	kind:variable	line:15
+n_D	../GAN/avator/config.py	/^n_D = 5     # train D_net 5 times in a iteration.$/;"	kind:variable	line:12
+n_extra_d	../AnimeProject/demo1_AnimeGAN/main.py	/^n_extra_d = opt.n_extra_layers_d$/;"	kind:variable	line:89
+n_extra_g	../AnimeProject/demo1_AnimeGAN/main.py	/^n_extra_g = opt.n_extra_layers_g$/;"	kind:variable	line:90
+name	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	/^    name = 'whySpider'$/;"	kind:variable	line:6
+nc	../AnimeProject/demo1_AnimeGAN/main.py	/^nc = 3$/;"	kind:variable	line:84
+nc	../AnimeProject/demo2_DCGAN/config.py	/^nc = 3      # num of channels$/;"	kind:variable	line:23
+nc	../AnimeProject/demo2_DCGAN/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nc	../AnimeProject/demo3_pokemon/config_PM.py	/^nc = 3      # num of channels$/;"	kind:variable	line:19
+nc	../AnimeProject/demo3_pokemon/model32.py	/^from config_PM import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nc	../AnimeProject/demo3_pokemon/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nc	../GAN/avator/config.py	/^nc = 3      # num of channels$/;"	kind:variable	line:17
+nc	../GAN/avator/model2.py	/^nc = 3         # channel数$/;"	kind:variable	line:7
+nc	../task_weeks/task_week6/model.py	/^nc = 1         # channel数$/;"	kind:variable	line:4
+ndf	../AnimeProject/demo1_AnimeGAN/main.py	/^ndf = opt.ndf$/;"	kind:variable	line:88
+ndf	../AnimeProject/demo2_DCGAN/config.py	/^ndf =64$/;"	kind:variable	line:21
+ndf	../AnimeProject/demo2_DCGAN/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ndf	../AnimeProject/demo3_pokemon/config_PM.py	/^ndf =64$/;"	kind:variable	line:17
+ndf	../AnimeProject/demo3_pokemon/model32.py	/^from config_PM import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ndf	../AnimeProject/demo3_pokemon/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ndf	../GAN/avator/model2.py	/^ndf = 64      # D的feature map数量$/;"	kind:variable	line:8
+ndf	../task_weeks/task_week6/model.py	/^ndf = 64      # 网络D的feature map数量$/;"	kind:variable	line:5
+net	../task_weeks/Task_week2/BayesNet.py	/^    net = Net(np.random.randint(0, 2, size=(varNum, varNum)))$/;"	kind:variable	line:97
+netD	../AnimeProject/demo1_AnimeGAN/main.py	/^    netD = models._netD_1(ngpu, nz, nc, ndf, n_extra_d)$/;"	kind:variable	line:107
+netD	../AnimeProject/demo1_AnimeGAN/main.py	/^    netD = models._netD_2(ngpu, nz, nc, ndf)$/;"	kind:variable	line:110
+netG	../AnimeProject/demo1_AnimeGAN/main.py	/^    netG = models._netG_1(ngpu, nz, nc, ngf, n_extra_g)$/;"	kind:variable	line:106
+netG	../AnimeProject/demo1_AnimeGAN/main.py	/^    netG = models._netG_2(ngpu, nz, nc, ngf)$/;"	kind:variable	line:109
+newLeafNo	../task_weeks/Task_week2/DecisionTree.py	/^newLeafNo = -1$/;"	kind:variable	line:7
+ngf	../AnimeProject/demo1_AnimeGAN/main.py	/^ngf = opt.ngf$/;"	kind:variable	line:87
+ngf	../AnimeProject/demo2_DCGAN/config.py	/^ngf =64$/;"	kind:variable	line:22
+ngf	../AnimeProject/demo2_DCGAN/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ngf	../AnimeProject/demo3_pokemon/config_PM.py	/^ngf =64$/;"	kind:variable	line:18
+ngf	../AnimeProject/demo3_pokemon/model32.py	/^from config_PM import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ngf	../AnimeProject/demo3_pokemon/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+ngf	../GAN/avator/model2.py	/^ngf = 64       # G的feature map数量$/;"	kind:variable	line:9
+ngf	../task_weeks/task_week6/model.py	/^ngf = 64       # 网络G的feature map数量$/;"	kind:variable	line:6
+ngpu	../AnimeProject/demo1_AnimeGAN/main.py	/^ngpu = opt.ngpu$/;"	kind:variable	line:85
+nn	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+nn	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.nn.parallel$/;"	kind:namespace	line:8
+nn	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch.nn as nn$/;"	kind:namespace	line:2
+nn	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch.nn.parallel$/;"	kind:namespace	line:3
+nn	../AnimeProject/demo2_DCGAN/model64.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+nn	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+nn	../AnimeProject/demo3_pokemon/model32.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+nn	../AnimeProject/demo3_pokemon/model64.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+nn	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+nn	../GAN/avator/model2.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+nn	../GAN/avator/train_DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+nn	../GAN/avator/train_WGAN-GP.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+nn	../PyTorch-SRGAN-master/models.py	/^import torch.nn as nn$/;"	kind:namespace	line:5
+nn	../PyTorch-SRGAN-master/models.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:6
+nn	../PyTorch-SRGAN-master/test.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+nn	../PyTorch-SRGAN-master/train.py	/^import torch.nn as nn$/;"	kind:namespace	line:10
+nn	../task_weeks/task_week3/BP.py	/^nn = Net(size)$/;"	kind:variable	line:137
+nn	../task_weeks/task_week5/imageTranser.py	/^import torch.nn as nn$/;"	kind:namespace	line:6
+nn	../task_weeks/task_week5/imageTranser.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+nn	../task_weeks/task_week6/DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:5
+nn	../task_weeks/task_week6/infoGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+nn	../task_weeks/task_week6/infoGAN.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+nn	../task_weeks/task_week6/model.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+node	../task_weeks/Task_week2/draw_Tree.py	/^node = dict(boxstyle = 'sawtooth', fc = '0.8')$/;"	kind:variable	line:5
+node	../task_weeks/task_week3/calGraph.py	/^class node(object):$/;"	kind:class	line:9
+noise	../AnimeProject/demo1_AnimeGAN/main.py	/^            noise = noise.squeeze()$/;"	kind:variable	line:195
+noise	../AnimeProject/demo1_AnimeGAN/main.py	/^noise = Variable(noise)$/;"	kind:variable	line:146
+noise	../AnimeProject/demo1_AnimeGAN/main.py	/^noise = torch.FloatTensor(opt.batchSize, nz, 1, 1)$/;"	kind:variable	line:126
+noise	../task_weeks/task_week6/DCGAN.py	/^        noise = torch.randn(batchSize, nz, 1, 1, device=device)     # 创建噪声向量$/;"	kind:variable	line:44
+normalize	../PyTorch-SRGAN-master/test.py	/^normalize = transforms.Normalize(mean = [0.485, 0.456, 0.406],$/;"	kind:variable	line:47
+normalize	../PyTorch-SRGAN-master/train.py	/^normalize = transforms.Normalize(mean = [0.485, 0.456, 0.406],$/;"	kind:variable	line:52
+normalize	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^def normalize(data, length):$/;"	kind:function	line:46
+normalize	../task_weeks/task_week3/BP.py	/^normalize = False$/;"	kind:variable	line:8
+normalize	../task_weeks/task_week4/Bayes.py	/^normalize = False$/;"	kind:variable	line:3
+normalize	../task_weeks/task_week4/SVM.py	/^normalize = True$/;"	kind:variable	line:4
+np	../AnimeProject/demo2_DCGAN/plot.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import numpy as np$/;"	kind:namespace	line:12
+np	../AnimeProject/demo3_pokemon/plot.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import numpy as np$/;"	kind:namespace	line:12
+np	../GAN/avator/plot.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../GAN/avator/train_DCGAN.py	/^import numpy as np$/;"	kind:namespace	line:13
+np	../GAN/avator/train_WGAN-GP.py	/^import numpy as np$/;"	kind:namespace	line:12
+np	../WebCrawler/tmp.py	/^import numpy as np$/;"	kind:namespace	line:2
+np	../animeGAN-master/build_face_dataset.py	/^import numpy as np$/;"	kind:namespace	line:4
+np	../task_weeks/Task_week1/Bayes.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week1/Tree.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week1/kNN_未处理数据.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/BayesNet.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/DecisionTree.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/Laplace-bayes.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/RandForest.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../task_weeks/Task_week2/k_means.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/k_means_HR.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/Task_week2/k_means_plus.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/task_week3/BP.py	/^import numpy as np$/;"	kind:namespace	line:2
+np	../task_weeks/task_week3/calGraph.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/task_week4/Bayes.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/task_week4/QDA.py	/^import numpy as np$/;"	kind:namespace	line:2
+np	../task_weeks/task_week4/SVM.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../task_weeks/task_week4/function.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/task_week4/kernel.py	/^import numpy as np$/;"	kind:namespace	line:1
+np	../task_weeks/task_week5/imageTranser.py	/^import numpy as np$/;"	kind:namespace	line:8
+np	../task_weeks/task_week6/infoGAN.py	/^import numpy as np$/;"	kind:namespace	line:8
+num	../AnimeProject/demo3_pokemon/crop.py	/^num = 32$/;"	kind:variable	line:5
+num	../WebCrawler/konachan检索页面爬虫.py	/^num = 1$/;"	kind:variable	line:8
+num	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^num = len(test_label)$/;"	kind:variable	line:76
+num	../task_weeks/Task_week1/kNN_未处理数据.py	/^num = len(test_label)$/;"	kind:variable	line:44
+num_steps	../task_weeks/task_week5/imageTranser.py	/^num_steps = 300$/;"	kind:variable	line:14
+nz	../AnimeProject/demo1_AnimeGAN/main.py	/^nz = opt.nz$/;"	kind:variable	line:86
+nz	../AnimeProject/demo2_DCGAN/config.py	/^nz = 100        # size of noise$/;"	kind:variable	line:16
+nz	../AnimeProject/demo2_DCGAN/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nz	../AnimeProject/demo2_DCGAN/test.py	/^nz = 100$/;"	kind:variable	line:8
+nz	../AnimeProject/demo3_pokemon/config_PM.py	/^nz = 100        # size of noise$/;"	kind:variable	line:12
+nz	../AnimeProject/demo3_pokemon/model32.py	/^from config_PM import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nz	../AnimeProject/demo3_pokemon/model64.py	/^from config import nz, nc, ndf, ngf$/;"	kind:namespace	line:3
+nz	../AnimeProject/demo3_pokemon/test.py	/^nz = 100$/;"	kind:variable	line:8
+nz	../GAN/avator/config.py	/^nz = 100        # size of noise$/;"	kind:variable	line:13
+nz	../GAN/avator/model2.py	/^nz = 100        # size of z$/;"	kind:variable	line:6
+nz	../GAN/avator/test.py	/^nz = 100$/;"	kind:variable	line:7
+nz	../GAN/avator/train_DCGAN.py	/^nz = 100        # 噪声的长度$/;"	kind:variable	line:24
+nz	../task_weeks/task_week6/DCGAN.py	/^nz = 100        # 白噪声向量的长度$/;"	kind:variable	line:11
+nz	../task_weeks/task_week6/infoGAN.py	/^nz = 100$/;"	kind:variable	line:12
+nz	../task_weeks/task_week6/model.py	/^nz = 100        # 白噪声向量的长度$/;"	kind:variable	line:3
+ones_const	../PyTorch-SRGAN-master/train.py	/^    ones_const = ones_const.cuda()$/;"	kind:variable	line:96
+ones_const	../PyTorch-SRGAN-master/train.py	/^ones_const = Variable(torch.ones(opt.batchSize, 1))$/;"	kind:variable	line:87
+opt	../AnimeProject/demo1_AnimeGAN/main.py	/^opt = parser.parse_args()$/;"	kind:variable	line:66
+opt	../PyTorch-SRGAN-master/test.py	/^opt = parser.parse_args()$/;"	kind:variable	line:30
+opt	../PyTorch-SRGAN-master/train.py	/^opt = parser.parse_args()$/;"	kind:variable	line:38
+optim	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.optim as optim$/;"	kind:namespace	line:10
+optim	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:2
+optim	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torch.optim as optim$/;"	kind:namespace	line:2
+optim	../GAN/avator/train_DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+optim	../GAN/avator/train_WGAN-GP.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+optim	../PyTorch-SRGAN-master/train.py	/^import torch.optim as optim$/;"	kind:namespace	line:8
+optim	../PyTorch-SRGAN-master/train.py	/^import torch.optim.lr_scheduler as lr_scheduler$/;"	kind:namespace	line:9
+optim	../task_weeks/Task_week2/BayesNet.py	/^    def optim(self, data):$/;"	kind:member	line:70
+optim	../task_weeks/task_week5/imageTranser.py	/^import torch.optim as optim$/;"	kind:namespace	line:5
+optim	../task_weeks/task_week6/DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+optim	../task_weeks/task_week6/infoGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:6
+optim_discriminator	../PyTorch-SRGAN-master/train.py	/^optim_discriminator = optim.Adam(discriminator.parameters(), lr=opt.discriminatorLR)$/;"	kind:variable	line:99
+optim_discriminator	../PyTorch-SRGAN-master/train.py	/^optim_discriminator = optim.Adam(discriminator.parameters(), lr=opt.discriminatorLR*0.1)$/;"	kind:variable	line:148
+optim_generator	../PyTorch-SRGAN-master/train.py	/^optim_generator = optim.Adam(generator.parameters(), lr=opt.generatorLR)$/;"	kind:variable	line:98
+optim_generator	../PyTorch-SRGAN-master/train.py	/^optim_generator = optim.Adam(generator.parameters(), lr=opt.generatorLR*0.1)$/;"	kind:variable	line:147
+optimize	../task_weeks/Task_week1/Tree.py	/^def optimize(data, label):$/;"	kind:function	line:44
+optimize	../task_weeks/Task_week2/DecisionTree.py	/^def optimize(data, label, k, valiData=False, valiLabel=False):$/;"	kind:function	line:51
+optimizerD	../AnimeProject/demo1_AnimeGAN/main.py	/^optimizerD = optim.Adam(netD.parameters(), lr = opt.lr, betas = (opt.beta1, 0.999))$/;"	kind:variable	line:150
+optimizerG	../AnimeProject/demo1_AnimeGAN/main.py	/^optimizerG = optim.Adam(netG.parameters(), lr = opt.lr, betas = (opt.beta1, 0.999))$/;"	kind:variable	line:151
+oriNet	../task_weeks/Task_week2/BayesNet.py	/^oriNet = np.array([$/;"	kind:variable	line:3
+origin	../task_weeks/task_week5/imageTranser.py	/^origin = loadImg("origin.jpg")$/;"	kind:variable	line:146
+os	../AnimeProject/demo1_AnimeGAN/main.py	/^import os$/;"	kind:namespace	line:2
+os	../AnimeProject/demo1_AnimeGAN/run.py	/^import os $/;"	kind:namespace	line:1
+os	../AnimeProject/demo2_DCGAN/clip.py	/^import os$/;"	kind:namespace	line:3
+os	../AnimeProject/demo2_DCGAN/config.py	/^import os$/;"	kind:namespace	line:1
+os	../AnimeProject/demo2_DCGAN/crawl.py	/^import os$/;"	kind:namespace	line:6
+os	../AnimeProject/demo2_DCGAN/plot.py	/^import os$/;"	kind:namespace	line:3
+os	../AnimeProject/demo2_DCGAN/test.py	/^import os$/;"	kind:namespace	line:1
+os	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import os$/;"	kind:namespace	line:11
+os	../AnimeProject/demo3_pokemon/config_PM.py	/^import os$/;"	kind:namespace	line:1
+os	../AnimeProject/demo3_pokemon/crawl.1.py	/^import os$/;"	kind:namespace	line:6
+os	../AnimeProject/demo3_pokemon/plot.py	/^import os$/;"	kind:namespace	line:3
+os	../AnimeProject/demo3_pokemon/test.py	/^import os$/;"	kind:namespace	line:1
+os	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import os$/;"	kind:namespace	line:11
+os	../GAN/avator/config.py	/^import os$/;"	kind:namespace	line:1
+os	../GAN/avator/plot.py	/^import os$/;"	kind:namespace	line:3
+os	../GAN/avator/train_DCGAN.py	/^import os$/;"	kind:namespace	line:12
+os	../GAN/avator/train_WGAN-GP.py	/^import os$/;"	kind:namespace	line:1
+os	../PyTorch-SRGAN-master/test.py	/^import os$/;"	kind:namespace	line:5
+os	../PyTorch-SRGAN-master/train.py	/^import os$/;"	kind:namespace	line:4
+os	../animeGAN-master/build_face_dataset.py	/^import os$/;"	kind:namespace	line:7
+os	../task_weeks/Task_week1/Bayes.py	/^import os$/;"	kind:namespace	line:2
+out	../task_weeks/task_week5/imageTranser.py	/^out = transfer(cnn, origin, target, img)$/;"	kind:variable	line:148
+output	../AnimeProject/demo1_AnimeGAN/main.py	/^        output = netD(fake)$/;"	kind:variable	line:191
+output	../AnimeProject/demo1_AnimeGAN/main.py	/^        output = netD(fake.detach()) # add ".detach()" to avoid backprop through G$/;"	kind:variable	line:179
+output	../AnimeProject/demo1_AnimeGAN/main.py	/^        output = netD(input)$/;"	kind:variable	line:166
+output	../task_weeks/task_week6/DCGAN.py	/^        output = dNet(fake)                     # 识别假图片$/;"	kind:variable	line:57
+output	../task_weeks/task_week6/DCGAN.py	/^        output = dNet(fake.detach())            # 识别假图片（不计算G中参数的梯度）$/;"	kind:variable	line:47
+output	../task_weeks/task_week6/DCGAN.py	/^        output = dNet(real)$/;"	kind:variable	line:39
+p_c	../task_weeks/Task_week1/Bayes.py	/^p_c = 0.5  # 文档是pos或者neg的概率$/;"	kind:variable	line:10
+pageNum	../WebCrawler/konachan检索页面爬虫.py	/^pageNum = 30$/;"	kind:variable	line:9
+paint	../task_weeks/Task_week2/k_means.py	/^def paint(category,ave):$/;"	kind:function	line:43
+paint	../task_weeks/Task_week2/k_means_HR.py	/^def paint(category, ave, k):$/;"	kind:function	line:108
+paint	../task_weeks/Task_week2/k_means_plus.py	/^def paint(category, ave, k):$/;"	kind:function	line:44
+parallel	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.nn.parallel$/;"	kind:namespace	line:8
+parallel	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch.nn.parallel$/;"	kind:namespace	line:3
+parse	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	/^    def parse(self, response):$/;"	kind:member	line:10
+parser	../AnimeProject/demo1_AnimeGAN/main.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:21
+parser	../PyTorch-SRGAN-master/test.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:18
+parser	../PyTorch-SRGAN-master/train.py	/^parser = argparse.ArgumentParser()$/;"	kind:variable	line:22
+path	../task_weeks/Task_week1/Bayes.py	/^path = (train_path1, train_path2, test_path1, test_path2)$/;"	kind:variable	line:8
+path	../task_weeks/task_week6/DCGAN.py	/^path = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/Task\/task_week6\/img'$/;"	kind:variable	line:16
+pd	../task_weeks/task_week3/BP.py	/^import pandas as pd$/;"	kind:namespace	line:1
+pd	../task_weeks/task_week4/function.py	/^import pandas as pd$/;"	kind:namespace	line:2
+per_num	../AnimeProject/demo1_AnimeGAN/run.py	/^per_num = 3$/;"	kind:variable	line:18
+pipelines.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/pipelines.py	1;"	kind:file	line:1
+plant	../task_weeks/Task_week2/DecisionTree.py	/^def plant(data, label, feat_label, valiData=False, valiLabel=False):$/;"	kind:function	line:94
+plant_tree	../task_weeks/Task_week1/Tree.py	/^def plant_tree(data, label):$/;"	kind:function	line:72
+plot	../AnimeProject/demo2_DCGAN/plot.py	/^def plot():$/;"	kind:function	line:35
+plot	../AnimeProject/demo3_pokemon/plot.py	/^def plot():$/;"	kind:function	line:35
+plot	../GAN/avator/plot.py	/^def plot():$/;"	kind:function	line:35
+plot.py	../AnimeProject/demo2_DCGAN/plot.py	1;"	kind:file	line:1
+plot.py	../AnimeProject/demo3_pokemon/plot.py	1;"	kind:file	line:1
+plot.py	../GAN/avator/plot.py	1;"	kind:file	line:1
+plotNode	../task_weeks/Task_week2/draw_Tree.py	/^def plotNode(nodeTxt, centrePt, parentPt, nodeType):$/;"	kind:function	line:9
+plotPath	../AnimeProject/demo2_DCGAN/plot.py	/^plotPath = workDir + '\/plot'$/;"	kind:variable	line:8
+plotPath	../AnimeProject/demo3_pokemon/plot.py	/^plotPath = workDir + '\/plot'$/;"	kind:variable	line:8
+plotPath	../GAN/avator/plot.py	/^plotPath = workDir + '\/plot'$/;"	kind:variable	line:8
+plt	../AnimeProject/demo2_DCGAN/clip.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	../AnimeProject/demo2_DCGAN/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+plt	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    import matplotlib.pyplot as plt$/;"	kind:namespace	line:16
+plt	../AnimeProject/demo3_pokemon/crop.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	../AnimeProject/demo3_pokemon/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+plt	../GAN/avator/plot.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+plt	../PyTorch-SRGAN-master/utils.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:10
+plt	../WebCrawler/tmp.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	../task_weeks/Task_week2/DecisionTree.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:2
+plt	../task_weeks/Task_week2/RandForest.py	/^import matplotlib as plt$/;"	kind:namespace	line:2
+plt	../task_weeks/Task_week2/draw_Tree.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:1
+plt	../task_weeks/Task_week2/k_means.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+plt	../task_weeks/Task_week2/k_means_HR.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+plt	../task_weeks/Task_week2/k_means_plus.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:3
+plt	../task_weeks/task_week5/imageTranser.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:4
+plt	../task_weeks/task_week6/infoGAN.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:4
+plus	../task_weeks/task_week3/calGraph.py	/^class plus(node):$/;"	kind:class	line:24
+power	../task_weeks/task_week3/calGraph.py	/^class power(node):$/;"	kind:class	line:48
+pre	../task_weeks/Task_week2/Laplace-bayes.py	/^pre=test(test_data, feat, p_xc, pc)$/;"	kind:variable	line:95
+pre	../task_weeks/task_week3/calGraph.py	/^    pre = None$/;"	kind:variable	line:11
+pred	../task_weeks/Task_week2/DecisionTree.py	/^def pred(data, tree):$/;"	kind:function	line:132
+pred	../task_weeks/task_week3/BP.py	/^    def pred(self, feat):$/;"	kind:member	line:22
+pred	../task_weeks/task_week4/SVM.py	/^def pred(feat, b, alpha, kernel, trainData, trainLabel):$/;"	kind:function	line:16
+print_function	../AnimeProject/demo1_AnimeGAN/main.py	/^from __future__ import print_function$/;"	kind:namespace	line:1
+print_function	../animeGAN-master/build_face_dataset.py	/^from __future__ import print_function$/;"	kind:namespace	line:1
+process_exception	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_exception(self, request, exception, spider):$/;"	kind:member	line:92
+process_img	../animeGAN-master/build_face_dataset.py	/^def process_img(img_path):$/;"	kind:function	line:55
+process_item	../WebCrawler/scrapyTestWhy/scrapyTestWhy/pipelines.py	/^    def process_item(self, item, spider):$/;"	kind:member	line:10
+process_request	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_request(self, request, spider):$/;"	kind:member	line:71
+process_response	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_response(self, request, response, spider):$/;"	kind:member	line:83
+process_spider_exception	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_spider_exception(self, response, exception, spider):$/;"	kind:member	line:38
+process_spider_input	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_spider_input(self, response, spider):$/;"	kind:member	line:23
+process_spider_output	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_spider_output(self, response, result, spider):$/;"	kind:member	line:30
+process_start_requests	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def process_start_requests(self, start_requests, spider):$/;"	kind:member	line:46
+project_opened	../task_weeks/Task_week1/.ropeproject/config.py	/^def project_opened(project):$/;"	kind:function	line:110
+randZ	../AnimeProject/demo2_DCGAN/test.py	/^randZ = True $/;"	kind:variable	line:7
+randZ	../AnimeProject/demo3_pokemon/test.py	/^randZ = False $/;"	kind:variable	line:7
+randZ	../GAN/avator/test.py	/^randZ = False $/;"	kind:variable	line:6
+random	../AnimeProject/demo1_AnimeGAN/main.py	/^import random$/;"	kind:namespace	line:4
+random	../AnimeProject/demo1_AnimeGAN/run.py	/^import random$/;"	kind:namespace	line:3
+random	../PyTorch-SRGAN-master/utils.py	/^import random$/;"	kind:namespace	line:7
+random	../task_weeks/Task_week2/DecisionTree.py	/^import random$/;"	kind:namespace	line:3
+re	../AnimeProject/demo1_AnimeGAN/run.py	/^import re$/;"	kind:namespace	line:8
+re	../AnimeProject/demo2_DCGAN/crawl.py	/^import re$/;"	kind:namespace	line:3
+re	../AnimeProject/demo3_pokemon/crawl.1.py	/^import re$/;"	kind:namespace	line:3
+re	../WebCrawler/konachan检索页面爬虫.py	/^import re$/;"	kind:namespace	line:4
+re	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^import re $/;"	kind:namespace	line:3
+reLU	../task_weeks/task_week3/calGraph.py	/^class reLU(node):$/;"	kind:class	line:64
+reader	../task_weeks/Task_week1/Tree.py	/^    reader = csv.reader(f)$/;"	kind:variable	line:87
+reader	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^    reader = csv.reader(f)$/;"	kind:variable	line:57
+reader	../task_weeks/Task_week1/kNN_未处理数据.py	/^    reader = csv.reader(f)$/;"	kind:variable	line:32
+real	../task_weeks/task_week6/DCGAN.py	/^        real = img.to(device)                   # 训练集中抽取的真图片$/;"	kind:variable	line:37
+real_features	../PyTorch-SRGAN-master/test.py	/^    real_features = Variable(feature_extractor(high_res_real).data)$/;"	kind:variable	line:133
+real_features	../PyTorch-SRGAN-master/train.py	/^        real_features = Variable(feature_extractor(high_res_real).data)$/;"	kind:variable	line:190
+real_label	../AnimeProject/demo1_AnimeGAN/main.py	/^real_label = 1$/;"	kind:variable	line:133
+remove	../AnimeProject/demo2_DCGAN/clip.py	/^def remove(err):$/;"	kind:function	line:23
+requests	../AnimeProject/demo2_DCGAN/crawl.py	/^import requests$/;"	kind:namespace	line:1
+requests	../AnimeProject/demo3_pokemon/crawl.1.py	/^import requests$/;"	kind:namespace	line:1
+requests	../WebCrawler/konachan检索页面爬虫.py	/^import requests$/;"	kind:namespace	line:6
+residualBlock	../PyTorch-SRGAN-master/models.py	/^class residualBlock(nn.Module):$/;"	kind:class	line:21
+response	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^response = BeautifulSoup(urlopen(url), features='lxml')$/;"	kind:variable	line:9
+result	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^result = classify(train_data, train_label, test_data)$/;"	kind:variable	line:74
+result	../task_weeks/Task_week1/kNN_未处理数据.py	/^result = classify(train_data, train_label, test_data)$/;"	kind:variable	line:42
+root	../AnimeProject/demo1_AnimeGAN/main.py	/^    root=opt.dataRoot,$/;"	kind:variable	line:93
+root	../task_weeks/Task_week1/Bayes.py	/^root = "\/media\/why\/DATA\/why的程序测试\/AI_Lab\/NLP\/"$/;"	kind:variable	line:3
+rootPath	../task_weeks/task_week5/imageTranser.py	/^rootPath = "\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/Task\/task_week5\/"$/;"	kind:variable	line:19
+rootURL	../WebCrawler/konachan检索页面爬虫.py	/^rootURL = 'http:\/\/konachan.net\/'$/;"	kind:variable	line:11
+run.py	../AnimeProject/demo1_AnimeGAN/run.py	1;"	kind:file	line:1
+sampleNum	../AnimeProject/demo2_DCGAN/config.py	/^sampleNum = 10    # set False to use all samples$/;"	kind:variable	line:11
+sampleNum	../AnimeProject/demo3_pokemon/config_PM.py	/^sampleNum = False    # set False to use all samples$/;"	kind:variable	line:8
+sampleNum	../GAN/avator/config.py	/^sampleNum = 10    # set False to use all samples$/;"	kind:variable	line:8
+sampleNum	../GAN/avator/train_DCGAN.py	/^sampleNum = False    # set False to use all samples$/;"	kind:variable	line:21
+saveImg	../AnimeProject/demo2_DCGAN/config.py	/^saveImg = True$/;"	kind:variable	line:5
+saveImg	../AnimeProject/demo3_pokemon/config_PM.py	/^saveImg = True$/;"	kind:variable	line:5
+saveImg	../GAN/avator/config.py	/^saveImg = False$/;"	kind:variable	line:5
+saveImg	../GAN/avator/train_DCGAN.py	/^saveImg = False$/;"	kind:variable	line:19
+saveImgNum	../AnimeProject/demo2_DCGAN/config.py	/^saveImgNum = 10$/;"	kind:variable	line:19
+saveImgNum	../AnimeProject/demo3_pokemon/config_PM.py	/^saveImgNum = 10$/;"	kind:variable	line:15
+saveImgNum	../GAN/avator/train_DCGAN.py	/^saveImgNum = 300    # 每个epoch中每多少轮保存生成的图片$/;"	kind:variable	line:28
+saveLoss	../GAN/avator/train_WGAN-GP.py	/^    def saveLoss(self, path):$/;"	kind:member	line:81
+saveModel	../AnimeProject/demo2_DCGAN/config.py	/^saveModel = False$/;"	kind:variable	line:4
+saveModel	../AnimeProject/demo3_pokemon/config_PM.py	/^saveModel = True$/;"	kind:variable	line:4
+saveModel	../GAN/avator/config.py	/^saveModel = False$/;"	kind:variable	line:4
+saveModel	../GAN/avator/train_DCGAN.py	/^saveModel = True$/;"	kind:variable	line:18
+saveModel	../GAN/avator/train_WGAN-GP.py	/^    def saveModel(self, No):$/;"	kind:member	line:74
+saveModelNum	../AnimeProject/demo2_DCGAN/config.py	/^saveModelNum = 10     # save current model per 5 times$/;"	kind:variable	line:20
+saveModelNum	../AnimeProject/demo3_pokemon/config_PM.py	/^saveModelNum = 5     # save current model per 5 times$/;"	kind:variable	line:16
+saveModelNum	../GAN/avator/train_DCGAN.py	/^saveModelNum = 5    # 每多少个epoch保存一次模型$/;"	kind:variable	line:29
+saveNum	../GAN/avator/config.py	/^saveNum = 5     # save current model per 5 times$/;"	kind:variable	line:16
+savePath	../AnimeProject/demo2_DCGAN/config.py	/^savePath = workDir + '\/img'$/;"	kind:variable	line:31
+savePath	../AnimeProject/demo2_DCGAN/test.py	/^savePath = workDir + '\/img'$/;"	kind:variable	line:14
+savePath	../AnimeProject/demo3_pokemon/config_PM.py	/^savePath = workDir + '\/img'$/;"	kind:variable	line:26
+savePath	../AnimeProject/demo3_pokemon/test.py	/^savePath = workDir + '\/img'$/;"	kind:variable	line:14
+savePath	../GAN/avator/config.py	/^savePath = workDir + '\/saveImg'$/;"	kind:variable	line:25
+savePath	../GAN/avator/test.py	/^savePath = workDir + '\/img'$/;"	kind:variable	line:13
+savePath	../GAN/avator/train_DCGAN.py	/^savePath = workDir + '\/saveImg'$/;"	kind:variable	line:37
+saveRandImg	../AnimeProject/demo2_DCGAN/config.py	/^saveRandImg = False$/;"	kind:variable	line:9
+save_all_model	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^save_all_model = False$/;"	kind:variable	line:19
+save_all_model	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^save_all_model = False$/;"	kind:variable	line:17
+save_image	../GAN/avator/train_WGAN-GP.py	/^from torchvision.utils import save_image$/;"	kind:namespace	line:9
+save_image	../PyTorch-SRGAN-master/test.py	/^from torchvision.utils import save_image$/;"	kind:namespace	line:14
+save_model	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^def save_model(Dnn, Gnn, modelPath, num, save_all=False):$/;"	kind:function	line:54
+save_model	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^def save_model(Dnn, Gnn, modelPath, num, save_all=False):$/;"	kind:function	line:52
+save_path	../AnimeProject/demo1_AnimeGAN/run.py	/^save_path = DIR + '\/testImg'$/;"	kind:variable	line:13
+scale	../PyTorch-SRGAN-master/test.py	/^scale = transforms.Compose([transforms.ToPILImage(),$/;"	kind:variable	line:50
+scale	../PyTorch-SRGAN-master/train.py	/^scale = transforms.Compose([transforms.ToPILImage(),$/;"	kind:variable	line:55
+scrapy	../WebCrawler/scrapyTestWhy/scrapyTestWhy/items.py	/^import scrapy$/;"	kind:namespace	line:8
+scrapy	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	/^import scrapy$/;"	kind:namespace	line:2
+set_prefs	../task_weeks/Task_week1/.ropeproject/config.py	/^def set_prefs(prefs):$/;"	kind:function	line:5
+set_z	../AnimeProject/demo1_AnimeGAN/run.py	/^def set_z(z):$/;"	kind:function	line:60
+settings.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/settings.py	1;"	kind:file	line:1
+shotNum	../AnimeProject/demo2_DCGAN/config.py	/^shotNum = 10      # save loss info per 100 iterations$/;"	kind:variable	line:18
+shotNum	../AnimeProject/demo3_pokemon/config_PM.py	/^shotNum = 10      # save loss info per 100 iterations$/;"	kind:variable	line:14
+shotNum	../GAN/avator/config.py	/^shotNum = 100       # save loss info per 100 iterations$/;"	kind:variable	line:15
+shotNum	../GAN/avator/train_DCGAN.py	/^shotNum = 100       # 每个epoch中每多少轮记录信息$/;"	kind:variable	line:27
+show	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^def show(data):$/;"	kind:function	line:44
+show	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^def show(data):$/;"	kind:function	line:42
+show	../GAN/avator/train_DCGAN.py	/^def show(img):$/;"	kind:function	line:64
+show	../PyTorch-SRGAN-master/utils.py	/^    def show(self, inputsG, inputsD_real, inputsD_fake):$/;"	kind:member	line:29
+show	../task_weeks/task_week5/imageTranser.py	/^def show(tensor):$/;"	kind:function	line:32
+sig	../task_weeks/task_week3/BP.py	/^def sig(x):$/;"	kind:function	line:111
+sigma	../task_weeks/task_week4/kernel.py	/^sigma = 2$/;"	kind:variable	line:3
+sigmoid	../task_weeks/task_week3/calGraph.py	/^class sigmoid(node):$/;"	kind:class	line:56
+sigmoid	../task_weeks/task_week4/kernel.py	/^def sigmoid(x, y):$/;"	kind:function	line:24
+signals	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^from scrapy import signals$/;"	kind:namespace	line:8
+size	../task_weeks/task_week3/BP.py	/^size = [5, 10, 4]$/;"	kind:variable	line:7
+size	../task_weeks/task_week6/infoGAN.py	/^size = 32$/;"	kind:variable	line:11
+soup	../WebCrawler/konachan检索页面爬虫.py	/^    soup = findNext(soup)$/;"	kind:variable	line:38
+soup	../WebCrawler/konachan检索页面爬虫.py	/^soup = BeautifulSoup(urlopen(url), features='lxml')$/;"	kind:variable	line:35
+soup	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^        soup = BeautifulSoup(urlopen('https:'+imgURL), features='lxml')$/;"	kind:variable	line:16
+spider	../AnimeProject/demo2_DCGAN/crawl.py	/^    spider = Spider()$/;"	kind:variable	line:61
+spider	../AnimeProject/demo3_pokemon/crawl.1.py	/^    spider = Spider()$/;"	kind:variable	line:50
+spider_opened	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def spider_opened(self, spider):$/;"	kind:member	line:102
+spider_opened	../WebCrawler/scrapyTestWhy/scrapyTestWhy/middlewares.py	/^    def spider_opened(self, spider):$/;"	kind:member	line:55
+start_iter	../AnimeProject/demo1_AnimeGAN/main.py	/^        start_iter = time.time()$/;"	kind:variable	line:155
+std	../PyTorch-SRGAN-master/test.py	/^                                                std = [0.229, 0.224, 0.225])$/;"	kind:variable	line:54
+std	../PyTorch-SRGAN-master/test.py	/^                                std = [0.229, 0.224, 0.225])$/;"	kind:variable	line:48
+std	../PyTorch-SRGAN-master/train.py	/^                                                std = [0.229, 0.224, 0.225])$/;"	kind:variable	line:59
+std	../PyTorch-SRGAN-master/train.py	/^                                std = [0.229, 0.224, 0.225])$/;"	kind:variable	line:53
+step_D	../GAN/avator/train_WGAN-GP.py	/^    def step_D(self, real):$/;"	kind:member	line:104
+step_D_new	../GAN/avator/train_WGAN-GP.py	/^    def step_D_new(self, real):$/;"	kind:member	line:123
+styleLayers	../task_weeks/task_week5/imageTranser.py	/^styleLayers = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']$/;"	kind:variable	line:18
+styleLoss	../task_weeks/task_week5/imageTranser.py	/^class styleLoss(nn.Module):$/;"	kind:class	line:63
+styleWeight	../task_weeks/task_week5/imageTranser.py	/^styleWeight = 1e5$/;"	kind:variable	line:16
+swish	../PyTorch-SRGAN-master/models.py	/^def swish(x):$/;"	kind:function	line:9
+sys	../PyTorch-SRGAN-master/test.py	/^import sys$/;"	kind:namespace	line:4
+sys	../PyTorch-SRGAN-master/train.py	/^import sys$/;"	kind:namespace	line:5
+sys	../animeGAN-master/build_face_dataset.py	/^import sys$/;"	kind:namespace	line:6
+target	../task_weeks/task_week5/imageTranser.py	/^target = loadImg("target.jpg")$/;"	kind:variable	line:145
+target_fake	../PyTorch-SRGAN-master/test.py	/^    target_fake = target_fake.cuda()$/;"	kind:variable	line:96
+target_fake	../PyTorch-SRGAN-master/test.py	/^target_fake = Variable(torch.zeros(opt.batchSize,1))$/;"	kind:variable	line:86
+target_fake	../PyTorch-SRGAN-master/train.py	/^            target_fake = Variable(torch.rand(opt.batchSize,1)*0.3)$/;"	kind:variable	line:175
+target_fake	../PyTorch-SRGAN-master/train.py	/^            target_fake = Variable(torch.rand(opt.batchSize,1)*0.3).cuda()$/;"	kind:variable	line:170
+target_real	../PyTorch-SRGAN-master/test.py	/^    target_real = target_real.cuda()$/;"	kind:variable	line:95
+target_real	../PyTorch-SRGAN-master/test.py	/^target_real = Variable(torch.ones(opt.batchSize,1))$/;"	kind:variable	line:85
+target_real	../PyTorch-SRGAN-master/train.py	/^            target_real = Variable(torch.rand(opt.batchSize,1)*0.5 + 0.7)$/;"	kind:variable	line:174
+target_real	../PyTorch-SRGAN-master/train.py	/^            target_real = Variable(torch.rand(opt.batchSize,1)*0.5 + 0.7).cuda()$/;"	kind:variable	line:169
+test	../AnimeProject/demo1_AnimeGAN/run.py	/^def test():$/;"	kind:function	line:69
+test	../AnimeProject/demo2_DCGAN/clip.py	/^def test():$/;"	kind:function	line:6
+test	../AnimeProject/demo2_DCGAN/test.py	/^    def test(self):$/;"	kind:member	line:35
+test	../AnimeProject/demo3_pokemon/test.py	/^    def test(self):$/;"	kind:member	line:35
+test	../GAN/avator/test.py	/^    def test(self):$/;"	kind:member	line:34
+test	../task_weeks/Task_week1/Bayes.py	/^def test(test_vector, test_label, p1_vec, p0_vec, pw_vec, doc_num):$/;"	kind:function	line:97
+test	../task_weeks/Task_week2/DecisionTree.py	/^def test(data, tree, label):$/;"	kind:function	line:145
+test	../task_weeks/Task_week2/Laplace-bayes.py	/^def test(test_data, feat, p_xc, pc):$/;"	kind:function	line:75
+test	../task_weeks/Task_week2/RandForest.py	/^    def test(self):$/;"	kind:member	line:45
+test	../task_weeks/task_week3/BP.py	/^    def test(self, testData, testLabel):$/;"	kind:member	line:83
+test	../task_weeks/task_week4/SVM.py	/^def test(testData, testLabel, trainData, trainLabel, alpha, b, kernel):$/;"	kind:function	line:112
+test	../task_weeks/task_week4/function.py	/^def test(testData, testLabel, func):$/;"	kind:function	line:31
+test.py	../AnimeProject/demo2_DCGAN/test.py	1;"	kind:file	line:1
+test.py	../AnimeProject/demo3_pokemon/test.py	1;"	kind:file	line:1
+test.py	../GAN/avator/test.py	1;"	kind:file	line:1
+test.py	../PyTorch-SRGAN-master/test.py	1;"	kind:file	line:1
+testNet	../AnimeProject/demo2_DCGAN/test.py	/^    testNet = TestNet()$/;"	kind:variable	line:54
+testNet	../AnimeProject/demo3_pokemon/test.py	/^    testNet = TestNet()$/;"	kind:variable	line:54
+testNet	../GAN/avator/test.py	/^    testNet = TestNet()$/;"	kind:variable	line:53
+test_data	../task_weeks/Task_week1/Bayes.py	/^test_data = np.array(test_data)$/;"	kind:variable	line:115
+test_data	../task_weeks/Task_week1/Tree.py	/^test_data = data[N:]$/;"	kind:variable	line:99
+test_data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^test_data = data[N:, :]$/;"	kind:variable	line:68
+test_data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^test_data = test_data[:, 0:-1]$/;"	kind:variable	line:72
+test_data	../task_weeks/Task_week1/kNN_未处理数据.py	/^test_data = data[N:, :]$/;"	kind:variable	line:36
+test_data	../task_weeks/Task_week1/kNN_未处理数据.py	/^test_data = test_data[:, 0:-1]$/;"	kind:variable	line:40
+test_label	../task_weeks/Task_week1/Tree.py	/^test_label = label[N:]$/;"	kind:variable	line:101
+test_label	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^test_label = test_data[:, -1:]$/;"	kind:variable	line:71
+test_label	../task_weeks/Task_week1/kNN_未处理数据.py	/^test_label = test_data[:, -1:]$/;"	kind:variable	line:39
+test_num	../task_weeks/Task_week2/Laplace-bayes.py	/^test_num = 1$/;"	kind:variable	line:3
+test_path1	../task_weeks/Task_week1/Bayes.py	/^test_path1 = root+"test\/pos\/"$/;"	kind:variable	line:6
+test_path2	../task_weeks/Task_week1/Bayes.py	/^test_path2 = root+"test\/neg\/"$/;"	kind:variable	line:7
+test_vector	../task_weeks/Task_week1/Bayes.py	/^test_vector = data_to_vector(word_list, test_data, 2*f_num[2])$/;"	kind:variable	line:113
+theta	../task_weeks/task_week4/kernel.py	/^theta = -1  # sigmoid核参数$/;"	kind:variable	line:2
+time	../AnimeProject/demo1_AnimeGAN/main.py	/^import time$/;"	kind:namespace	line:3
+time	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import time$/;"	kind:namespace	line:1
+time	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import time$/;"	kind:namespace	line:1
+time	../GAN/avator/train_DCGAN.py	/^import time$/;"	kind:namespace	line:2
+time	../RL/demo.py	/^import time$/;"	kind:namespace	line:2
+tmp.py	../WebCrawler/tmp.py	1;"	kind:file	line:1
+tmp.py	../task_weeks/Task_week2/tmp.py	1;"	kind:file	line:1
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch$/;"	kind:namespace	line:6
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.backends.cudnn as cudnn$/;"	kind:namespace	line:9
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.nn.parallel$/;"	kind:namespace	line:8
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.optim as optim$/;"	kind:namespace	line:10
+torch	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.utils.data$/;"	kind:namespace	line:11
+torch	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch$/;"	kind:namespace	line:1
+torch	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch.nn as nn$/;"	kind:namespace	line:2
+torch	../AnimeProject/demo1_AnimeGAN/models.py	/^import torch.nn.parallel$/;"	kind:namespace	line:3
+torch	../AnimeProject/demo1_AnimeGAN/run.py	/^import torch$/;"	kind:namespace	line:4
+torch	../AnimeProject/demo2_DCGAN/model64.py	/^import torch$/;"	kind:namespace	line:2
+torch	../AnimeProject/demo2_DCGAN/model64.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+torch	../AnimeProject/demo2_DCGAN/test.py	/^import torch$/;"	kind:namespace	line:3
+torch	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torch$/;"	kind:namespace	line:8
+torch	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+torch	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:2
+torch	../AnimeProject/demo3_pokemon/model32.py	/^import torch$/;"	kind:namespace	line:2
+torch	../AnimeProject/demo3_pokemon/model32.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+torch	../AnimeProject/demo3_pokemon/model64.py	/^import torch$/;"	kind:namespace	line:2
+torch	../AnimeProject/demo3_pokemon/model64.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+torch	../AnimeProject/demo3_pokemon/test.py	/^import torch$/;"	kind:namespace	line:3
+torch	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torch$/;"	kind:namespace	line:8
+torch	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+torch	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torch.optim as optim$/;"	kind:namespace	line:2
+torch	../GAN/avator/model2.py	/^import torch$/;"	kind:namespace	line:2
+torch	../GAN/avator/model2.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+torch	../GAN/avator/test.py	/^import torch$/;"	kind:namespace	line:2
+torch	../GAN/avator/train_DCGAN.py	/^import torch$/;"	kind:namespace	line:9
+torch	../GAN/avator/train_DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+torch	../GAN/avator/train_DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+torch	../GAN/avator/train_WGAN-GP.py	/^import torch$/;"	kind:namespace	line:6
+torch	../GAN/avator/train_WGAN-GP.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+torch	../GAN/avator/train_WGAN-GP.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+torch	../PyTorch-SRGAN-master/models.py	/^import torch$/;"	kind:namespace	line:4
+torch	../PyTorch-SRGAN-master/models.py	/^import torch.nn as nn$/;"	kind:namespace	line:5
+torch	../PyTorch-SRGAN-master/models.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:6
+torch	../PyTorch-SRGAN-master/test.py	/^import torch$/;"	kind:namespace	line:7
+torch	../PyTorch-SRGAN-master/test.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+torch	../PyTorch-SRGAN-master/train.py	/^import torch$/;"	kind:namespace	line:7
+torch	../PyTorch-SRGAN-master/train.py	/^import torch.nn as nn$/;"	kind:namespace	line:10
+torch	../PyTorch-SRGAN-master/train.py	/^import torch.optim as optim$/;"	kind:namespace	line:8
+torch	../PyTorch-SRGAN-master/train.py	/^import torch.optim.lr_scheduler as lr_scheduler$/;"	kind:namespace	line:9
+torch	../task_weeks/task_week5/imageTranser.py	/^import torch$/;"	kind:namespace	line:9
+torch	../task_weeks/task_week5/imageTranser.py	/^import torch.nn as nn$/;"	kind:namespace	line:6
+torch	../task_weeks/task_week5/imageTranser.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+torch	../task_weeks/task_week5/imageTranser.py	/^import torch.optim as optim$/;"	kind:namespace	line:5
+torch	../task_weeks/task_week6/DCGAN.py	/^import torch$/;"	kind:namespace	line:7
+torch	../task_weeks/task_week6/DCGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:5
+torch	../task_weeks/task_week6/DCGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:3
+torch	../task_weeks/task_week6/infoGAN.py	/^import torch.nn as nn$/;"	kind:namespace	line:7
+torch	../task_weeks/task_week6/infoGAN.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:3
+torch	../task_weeks/task_week6/infoGAN.py	/^import torch.optim as optim$/;"	kind:namespace	line:6
+torch	../task_weeks/task_week6/infoGAN.py	/^import torch.utils.data as D$/;"	kind:namespace	line:5
+torch	../task_weeks/task_week6/model.py	/^import torch.nn as nn$/;"	kind:namespace	line:1
+torchvision	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.datasets as dset$/;"	kind:namespace	line:12
+torchvision	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:13
+torchvision	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.utils as vutils$/;"	kind:namespace	line:14
+torchvision	../AnimeProject/demo1_AnimeGAN/run.py	/^import torchvision.transforms$/;"	kind:namespace	line:6
+torchvision	../AnimeProject/demo1_AnimeGAN/run.py	/^import torchvision.utils as vutils$/;"	kind:namespace	line:5
+torchvision	../AnimeProject/demo2_DCGAN/test.py	/^import torchvision$/;"	kind:namespace	line:4
+torchvision	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torchvision$/;"	kind:namespace	line:5
+torchvision	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:6
+torchvision	../AnimeProject/demo3_pokemon/test.py	/^import torchvision$/;"	kind:namespace	line:4
+torchvision	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torchvision$/;"	kind:namespace	line:5
+torchvision	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:6
+torchvision	../GAN/avator/test.py	/^import torchvision$/;"	kind:namespace	line:3
+torchvision	../GAN/avator/train_DCGAN.py	/^import torchvision$/;"	kind:namespace	line:6
+torchvision	../GAN/avator/train_DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:7
+torchvision	../GAN/avator/train_WGAN-GP.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:10
+torchvision	../PyTorch-SRGAN-master/test.py	/^import torchvision$/;"	kind:namespace	line:11
+torchvision	../PyTorch-SRGAN-master/test.py	/^import torchvision.datasets as datasets$/;"	kind:namespace	line:12
+torchvision	../PyTorch-SRGAN-master/test.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:13
+torchvision	../PyTorch-SRGAN-master/train.py	/^import torchvision$/;"	kind:namespace	line:13
+torchvision	../PyTorch-SRGAN-master/train.py	/^import torchvision.datasets as datasets$/;"	kind:namespace	line:14
+torchvision	../PyTorch-SRGAN-master/train.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:15
+torchvision	../task_weeks/task_week5/imageTranser.py	/^import torchvision.models as models$/;"	kind:namespace	line:2
+torchvision	../task_weeks/task_week5/imageTranser.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:1
+torchvision	../task_weeks/task_week6/DCGAN.py	/^import torchvision$/;"	kind:namespace	line:6
+torchvision	../task_weeks/task_week6/DCGAN.py	/^import torchvision.datasets as dSet$/;"	kind:namespace	line:1
+torchvision	../task_weeks/task_week6/DCGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:2
+torchvision	../task_weeks/task_week6/infoGAN.py	/^import torchvision.datasets as dataset$/;"	kind:namespace	line:1
+torchvision	../task_weeks/task_week6/infoGAN.py	/^import torchvision.transforms as T$/;"	kind:namespace	line:2
+train	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^def train(Dnn, Gnn):$/;"	kind:function	line:70
+train	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^def train(Dnn, Gnn):$/;"	kind:function	line:68
+train	../GAN/avator/train_DCGAN.py	/^def train(Dnn, Gnn, trainLoader):$/;"	kind:function	line:79
+train	../GAN/avator/train_WGAN-GP.py	/^    def train(self, trainLoader):$/;"	kind:member	line:135
+train	../task_weeks/Task_week1/Bayes.py	/^def train(train_vector, train_label, doc_num):$/;"	kind:function	line:67
+train	../task_weeks/Task_week2/Laplace-bayes.py	/^def train(pos, neg):$/;"	kind:function	line:52
+train	../task_weeks/Task_week2/RandForest.py	/^    def train(self):$/;"	kind:member	line:38
+train	../task_weeks/task_week4/Bayes.py	/^def train(trainData, trainLabel):$/;"	kind:function	line:16
+train	../task_weeks/task_week4/QDA.py	/^def train(trainData, trainLabel):$/;"	kind:function	line:16
+train	../task_weeks/task_week4/SVM.py	/^def train(trainData, trainLabel, num, kernel):$/;"	kind:function	line:54
+train.py	../PyTorch-SRGAN-master/train.py	1;"	kind:file	line:1
+trainData	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^    trainData = whyDataset(imgPath)$/;"	kind:variable	line:138
+trainData	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^    trainData = whyDataset(imgPath)$/;"	kind:variable	line:135
+trainData	../GAN/avator/train_DCGAN.py	/^    trainData = whyDataset(imgPath)$/;"	kind:variable	line:142
+trainData	../task_weeks/task_week6/DCGAN.py	/^trainData = dSet.MNIST(root='\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/DataSet',$/;"	kind:variable	line:17
+trainLoader	../GAN/avator/train_DCGAN.py	/^    trainLoader = DataLoader($/;"	kind:variable	line:143
+trainLoader	../GAN/avator/train_WGAN-GP.py	/^    trainLoader = DataLoader($/;"	kind:variable	line:173
+trainLoader	../task_weeks/task_week6/DCGAN.py	/^trainLoader = torch.utils.data.DataLoader($/;"	kind:variable	line:19
+train_DCGAN.py	../AnimeProject/demo2_DCGAN/train_DCGAN.py	1;"	kind:file	line:1
+train_DCGAN.py	../GAN/avator/train_DCGAN.py	1;"	kind:file	line:1
+train_DCGAN_pm.py	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	1;"	kind:file	line:1
+train_WGAN-GP.py	../GAN/avator/train_WGAN-GP.py	1;"	kind:file	line:1
+train_data	../task_weeks/Task_week1/Bayes.py	/^train_data = np.array(train_data)$/;"	kind:variable	line:114
+train_data	../task_weeks/Task_week1/Tree.py	/^train_data = data[:N]$/;"	kind:variable	line:98
+train_data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^train_data = data[:N, :]$/;"	kind:variable	line:67
+train_data	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^train_data = train_data[:, 0:-1]$/;"	kind:variable	line:70
+train_data	../task_weeks/Task_week1/kNN_未处理数据.py	/^train_data = data[:N, :]$/;"	kind:variable	line:35
+train_data	../task_weeks/Task_week1/kNN_未处理数据.py	/^train_data = train_data[:, 0:-1]$/;"	kind:variable	line:38
+train_label	../task_weeks/Task_week1/Tree.py	/^train_label = label[:N]$/;"	kind:variable	line:100
+train_label	../task_weeks/Task_week1/kNN_归一化＆缺失填充.py	/^train_label = train_data[:, -1:]$/;"	kind:variable	line:69
+train_label	../task_weeks/Task_week1/kNN_未处理数据.py	/^train_label = train_data[:, -1:]$/;"	kind:variable	line:37
+train_path1	../task_weeks/Task_week1/Bayes.py	/^train_path1 = root+"train\/pos\/"$/;"	kind:variable	line:4
+train_path2	../task_weeks/Task_week1/Bayes.py	/^train_path2 = root+"train\/neg\/"$/;"	kind:variable	line:5
+train_vector	../task_weeks/Task_week1/Bayes.py	/^train_vector = data_to_vector(word_list, train_data, 2*f_num[0])$/;"	kind:variable	line:112
+transfer	../task_weeks/task_week5/imageTranser.py	/^def transfer(cnn, origin, target, inputImg):$/;"	kind:function	line:115
+transform	../AnimeProject/demo1_AnimeGAN/main.py	/^    transform=transforms.Compose([$/;"	kind:variable	line:94
+transform	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^transform = T.Compose([T.CenterCrop(64), T.Resize(imgSize), T.ToTensor()])$/;"	kind:variable	line:23
+transform	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^transform = T.Compose([T.CenterCrop(32), T.Resize(imgSize), T.ToTensor()])$/;"	kind:variable	line:21
+transform	../GAN/avator/train_DCGAN.py	/^transform = T.Compose([T.Resize(imgSize), T.ToTensor()])$/;"	kind:variable	line:45
+transform	../GAN/avator/train_WGAN-GP.py	/^transform = T.Compose([T.Resize(imgSize), T.ToTensor()])$/;"	kind:variable	line:19
+transform	../PyTorch-SRGAN-master/test.py	/^transform = transforms.Compose([transforms.RandomCrop(opt.imageSize*opt.upSampling),$/;"	kind:variable	line:44
+transform	../PyTorch-SRGAN-master/train.py	/^transform = transforms.Compose([transforms.RandomCrop(opt.imageSize*opt.upSampling),$/;"	kind:variable	line:49
+transforms	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:13
+transforms	../AnimeProject/demo1_AnimeGAN/run.py	/^import torchvision.transforms$/;"	kind:namespace	line:6
+transforms	../PyTorch-SRGAN-master/test.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:13
+transforms	../PyTorch-SRGAN-master/train.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:15
+transforms	../PyTorch-SRGAN-master/utils.py	/^from torchvision import transforms$/;"	kind:namespace	line:9
+transforms	../task_weeks/task_week5/imageTranser.py	/^import torchvision.transforms as transforms$/;"	kind:namespace	line:1
+trash	../task_weeks/Task_week1/Bayes.py	/^trash = ('<br \/>', '.', '(', ')', '!', ';', '"', ':', '\/ ', '*', '-')$/;"	kind:variable	line:9
+tree	../task_weeks/Task_week1/Tree.py	/^tree = plant_tree(train_data, train_label)$/;"	kind:variable	line:103
+treeNum	../task_weeks/Task_week2/RandForest.py	/^treeNum = 30$/;"	kind:variable	line:4
+try_process_img	../animeGAN-master/build_face_dataset.py	/^def try_process_img(img_path):$/;"	kind:function	line:76
+unloader	../task_weeks/task_week5/imageTranser.py	/^unloader = transforms.ToPILImage()$/;"	kind:variable	line:21
+unnormalize	../PyTorch-SRGAN-master/test.py	/^unnormalize = transforms.Normalize(mean = [-2.118, -2.036, -1.804], std = [4.367, 4.464, 4.444])$/;"	kind:variable	line:58
+update	../task_weeks/task_week3/BP.py	/^    def update(self, label, nerve, alpha):$/;"	kind:member	line:30
+upsampleBlock	../PyTorch-SRGAN-master/models.py	/^class upsampleBlock(nn.Module):$/;"	kind:class	line:34
+urlopen	../AnimeProject/demo3_pokemon/crawl.1.py	/^from urllib.request import urlretrieve, urlopen$/;"	kind:namespace	line:4
+urlopen	../WebCrawler/konachan检索页面爬虫.py	/^from urllib.request import urlopen, urlretrieve$/;"	kind:namespace	line:3
+urlopen	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^from urllib.request import urlopen, urlretrieve$/;"	kind:namespace	line:1
+urlretrieve	../AnimeProject/demo2_DCGAN/crawl.py	/^from urllib.request import urlretrieve$/;"	kind:namespace	line:4
+urlretrieve	../AnimeProject/demo3_pokemon/crawl.1.py	/^from urllib.request import urlretrieve, urlopen$/;"	kind:namespace	line:4
+urlretrieve	../WebCrawler/konachan检索页面爬虫.py	/^from urllib.request import urlopen, urlretrieve$/;"	kind:namespace	line:3
+urlretrieve	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/1.py	/^from urllib.request import urlopen, urlretrieve$/;"	kind:namespace	line:1
+utils	../AnimeProject/demo1_AnimeGAN/main.py	/^import torch.utils.data$/;"	kind:namespace	line:11
+utils	../task_weeks/task_week6/infoGAN.py	/^import torch.utils.data as D$/;"	kind:namespace	line:5
+utils.py	../PyTorch-SRGAN-master/utils.py	1;"	kind:file	line:1
+varNum	../task_weeks/Task_week2/BayesNet.py	/^varNum = 7$/;"	kind:variable	line:2
+visualizer	../PyTorch-SRGAN-master/train.py	/^visualizer = Visualizer(image_size=opt.imageSize*opt.upSampling)$/;"	kind:variable	line:102
+vutils	../AnimeProject/demo1_AnimeGAN/main.py	/^import torchvision.utils as vutils$/;"	kind:namespace	line:14
+vutils	../AnimeProject/demo1_AnimeGAN/run.py	/^import torchvision.utils as vutils$/;"	kind:namespace	line:5
+weights_init	../AnimeProject/demo1_AnimeGAN/main.py	/^from models import weights_init$/;"	kind:namespace	line:19
+weights_init	../AnimeProject/demo1_AnimeGAN/models.py	/^def weights_init(m):$/;"	kind:function	line:6
+why	../why@bin/pythonLib/whyAI/whytest.py	/^def why():$/;"	kind:function	line:4
+whyDataset	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^class whyDataset(Dataset):$/;"	kind:class	line:27
+whyDataset	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^class whyDataset(Dataset):$/;"	kind:class	line:25
+whyDataset	../GAN/avator/train_DCGAN.py	/^class whyDataset(Dataset):$/;"	kind:class	line:49
+whyDataset	../GAN/avator/train_WGAN-GP.py	/^class whyDataset(Dataset):$/;"	kind:class	line:23
+whySpider.py	../WebCrawler/scrapyTestWhy/scrapyTestWhy/spiders/whySpider.py	1;"	kind:file	line:1
+whytest.py	../why@bin/pythonLib/whyAI/whytest.py	1;"	kind:file	line:1
+word_list	../task_weeks/Task_week1/Bayes.py	/^word_list = word_to_list(train_data+test_data)$/;"	kind:variable	line:111
+word_to_list	../task_weeks/Task_week1/Bayes.py	/^def word_to_list(train_data):  # 建立词集$/;"	kind:function	line:45
+workDir	../AnimeProject/demo2_DCGAN/config.py	/^workDir = os.getcwd()$/;"	kind:variable	line:28
+workDir	../AnimeProject/demo2_DCGAN/plot.py	/^workDir = os.getcwd()$/;"	kind:variable	line:5
+workDir	../AnimeProject/demo2_DCGAN/test.py	/^workDir = os.getcwd() $/;"	kind:variable	line:13
+workDir	../AnimeProject/demo3_pokemon/config_PM.py	/^workDir = os.getcwd()$/;"	kind:variable	line:24
+workDir	../AnimeProject/demo3_pokemon/plot.py	/^workDir = os.getcwd()$/;"	kind:variable	line:5
+workDir	../AnimeProject/demo3_pokemon/test.py	/^workDir = os.getcwd() $/;"	kind:variable	line:13
+workDir	../GAN/avator/config.py	/^workDir = os.getcwd()$/;"	kind:variable	line:22
+workDir	../GAN/avator/plot.py	/^workDir = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/Task\/Task_Extra\/avator'$/;"	kind:variable	line:6
+workDir	../GAN/avator/test.py	/^workDir = '\/run\/media\/why\/DATA\/why的程序测试\/AI_Lab\/Task\/Task_Extra\/avator'$/;"	kind:variable	line:12
+workDir	../GAN/avator/train_DCGAN.py	/^workDir = os.getcwd()$/;"	kind:variable	line:35
+write	../AnimeProject/demo2_DCGAN/train_DCGAN.py	/^def write(path, G, D):$/;"	kind:function	line:63
+write	../AnimeProject/demo3_pokemon/train_DCGAN_pm.py	/^def write(path, G, D):$/;"	kind:function	line:61
+write	../GAN/avator/train_DCGAN.py	/^def write(path, G, D):$/;"	kind:function	line:72
+writeData	../AnimeProject/demo2_DCGAN/config.py	/^writeData = False$/;"	kind:variable	line:6
+writeData	../AnimeProject/demo3_pokemon/config_PM.py	/^writeData = False$/;"	kind:variable	line:6
+writeData	../GAN/avator/config.py	/^writeData = False$/;"	kind:variable	line:6
+x	../WebCrawler/tmp.py	/^x = np.linspace(-1, 1, 50)$/;"	kind:variable	line:6
+y1	../task_weeks/task_week6/infoGAN.py	/^y1 = 10  # y中包含的离散变量的个数，假设表示one-hot编码的label$/;"	kind:variable	line:13
+y2	../task_weeks/task_week6/infoGAN.py	/^y2 = 2  # y中包含连续变量的个数，假设表示笔画的粗细和字体的倾角$/;"	kind:variable	line:14

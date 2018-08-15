@@ -1,0 +1,9 @@
+#!/bin/expect                                                                                                                                                                             
+
+set timeout 10
+spawn ssh root@47.106.247.165
+expect "*(yes/no)*"
+send "yes\r"
+expect "*password:"
+send "23333333\r"
+interact

@@ -1,0 +1,9 @@
+#!/bin/expect
+
+set timeout 10
+spawn ssh root@180.76.58.48
+expect "*(yes/no)*"
+send "yes\r"
+expect "*password*"
+send "HustRootCS2017\r"
+interact

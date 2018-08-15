@@ -56,7 +56,7 @@ categories: Linux
 * **布尔&逻辑运算符**：格式和关系运算一样。
     * 布尔运算：`!`非，`-o`或，`-a`与
     * 逻辑运算：`&&`与逻辑，`||`或逻辑
-* **文件判断、字符串运算符**：啊啊啊好多啊直接贴![链接](http://www.runoob.com/linux/linux-shell-basic-operators.html)
+* **文件判断、字符串运算符**：啊啊啊好多啊直接贴[链接](http://www.runoob.com/linux/linux-shell-basic-operators.html)
 * **条件语句**：
     ```shell
     if [ $a == $b ]
@@ -142,3 +142,19 @@ expect{
     fx a b c
     ```
     要注意大括号两边必须有空格。
+
+* 条件：注意大括号位置都是固定的！不能随便换行！
+```
+if {condition} {
+    [我是代码]
+} elseif {condition} {
+
+} else {
+    [我是代码]
+}
+```
+
+* 命令行参数：
+    * `[lindex $argv 0]`表示第一个命令行参数（不包含脚本名字本身）
+    * `$argv0`表示脚本名字本身
+    * `$argc`表示参数的个数
