@@ -1,0 +1,79 @@
+#!/bin/expect
+
+set timeout 10
+set argv1 [lindex $argv 0]
+
+proc link {ip pwd} {
+
+    spawn ssh $ip
+    expect "*password*"
+    send $pwd
+
+    interact
+}
+
+
+if {$argv1=="do"} {
+    spawn ssh why@138.68.236.204
+    expect "*password*"
+    send "why11037\r"
+    expect "*$*"
+#   send "zsh\r"
+    send "ssserver -c shadowsocks.json\r"
+    interact
+}
+# if {$argv1=="tt"} {
+#     link root@180.76.58.48 "HustRootCS2017\r"
+# }
+if {$argv1=="uq"} {
+    link unique@115.156.207.244 "unique\r"
+}
+if {$argv1=="UQ"} {
+    spawn ssh public@dian.org.cn -p 2222
+    expect "*password*"
+    send "enterdian\r"
+    expect "*$*"
+    send "ssh unique@115.156.207.244\r"
+    expect "*password*"
+    send "unique\r"
+    expect "*$*"
+    send "cd /disk/unique/why\r"
+    interact
+}
+if {$argv1=="al"} {
+    link root@47.106.247.165 "23333333\r"
+}    
+if {$argv1=="mid"} {
+    spawn ssh public@dian.org.cn -p 2222
+    expect "*password*"
+    send "enterdian\r"
+    interact
+}    
+
+if {$argv1=="d5"} {
+    spawn ssh public@dian.org.cn -p 2222
+    expect "*password*"
+    send "enterdian\r"
+    expect "*$*"
+    send "ssh dian@192.168.0.5\r"
+    expect "*password*"
+    send "DianSince2002\r"
+    expect "*$*"
+    send "cd /disk\r"
+    interact
+}
+if {$argv1=="d4"} {
+    spawn ssh public@dian.org.cn -p 2222
+    expect "*password*"
+    send "enterdian\r"
+    expect "*$*"
+    send "ssh dian@115.156.207.244\r"
+    expect "*password*"
+    send "DianSince2002\r"
+    expect "*$*"
+    send "zsh\r"
+    expect "~"
+    send "py3\r"
+    interact
+}
+

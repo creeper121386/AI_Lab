@@ -1,0 +1,11 @@
+#!/bin/expect
+
+set timeout 10
+spawn ssh why@180.76.58.48
+expect "*(yes/no)*"
+send "yes\r"
+expect "*password*"
+send "why11037\r"
+expect "*$*"
+send "zsh\r"
+interact

@@ -1,4 +1,4 @@
 *.pkl
 *.pth
-/run/media/why/DATA/why的程序测试/AI_Lab/Task/PyTorch-SRGAN-master/data
+.json
 *.tar.gz

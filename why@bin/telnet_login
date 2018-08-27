@@ -1,0 +1,12 @@
+#!/bin/expect 
+
+set timeout 30
+spawn telnet 180.76.58.48
+expect "*login*"
+send "root\r"
+expect "*Password*"
+send "hust\r"
+expect "*$*"
+send "zsh\r"
+interact
+
