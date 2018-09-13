@@ -1,5 +1,5 @@
 ---
-title: whyの学习笔记:各种常用的Python库（已更新Numpy, Re, matplotlib）
+title: whyの学习笔记:各种常用的Python库（已更新Numpy, Re, matplotlib, tqdm）
 date: 2018-04-11 19:10:51
 tags:
 - 编程
@@ -30,7 +30,7 @@ import numpy as np
 
 ***
 
-## 矩阵操作
+## Array相关操作
 * **切片：** array本质上是多维数组，因此对每一个子数组均需要指定切片。如`a[1:2,5:6]`表示将a矩阵的1~2行，5~6行切片。切片时`:`表示复制整个数组。（基本和py一样啦...）
 * **gpu加速：** `a=a.cuda()`，注意要对a进行赋值。
 * **求最值：**
@@ -54,6 +54,8 @@ import numpy as np
 |最大值|np.argmax(a,axis=1)|np.argmax(a,axis=0)|
 |最小值|np.argmin(a,axis=1)|np.argmin(a,axis=0)|
 
+- 对`array`进行扩展：`np.concatenate((x, y), axis=1)`， 表示把`x`和`y`按照`axis=1`的方向进行合并（`axis`的含义同上）
+- 行向量变列向量：`np.array([x]).T`，方括号不能省略。
 
 ## 计算
 ### 范数计算
@@ -64,6 +66,7 @@ import numpy as np
 * `np.loadtxt('文件名',dtype='',delimiter='分割符')`,从指定的文本文件中读取数据,返回值是array类型.可以指定分隔符读取,也可以读取csv文件.
 * 保存&加载`array`:
     * `np.savetxt('path', array)`
+        * 当数组列数$n$过大，或格式不匹配时可能出错，此时使用`np.savetxt('path', array, fmt='%s, %s, %s')`($n$个`%s`，若为其他数据类型，使用相应的转换说明。)手动指定保存格式。
     * `np.save('path', array)`，以二进制形式保存。`path`中的文件名后缀应该是`.npy`。相应的加载方法是`array = np.load('path')`
     * `np.savez('path', name1 = array1, name2 = array2...)`用来保存多个数组。文件后缀应当是`.npz`。也用`a = np.load(path)`加载，但返回的`a`是一个字典。使用`a['name1']`来获取相应的数组。
 
@@ -205,3 +208,15 @@ import numpy as np
 * `plt.subplot(a,b,c)`表示将整个`figure`分成`a`行`b`列，当前正在第`c`个子图上。
 * 在子图上的绘制过程和之前相同。
 * 可以使用`plt.savefig('path')`来保存图像。
+
+# tqdm
+
+一个终端进度条工具。
+
+## 使用方法
+- ```
+  form tqdm import tqdm
+
+  for _ in tqdm(range(1000)):
+      [我是代码]
+  ```
