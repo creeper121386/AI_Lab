@@ -123,7 +123,7 @@ import numpy as np
 
 ### 调整坐标轴
 
-* `plt.xlim((a, b))`表示x轴显示范围是$(a,b)$，使用`plt.xlabe('name')`调整x轴名称。y轴同理。
+* `plt.xlim((a, b))`表示x轴显示范围是$(a,b)$，使用`plt.xlabel('name')`调整x轴名称。y轴同理。
 * 调整刻度&给刻度添加名称：`plt.xticks(ticks, names)`，ticks是刻度值组成的列表，`names`是相应名称组成的列表
 * `axis = plt.gca()`获得坐标轴当前的状态，`axis`的成员`xaxis`和`yaxis`表示两个坐标轴，`apines`表示边框。`axis`有以下方法：
     * `axis.spines['top'].set_color('red')`设置上边框颜色，下、左、右同理。
@@ -146,6 +146,11 @@ import numpy as np
 * `plt.plot([x0, x0,], [0, y0,], 'k--', linewidth=2.5)` 在某一点$(x_0,y_0)$处画出一条垂直于x轴的虚线.
 * 为某一点设置样式`plt.scatter([x0, ], [y0, ], s=50, color='b')`，其实`plt.scatter`是画散点图用的...
 
+### 显示网格
+
+- `plt.grid(True, linestyle = "--", color = "r", linewidth = "3")`
+- 参数含义同上。
+
 ### 散点图
 
 * `scatter(x, y, s=75 c=None, marker=None, cmap=plt.cm.hot, norm=None, vmin=None, vmax=None, alpha=None, linewidths=None, verts=None, edgecolors=None, hold=None, data=None)`
@@ -153,6 +158,13 @@ import numpy as np
     * `s`表示`size`，点的大小，int
     * `c`表示颜色，颜色可以是一个长度等于散点数的列表，每个元素用来描述每个点的颜色。
     * `cmap`表示颜色组，设置颜色组可以自动配色。`cmap=plt.cm.hot`表示暖色组。所有的`cmap`在[这里](https://matplotlib.org/examples/color/colormaps_reference.html)
+    * 如果想要设置渐变色，需要手动设置一个颜色数组，长度与数据的数目相同，常常使用`cmap`来实现渐变效果，如：
+
+        ```python 
+        colors = [plt.cm.viridis(x) for x in range(N)]
+        plt.scatter(X, Y, c=colors)
+        ```
+
     * `aplpha`表示透明度
     * `marker`表示形状
     * `edgecolors`表示描边颜色
@@ -183,6 +195,10 @@ import numpy as np
 * 使用`plt.clabel(C, inline=True, fontsize=10)`为描边添加高度数字。
     * `C`是之前`coutour`返回的对象。
     * `inline`表示是否在线上，`fontsize`是字体大小。 
+
+### 极坐标图
+
+- 使用`plt.subplot(111, projection = 'polar')`绘制极坐标图
 
 ## 显示图片
 

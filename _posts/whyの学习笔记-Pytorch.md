@@ -88,6 +88,7 @@ categories: 深度学习
 #### `nn.Module`中的网络层
 
 * `nn.Linear(m, n)`线性全连接层。接受一个张量，输出一个张量，输入张量的`size`必须为`(*,m)`，输出的`size`为`(*,n)`。即只对最后一个维度进行全连接计算，再将各个维度拼接起来。这是为了保证在网络中进行随机梯度下降时(假设`batchSize = b`)，最后传到全连接层的张量`size`为`(b,m)`，这样设计可以保证全连接层的输出`size`为`(b,n)`，即只对每个样本进行计算，而不会把不同样本之间的数据放在一起计算。
+* 使用`1x1`卷积，相当于在网络中使用一个全连接层，也可以用来压缩`channel`数。
 
 
 
@@ -146,3 +147,14 @@ def __getitem__(self, index)
     * 早停（当训练集正确率上升而测试集正确率下降时）
     * 使用`dropout`和`dropconnect`，即删除无用的部分
     * 加入正则项
+
+## ~~论why有多蠢(番外篇)~~ why遇到的坑
+
+### CudaRuntimeError
+
+- 标签索引溢出：
+    ```
+    RuntimeError: cuda runtime error (59) : device-side assert triggered at
+    /opt/conda/conda-bld/pytorch_1524586445097/work/aten/src/THC/generic/THCTensorCopy.c:70
+    ```
+    常常是因为`label`编号的最大值大于了总`label`数。大概率是因为网络最后的`FC`层输出没有和`label`数目匹配....换数据集一定要记得改全连接层啊啊啊啊
